@@ -1,12 +1,14 @@
-import "./App.css";
-import LatestNews from "./components/latest-news/latest-news";
+import { Suspense } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "routes/config";
 
 function App() {
   return (
-    <div className="App">
-      Hello 906
-      <LatestNews />
-    </div>
+    <Suspense fallback="Loading...">
+      <Router>
+        <Routes />
+      </Router>
+    </Suspense>
   );
 }
 
