@@ -1,0 +1,16 @@
+.events-card {
+  transition: 0.3s;
+}
+
+.events-card:hover {
+  box-shadow: 0 0 40px #8b8b8b;
+}
+
+.events-card img:hover {
+  transform: scale(1.07);
+}
+
+.events-card img {
+  transition: 0.3s;
+  cursor: pointer;
+}
