@@ -17,16 +17,16 @@ export const Wrapper = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 
-  @media (min-width: ${({ theme }) => theme.media.mobileL})
+  @media (min-width: ${({ theme }) => theme.media.mobileL}) {
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: ${({ theme }) => theme.media.tablet})
+  @media (min-width: ${({ theme }) => theme.media.tablet}) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: ${({ theme }) => theme.media.laptop})
+  @media (min-width: ${({ theme }) => theme.media.laptop}) {
     grid-template-columns: repeat(4, 1fr);
   }
 `;
@@ -54,7 +54,7 @@ export const CardWrapper = styled.div`
 export const CardText = styled.div`
   color: ${({ theme }) => theme.primary};
   padding: 30px;
-  @media (min-width: ${({ theme }) => theme.media.mobileS})
+  @media (min-width: ${({ theme }) => theme.media.mobileS}) {
     padding: 20px;
   }
 `;

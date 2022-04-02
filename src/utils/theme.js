@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background:${colors.background};
     color:${colors.text};
-  
+    font-family: 'League Spartan', sans-serif;
   }
 `;
 
