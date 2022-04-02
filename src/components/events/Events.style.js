@@ -26,6 +26,10 @@ export const Wrapper = styled.div`
   @media ${device.tablet} {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  @media ${device.laptop} {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 export const CardWrapper = styled.div`
@@ -55,9 +59,3 @@ export const CardText = styled.div`
     padding: 20px;
   }
 `;
-
-// export const Card = styled.div``;
-// export const Wrapper = styled.div`
-// `
-// export const Wrapper = styled.div`
-// `
