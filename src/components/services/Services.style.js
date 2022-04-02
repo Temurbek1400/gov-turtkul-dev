@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  padding: 40px;
+  padding: 30px;
 `;
 export const Service = styled.div`
   width: 50%;
