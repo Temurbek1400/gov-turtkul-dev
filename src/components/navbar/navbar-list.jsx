@@ -6,7 +6,6 @@ import { Typography } from "@mui/material";
 import { CustomBox, CustomListItem } from "./navbar.style";
 
 export const NavbarList = ({ toggleDrawer, listData }) => {
-   debugger;
    return (
       <CustomBox onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
          <List>

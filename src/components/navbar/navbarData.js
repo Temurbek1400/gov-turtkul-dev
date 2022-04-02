@@ -15,7 +15,7 @@ module.exports = [
       ],
    },
    {
-      head: "Hokimiyat haqida",
+      head: "Faoliyat",
       list: [
          "Rahbariyat",
          "Markaziy apparat",
@@ -30,7 +30,7 @@ module.exports = [
       ],
    },
    {
-      head: "Hokimiyat haqida",
+      head: "Hokimiyat yangiliklari",
       list: [
          "Rahbariyat",
          "Markaziy apparat",
@@ -45,7 +45,7 @@ module.exports = [
       ],
    },
    {
-      head: "Hokimiyat haqida",
+      head: "Yig'ilish",
       list: [
          "Rahbariyat",
          "Markaziy apparat",
@@ -60,7 +60,7 @@ module.exports = [
       ],
    },
    {
-      head: "Hokimiyat haqida",
+      head: "Xizmatlar",
       list: [
          "Rahbariyat",
          "Markaziy apparat",
