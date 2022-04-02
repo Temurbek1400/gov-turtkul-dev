@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ServicesData } from "./ServicesData";
-import { CommentsData } from "./CommentsData";
+import { ServicesData } from "./services-data";
+import { CommentsData } from "./comments-data";
 import "swiper/css";
 import {
   Comment,
@@ -12,7 +12,7 @@ import {
   SwiperItem,
   Title,
   Wrapper,
-} from "./Services.style";
+} from "./services.style";
 
 const Services = () => {
   return (

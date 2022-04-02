@@ -8,7 +8,7 @@ import {
   VoteBody,
   VoteCard,
   Wrapper,
-} from "./votes-style";
+} from "./votes.style";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 import { BiDislike, BiLike } from "react-icons/bi";
