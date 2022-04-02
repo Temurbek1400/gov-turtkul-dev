@@ -1,7 +1,7 @@
 import { FaBus, FaMapMarkedAlt } from "react-icons/fa";
 import { HiDocumentSearch } from "react-icons/hi";
 import { AiFillQuestionCircle } from "react-icons/ai";
-import { GrDocument } from "react-icons/gr";
+import { FcIdea } from "react-icons/fc";
 
 export const ServicesData = [
   {
@@ -10,15 +10,15 @@ export const ServicesData = [
   },
   {
     icon: <FaBus />,
-    text: "Lorem ipsum dolor sit amet.",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     icon: <AiFillQuestionCircle />,
-    text: "Lorem ipsum dolor sit amet.",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
-    icon: <GrDocument />,
-    text: "Lorem ipsum dolor sit amet.",
+    icon: <FcIdea />,
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     icon: <FaMapMarkedAlt />,

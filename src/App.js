@@ -1,13 +1,14 @@
-import Events from "./components/Events";
-import "./App.css";
-import Services from "./components/services/Services";
+import { Suspense } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "routes/config";
 
 function App() {
   return (
-    <div className="App">
-      <Events />
-      <Services />
-    </div>
+    <Suspense fallback="Loading...">
+      <Router>
+        <Routes />
+      </Router>
+    </Suspense>
   );
 }
 
