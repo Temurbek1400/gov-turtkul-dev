@@ -7,10 +7,10 @@ import Votes from "components/votes/Votes";
 const Home = () => {
   return (
     <div>
-      <LatestNews />
+      {/* <LatestNews /> */}
       <Events />
       <Services />
-      {/* <Votes /> */}
+      <Votes />
     </div>
   );
 };
