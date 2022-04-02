@@ -1,10 +1,15 @@
-import "./App.css";
-import Navbar from './components/navbar/navbar';
+import { Suspense } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "routes/config";
 
 function App() {
-   return <div className="App">
-      <Navbar />
-   </div>;
+  return (
+    <Suspense fallback="Loading...">
+      <Router>
+        <Routes />
+      </Router>
+    </Suspense>
+  );
 }
 
 export default App;
