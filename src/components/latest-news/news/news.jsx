@@ -1,9 +1,8 @@
 import { MdOutlineWatchLater } from "react-icons/md";
 import { MainBody, Time, Wrapper } from "./news.style";
 
-const News = ({ time, data }) => {
-  const truncatedData =
-    data.length > 140 ? (data = data.slice(0, 140) + "...") : data;
+const News = ({ time, info }) => {
+  const truncatedData = info.length > 100 ? info.slice(0, 100) + "..." : info;
   return (
     <Wrapper>
       <Time>

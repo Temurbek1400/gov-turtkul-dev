@@ -9,7 +9,8 @@ export const Title = styled.h2`
 
 export const CustomPaper = styled(Paper)`
   margin-top: 16px;
-  padding: 30px 40px;
+  padding: 30px 0px;
+  width: 100%;
 `;
 
 export const Box = styled.div`
@@ -21,5 +22,21 @@ export const Box = styled.div`
   }
   div:nth-child(2n) {
     padding-left: 50px;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  gap: 40px;
+  @media (max-width: ${(props) => props.theme.media.laptop}) {
+    flex-direction: column;
+  }
+  @media (max-width: ${(props) => props.theme.media.mobileL}) {
+    ${Box} {
+      grid-template-columns: 1fr;
+      div:nth-child(2n + 1) {
+        border-right: none;
+      }
+    }
   }
 `;

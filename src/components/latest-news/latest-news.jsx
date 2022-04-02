@@ -1,25 +1,29 @@
 import { Divider } from "@mui/material";
-import { CustomPaper, Title, Box } from "./latest-news.style";
+import { scheduleData } from "./latest-news.data";
+import { CustomPaper, Title, Box, Wrapper } from "./latest-news.style";
 import News from "./news/news";
+import Schedule from "./schedule/schedule";
 
 const LatestNews = () => {
   return (
-    <>
-      <Title>So`nggi yangiliklar</Title>
-      <Divider />
-      <CustomPaper elevation={3}>
-        <Box>
-          {[1, 2, 4, 5, 6, 7, 8].map((item) => (
-            <News
-              time={"12.00"}
-              data={
-                "aadklj  adlksdklfjflk osakfjladsfl kljlsadklfjklas kljkasdfjlk kljkasf dklj aadklj  adlksdklfjflk osakfjladsfl kljlsadklfjklas kljkasdfjlk kljkasf dklj aadklj  adlksdklfjflk osakfjladsfl kljlsadklfjklas kljkasdfjlk kljkasf dklj aadklj  adlksdklfjflk osakfjladsfl kljlsadklfjklas kljkasdfjlk kljkasf dklj  "
-              }
-            />
-          ))}
-        </Box>
-      </CustomPaper>
-    </>
+    <Wrapper>
+      <div>
+        <Title>So`nggi yangiliklar</Title>
+        <Divider />
+        <CustomPaper elevation={3}>
+          <Box>
+            {scheduleData.map((item) => (
+              <News key={item.time} time={item.time} info={item.info} />
+            ))}
+          </Box>
+        </CustomPaper>
+      </div>
+      <div>
+        <Title>Shahar ishlari rejasi</Title>
+        <Divider />
+        <Schedule data={scheduleData} />
+      </div>
+    </Wrapper>
   );
 };
 
