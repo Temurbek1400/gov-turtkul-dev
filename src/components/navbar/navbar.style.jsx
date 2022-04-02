@@ -20,3 +20,4 @@ export const CloseButton = styled(Button)`
    width: 0;
    color: ${(props) => props.theme.primary};
 `;
+   

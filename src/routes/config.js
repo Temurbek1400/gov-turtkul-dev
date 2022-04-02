@@ -14,6 +14,10 @@ const routes = [
         element: <Home />,
       },
       {
+        path: "/home",
+        element: <Home />,
+      },
+      {
         path: "*",
         element: <Navigate to="/" replace />,
       },
