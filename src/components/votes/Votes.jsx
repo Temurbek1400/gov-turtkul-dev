@@ -1,4 +1,4 @@
-import { Title } from "components/services/Services.style";
+import { Title } from "components/services/services.style";
 import React from "react";
 import { VoteData } from "./votes-data";
 import {
