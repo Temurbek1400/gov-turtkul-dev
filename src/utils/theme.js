@@ -17,6 +17,7 @@ const size = {
   mobileS: "320px",
   mobileM: "375px",
   mobileL: "425px",
+  tabletS: "650px",
   tablet: "768px",
   laptop: "1024px",
   laptopL: "1440px",
@@ -28,6 +29,12 @@ const GlobalStyle = createGlobalStyle`
     background:${colors.background};
     color:${colors.text};
     font-family: 'League Spartan', sans-serif;
+    margin:0;
+    padding: 0 30px;
+
+    @media (max-width: 425px) {
+      padding: 0 20px;
+    }
   }
 `;
 
@@ -63,6 +70,7 @@ const styledTheme = {
     mobileS: size.mobileS,
     mobileM: size.mobileM,
     mobileL: size.mobileL,
+    tabletS: size.tabletS,
     tablet: size.tablet,
     laptop: size.laptop,
     laptopL: size.laptopL,

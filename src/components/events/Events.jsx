@@ -1,18 +1,26 @@
 import React from "react";
-import EventCard from "./event-card";
 import { EventsData } from "./events-card-data";
-import { Title, Wrapper } from "./events.style";
+import { Title, Wrapper, CardText, CardWrapper } from "./events.style";
 
 const Events = () => {
   return (
-    <div style={{ padding: "0 30px" }}>
+    <>
       <Title>Voqealar</Title>
       <Wrapper>
         {EventsData.map((item, id) => {
-          return <EventCard item={item} key={id} />;
+          return (
+            <CardWrapper key={id}>
+              <img
+                src={item.img}
+                alt="event-card-img"
+                style={{ width: "100%" }}
+              />
+              <CardText>{item.text}</CardText>
+            </CardWrapper>
+          );
         })}
       </Wrapper>
-    </div>
+    </>
   );
 };
 

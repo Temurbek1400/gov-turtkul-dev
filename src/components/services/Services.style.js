@@ -2,10 +2,19 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  padding: 30px;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 `;
+
 export const Service = styled.div`
   width: 50%;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h1`
@@ -18,10 +27,22 @@ export const ServiceWrapper = styled.div`
   grid-template-columns: repeat(2, 1fr);
   margin-top: 20px;
   gap: 15px;
+
+  @media (max-width: ${({ theme }) => theme.media.laptop}) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tabletS}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ServiceCard = styled.div`
-  padding: 15px;
+  padding: 7px 15px;
   color: #fff;
   display: flex;
   align-items: center;
@@ -31,16 +52,37 @@ export const ServiceCard = styled.div`
   svg {
     font-size: 50px;
   }
+
+  @media (max-width: ${({ theme }) => theme.media.tabletS}) {
+    padding: 10px 15px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobileM}) {
+    padding: 10px;
+  }
 `;
 
 export const CommentsWrapper = styled.div`
   width: 50%;
   padding: 0 30px;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    width: 100%;
+    padding: 0;
+  }
 `;
 
 export const SwiperItem = styled.div`
   padding: 40px 50px;
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.laptop}) {
+    padding: 20px 30px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobileL}) {
+    padding: 10px 15px;
+  } ;
 `;
 
 export const Comment = styled.div`

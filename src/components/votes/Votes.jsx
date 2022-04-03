@@ -12,10 +12,11 @@ import {
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 import { BiDislike, BiLike } from "react-icons/bi";
+import { Button } from "@mui/material";
 
 const Votes = () => {
   return (
-    <div style={{ padding: "0 30px" }}>
+    <>
       <Title>Ovoz berish</Title>
       <Wrapper>
         {VoteData.map((item, id) => {
@@ -26,21 +27,25 @@ const Votes = () => {
               <Progress percent={item.voted} />
               <IconsWrapper>
                 <Like>
-                  <Vote>
-                    Rozi
-                    <BiLike style={{ color: "green" }} />
-                  </Vote>
-                  <Vote>
-                    <BiDislike style={{ color: "red" }} />
-                    Qarshi
-                  </Vote>
+                  <Button variant="outlined" color="success" size="small">
+                    <Vote>
+                      Rozi
+                      <BiLike style={{ color: "green" }} />
+                    </Vote>
+                  </Button>
+                  <Button color="error" variant="outlined">
+                    <Vote>
+                      <BiDislike style={{ color: "red" }} />
+                      Qarshi
+                    </Vote>
+                  </Button>
                 </Like>
               </IconsWrapper>
             </VoteCard>
           );
         })}
       </Wrapper>
-    </div>
+    </>
   );
 };
 
