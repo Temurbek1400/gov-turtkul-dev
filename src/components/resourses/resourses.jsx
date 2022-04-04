@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Title from "components/title";
-import { Card, CardWrapper, SwiperWrapper } from "./resourses.style";
+import { Card, CardWrapper } from "./resourses.style";
 import { ResourseData } from "./resourses-data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -26,23 +26,27 @@ const Resourses = () => {
   return (
     <>
       <Title text="Foydali resurslar" />
-      <SwiperWrapper>
-        <Swiper spaceBetween={20} slidesPerView={cardsCount}>
-          {ResourseData.map((item, id) => {
-            return (
-              <SwiperSlide key={id}>
-                <CardWrapper>
-                  <Card>
-                    <img src={item.logo} alt="event-card-img" />
-                    <h4>{item.name}</h4>
-                    <p>{item.website}</p>
-                  </Card>
-                </CardWrapper>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </SwiperWrapper>
+      {/* <SwiperWrapper> */}
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={cardsCount}
+        style={{ padding: "0 20px" }}
+      >
+        {ResourseData.map((item, id) => {
+          return (
+            <SwiperSlide key={id}>
+              <CardWrapper>
+                <Card>
+                  <img src={item.logo} alt="event-card-img" />
+                  <h4>{item.name}</h4>
+                  <p>{item.website}</p>
+                </Card>
+              </CardWrapper>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+      {/* </SwiperWrapper> */}
     </>
   );
 };

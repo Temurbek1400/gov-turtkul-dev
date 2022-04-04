@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const SwiperWrapper = styled.div`
-  padding: 0 15px;
-`;
-
 export const CardWrapper = styled.div`
   padding: 20px 0;
 `;

@@ -31,7 +31,7 @@ const Services = () => {
         </ServiceWrapper>
       </Service>
       <CommentsWrapper>
-        <Title>Sharhlar</Title>
+        <Title text="Sharhlar" />
         <Swiper
           spaceBetween={50}
           slidesPerView={1}

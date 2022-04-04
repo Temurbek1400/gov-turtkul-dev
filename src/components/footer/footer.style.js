@@ -36,10 +36,3 @@ export const Right = styled.div`
   color: #fff;
   line-height: 150%;
 `;
-// export const Wrapper = styled.div``;
-// export const Wrapper = styled.div``;
-// export const Wrapper = styled.div``;
-// export const Wrapper = styled.div``;
-// export const Wrapper = styled.div``;
-// export const Wrapper = styled.div``;
-// export const Wrapper = styled.div``;
