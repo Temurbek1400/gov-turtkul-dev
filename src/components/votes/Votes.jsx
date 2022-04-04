@@ -1,4 +1,3 @@
-import { Title } from "components/services/services.style";
 import React from "react";
 import { VoteData } from "./votes-data";
 import {
@@ -13,11 +12,12 @@ import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 import { BiDislike, BiLike } from "react-icons/bi";
 import { Button } from "@mui/material";
+import Title from "components/title";
 
 const Votes = () => {
   return (
     <>
-      <Title>Ovoz berish</Title>
+      <Title text="Ovoz berish" />
       <Wrapper>
         {VoteData.map((item, id) => {
           return (

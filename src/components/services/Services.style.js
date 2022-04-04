@@ -16,12 +16,6 @@ export const Service = styled.div`
     width: 100%;
   }
 `;
-
-export const Title = styled.h1`
-  color: ${({ theme }) => theme.primary};
-  border-bottom: 1px solid #909090;
-  padding-bottom: 20px;
-`;
 export const ServiceWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
-  padding-bottom: 20px;
-  color: ${({ theme }) => theme.primary};
-  border-bottom: 1px solid #909090;
-`;
-
 export const Wrapper = styled.div`
   margin-top: 20px;
   display: grid;
@@ -27,16 +21,17 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.media.laptop}) {
+    gap: 30px;
     grid-template-columns: repeat(4, 1fr);
   }
 `;
 
 export const CardWrapper = styled.div`
   background: ${({ theme }) => theme.secondary2};
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   transition: 0.3s;
-
+  padding-bottom: 20px;
   :hover {
     box-shadow: 0 0 40px #707070;
   }
@@ -44,17 +39,23 @@ export const CardWrapper = styled.div`
   img {
     transition: 0.3s;
     cursor: pointer;
+    width: 100%;
   }
 
   img:hover {
     transform: scale(1.07);
   }
+
+  p {
+    padding: 15px 15px 0;
+    margin: 0;
+  }
 `;
 
 export const CardText = styled.div`
   color: ${({ theme }) => theme.primary};
-  padding: 30px;
-  @media (min-width: ${({ theme }) => theme.media.mobileS}) {
-    padding: 20px;
-  }
+  padding: 15px 15px 0;
+  /* @media (min-width: ${({ theme }) => theme.media.mobileS}) {
+    padding: 30px 30px 0;
+  } */
 `;

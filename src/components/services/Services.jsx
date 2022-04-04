@@ -10,15 +10,15 @@ import {
   ServiceCard,
   ServiceWrapper,
   SwiperItem,
-  Title,
   Wrapper,
 } from "./services.style";
+import Title from "components/title";
 
 const Services = () => {
   return (
     <Wrapper>
       <Service>
-        <Title>Xizmatlar</Title>
+        <Title text="Xizmatlar" />
         <ServiceWrapper>
           {ServicesData.map((item, id) => {
             return (
@@ -35,7 +35,6 @@ const Services = () => {
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
-          onSwiper={(swiper) => console.log(swiper)}
           style={{ boxShadow: "0 0 20px #606060", marginTop: "20px" }}
         >
           {CommentsData.map((item, id) => {

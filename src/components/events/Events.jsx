@@ -1,20 +1,17 @@
+import Title from "components/title";
 import React from "react";
 import { EventsData } from "./events-card-data";
-import { Title, Wrapper, CardText, CardWrapper } from "./events.style";
+import { Wrapper, CardText, CardWrapper } from "./events.style";
 
 const Events = () => {
   return (
     <>
-      <Title>Voqealar</Title>
+      <Title text="Voqealar" />
       <Wrapper>
         {EventsData.map((item, id) => {
           return (
             <CardWrapper key={id}>
-              <img
-                src={item.img}
-                alt="event-card-img"
-                style={{ width: "100%" }}
-              />
+              <img src={item.img} alt="event-card-img" />
               <CardText>{item.text}</CardText>
             </CardWrapper>
           );
