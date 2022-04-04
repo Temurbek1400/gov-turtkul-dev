@@ -5,6 +5,7 @@ import LatestNews from "components/latest-news/latest-news";
 import Events from "components/events/events";
 import Votes from "components/votes/votes";
 import City from "components/city/city";
+import Resourses from "components/resourses/resourses";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Services />
       <Votes />
       <City />
+      <Resourses />
     </div>
   );
 };
