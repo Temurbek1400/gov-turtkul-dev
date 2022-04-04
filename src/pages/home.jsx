@@ -6,6 +6,7 @@ import Events from "components/events/events";
 import Votes from "components/votes/votes";
 import City from "components/city/city";
 import Resourses from "components/resourses/resourses";
+import Footer from "components/footer/footer";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Votes />
       <City />
       <Resourses />
+      <Footer />
     </div>
   );
 };
