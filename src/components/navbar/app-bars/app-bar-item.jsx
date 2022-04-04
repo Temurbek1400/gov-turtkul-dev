@@ -1,15 +1,10 @@
-import Typography from "@mui/material/Typography";
+import { AppBarItemText } from "./app-bar.styles";
 
 const AppBarItem = ({ data }) => {
    return (
-      <Typography
-         variant="h6"
-         noWrap
-         component="div"
-         sx={{ flexGrow: 1, display: { xs: "none", sm: "block" }, color: "#fff", fontSize: "18px"}}
-      >
+      <AppBarItemText variant="h6" noWrap component="div">
          {data.head}
-      </Typography>
+      </AppBarItemText>
    );
 };
 
