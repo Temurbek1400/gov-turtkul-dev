@@ -6,7 +6,7 @@ const AppBarItem = ({ data }) => {
          variant="h6"
          noWrap
          component="div"
-         sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+         sx={{ flexGrow: 1, display: { xs: "none", sm: "block" }, color: "#fff", fontSize: "18px"}}
       >
          {data.head}
       </Typography>

@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     background:${colors.background};
     color:${colors.text};
     margin: 0;
-    padding: 0;
+    padding: 0;   
   }
 `;
 

@@ -2,12 +2,18 @@ import Button from "@mui/material/Button";
 import styled from "styled-components";
 import { alpha, styled as styledMUI } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
+import Typography from "@mui/material/Typography";
 export const IconWrapperButton = styled(Button)`
    & svg {
       color: white;
    }
 `;
-
+export const AppBarItemText = styledMUI(Typography)(({ theme }) => ({
+   flexGrow: 1,
+   display: { xs: "none", sm: "block" },
+   color: "#fff",
+   fontSize: "18px",
+}));
 
 export const Search = styledMUI("div")(({ theme }) => ({
    position: "relative",

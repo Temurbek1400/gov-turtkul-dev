@@ -1,4 +1,4 @@
-import { Title } from "components/services/Services.style";
+import { Title } from "components/services/services.style";
 import React from "react";
 import { VoteData } from "./votes-data";
 import {
@@ -8,7 +8,7 @@ import {
   VoteBody,
   VoteCard,
   Wrapper,
-} from "./votes-style";
+} from "./votes.style";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 import { BiDislike, BiLike } from "react-icons/bi";

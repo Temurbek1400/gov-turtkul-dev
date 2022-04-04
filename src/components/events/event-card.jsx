@@ -1,6 +1,5 @@
 import React from "react";
-import { CardText, CardWrapper } from "./Events.style";
-
+import { CardText, CardWrapper } from "./events.style";
 const EventCard = ({ item }) => {
   return (
     <CardWrapper>

@@ -7,28 +7,28 @@ export const Title = styled.h1`
 `;
 
 export const Wrapper = styled.div`
-   margin-top: 20px;
-   display: grid;
-   grid-template-columns: repeat(1, 1fr);
-   gap: 30px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
 
-   @media (min-width: ${({ theme }) => theme.media.mobileS}) {
-      gap: 20px;
-      grid-template-columns: repeat(1, 1fr);
-   }
+  @media (min-width: ${({ theme }) => theme.media.mobileS}) {
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-   @media (min-width: ${({ theme }) => theme.media.mobileL}) {
-      gap: 20px;
-      grid-template-columns: repeat(2, 1fr);
-   }
+  @media (min-width: ${({ theme }) => theme.media.mobileL}) {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-   @media (min-width: ${({ theme }) => theme.media.tablet}) {
-      grid-template-columns: repeat(3, 1fr);
-   }
+  @media (min-width: ${({ theme }) => theme.media.tablet}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-   @media (min-width: ${({ theme }) => theme.media.laptop}) {
-      grid-template-columns: repeat(4, 1fr);
-   }
+  @media (min-width: ${({ theme }) => theme.media.laptop}) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 export const CardWrapper = styled.div`
@@ -52,9 +52,9 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardText = styled.div`
-   color: ${({ theme }) => theme.primary};
-   padding: 30px;
-   @media (min-width: ${({ theme }) => theme.media.mobileS}) {
-      padding: 20px;
-   }
+  color: ${({ theme }) => theme.primary};
+  padding: 30px;
+  @media (min-width: ${({ theme }) => theme.media.mobileS}) {
+    padding: 20px;
+  }
 `;

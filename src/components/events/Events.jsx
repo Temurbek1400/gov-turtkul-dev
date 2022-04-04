@@ -1,7 +1,7 @@
 import React from "react";
-import EventCard from "./EventCard";
-import { EventsData } from "./EventsCardData";
-import { Title, Wrapper } from "./Events.style";
+import EventCard from "./event-card";
+import { EventsData } from "./events-card-data";
+import { Title, Wrapper } from "./events.style";
 
 const Events = () => {
   return (
