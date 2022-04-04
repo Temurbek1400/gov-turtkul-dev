@@ -2,10 +2,10 @@ import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { Typography } from "@mui/material";
-import { CustomBox, CustomListItem } from "./navbar.style";
+import Typography from "@mui/material/Typography";
+import { CustomBox, CustomListItem } from "./custom-drawer.styles";
 
-export const NavbarList = ({ toggleDrawer, listData }) => {
+export const CustomDrawerList = ({ toggleDrawer, listData }) => {
    return (
       <CustomBox onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
          <List>

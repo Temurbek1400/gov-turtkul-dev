@@ -1,15 +1,29 @@
-import { Title } from "./latest-news.style";
-import Button from "@mui/material/Button";
-import { Typography } from "@mui/material";
+import { Divider } from "@mui/material";
+import { scheduleData } from "./latest-news.data";
+import { CustomPaper, Title, Box, Wrapper } from "./latest-news.style";
+import News from "./news/news";
+import Schedule from "./schedule/schedule";
 
 const LatestNews = () => {
   return (
-    <>
-      <Title>Styled-components with theme</Title>
-      <Button>asdasd</Button>
-      <Typography>dsadas</Typography>
-      <span>sada</span>
-    </>
+    <Wrapper>
+      <div>
+        <Title>So`nggi yangiliklar</Title>
+        <Divider />
+        <CustomPaper elevation={3}>
+          <Box>
+            {scheduleData.map((item) => (
+              <News key={item.time} time={item.time} info={item.info} />
+            ))}
+          </Box>
+        </CustomPaper>
+      </div>
+      <div>
+        <Title>Shahar ishlari rejasi</Title>
+        <Divider />
+        <Schedule data={scheduleData} />
+      </div>
+    </Wrapper>
   );
 };
 

@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 
-export const AppBarItem = ({ data }) => {
+const AppBarItem = ({ data }) => {
    return (
       <Typography
          variant="h6"
@@ -12,3 +12,5 @@ export const AppBarItem = ({ data }) => {
       </Typography>
    );
 };
+
+export default AppBarItem;

@@ -1,15 +1,11 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import SearchIcon from "@mui/icons-material/Search";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
-import {
-   IconWrapperButton,
-   Search,
-   SearchIconWrapper,
-   StyledInputBase,
-} from "./app-bar.styles";
-import { AppBarItem } from "./app-bar-item";
+
+import { IconWrapperButton } from "./app-bar.styles";
+import AppBarItem from "./app-bar-item";
+import SearchInput from "./search-input";
 
 export default function CustomAppBar({ toggleDrawer, navbarData }) {
    return (
@@ -18,19 +14,11 @@ export default function CustomAppBar({ toggleDrawer, navbarData }) {
             <Toolbar>
                <IconWrapperButton onClick={toggleDrawer(true)}>
                   <DensityMediumIcon />
-               </IconWrapperButton> 
+               </IconWrapperButton>
                {navbarData.map((data) => (
                   <AppBarItem data={data} />
                ))}
-               <Search>
-                  <SearchIconWrapper>
-                     <SearchIcon />
-                  </SearchIconWrapper>
-                  <StyledInputBase
-                     placeholder="izlash..."
-                     inputProps={{ "aria-label": "search" }}
-                  />
-               </Search>
+               <SearchInput />
             </Toolbar>
          </AppBar>
       </Box>

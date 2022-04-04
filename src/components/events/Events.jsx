@@ -5,7 +5,7 @@ import { Title, Wrapper } from "./Events.style";
 
 const Events = () => {
   return (
-    <div className="p-4">
+    <div style={{ padding: "0 30px" }}>
       <Title>Voqealar</Title>
       <Wrapper>
         {EventsData.map((item, id) => {
