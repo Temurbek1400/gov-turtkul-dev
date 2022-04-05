@@ -6,15 +6,16 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { AppBar } from "./mobile-app-bar.styles";
 import SearchInput from "../search-input";
+import Logo from "components/navbar/gov-info/logo";
 
 const MobileAppBar = ({ drawer, toggleDrawerMobile }) => {
    return (
       <Box sx={{ display: "flex" }}>
          <CssBaseline />
-         <AppBar position="static" open={drawer}>
+         <AppBar color="transparent" position="static" open={drawer}>
             <Toolbar>
+               <Logo />
                <IconButton
-                  color="inherit"
                   aria-label="open drawer"
                   onClick={() => toggleDrawerMobile(true)}
                   edge="start"

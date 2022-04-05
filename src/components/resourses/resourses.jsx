@@ -9,7 +9,6 @@ const Resourses = () => {
   const [cardsCount, setCardsCount] = useState(5);
 
   const checkSize = (width) => {
-    console.log(width);
     if (width > 1024) setCardsCount(5);
     else if (width > 900) setCardsCount(4);
     else if (width > 700) setCardsCount(3);
@@ -18,7 +17,6 @@ const Resourses = () => {
   };
 
   useEffect(() => {
-    console.log("effect");
     checkSize(window.innerWidth);
     window.addEventListener("resize", () => checkSize(window.innerWidth));
   }, []);
@@ -26,7 +24,6 @@ const Resourses = () => {
   return (
     <>
       <Title text="Foydali resurslar" />
-      {/* <SwiperWrapper> */}
       <Swiper
         spaceBetween={20}
         slidesPerView={cardsCount}
@@ -46,7 +43,6 @@ const Resourses = () => {
           );
         })}
       </Swiper>
-      {/* </SwiperWrapper> */}
     </>
   );
 };

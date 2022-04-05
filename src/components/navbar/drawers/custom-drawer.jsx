@@ -10,6 +10,7 @@ import { CloseButton, ListContainer } from "../navbar.styles";
             anchor={"top"}
             open={drawer}
             onClose={toggleDrawer(false)}
+            sx={{padding: "30px"}}
          >
             <CloseButton onClick={toggleDrawer(false)}>
                <CloseIcon />

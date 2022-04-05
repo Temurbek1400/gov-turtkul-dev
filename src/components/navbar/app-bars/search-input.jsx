@@ -9,6 +9,7 @@ const SearchInput = () => {
             <SearchIcon />
          </SearchIconWrapper>
          <StyledInputBase
+            variant="filled"
             placeholder="izlash..."
             inputProps={{ "aria-label": "search" }}
          />

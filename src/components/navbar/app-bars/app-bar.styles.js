@@ -3,16 +3,14 @@ import styled from "styled-components";
 import { alpha, styled as styledMUI } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import Typography from "@mui/material/Typography";
-export const IconWrapperButton = styled(Button)`
-   & svg {
-      color: white;
-   }
-`;
+import TextField  from "@mui/material/TextField";
+
 export const AppBarItemText = styledMUI(Typography)(({ theme }) => ({
    flexGrow: 1,
    display: { xs: "none", sm: "block" },
-   color: "#fff",
+   color: theme.palette.primary.main,
    fontSize: "18px",
+   
 }));
 
 export const Search = styledMUI("div")(({ theme }) => ({
@@ -40,8 +38,7 @@ export const SearchIconWrapper = styledMUI("div")(({ theme }) => ({
    justifyContent: "center",
 }));
 
-export const StyledInputBase = styledMUI(InputBase)(({ theme }) => ({
-   color: "inherit",
+export const StyledInputBase = styledMUI(TextField)(({ theme }) => ({
    "& .MuiInputBase-input": {
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
