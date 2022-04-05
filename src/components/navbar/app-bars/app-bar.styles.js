@@ -1,11 +1,8 @@
-import Button from "@mui/material/Button";
-import styled from "styled-components";
 import { alpha, styled as styledMUI } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
-import Typography from "@mui/material/Typography";
 import TextField  from "@mui/material/TextField";
+import { ListItem } from '@mui/material';
 
-export const AppBarItemText = styledMUI(Typography)(({ theme }) => ({
+export const AppBarItemText = styledMUI(ListItem)(({ theme }) => ({
    flexGrow: 1,
    display: { xs: "none", sm: "block" },
    color: theme.palette.primary.main,
