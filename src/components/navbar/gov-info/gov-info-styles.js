@@ -1,27 +1,9 @@
 import styled from "styled-components";
 
-export const Wrapper = styled`
-
-`;
-export const Divider = styled`
-   display: flex;
-
-`;
-export const WebsiteInfo = styled`
-   display: flex;
-
-`;
-
-export const TestVersion = styled`
-   display: flex;
-
-`;
-
-export const Website = styled`
-   display: flex;
-
-`;
-export const GovLocation = styled`
-   display: flex;
-
-`;
+export const LogoWrapper = styled.div`
+   margin: 0 20px;
+   img {
+      max-width: 80px;
+      color: white;
+   }
+`

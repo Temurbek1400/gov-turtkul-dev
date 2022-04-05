@@ -7,6 +7,7 @@ import MobileDrawer from "./drawers/mobile/mobile-drawer";
 
 import CustomAppBar from "./app-bars/app-bar";
 import MobileAppBar from "./app-bars/mobile/mobile-app-bar";
+import   Divider from '@mui/material/Divider';
 
 
 export default function Navbar() {
@@ -54,6 +55,7 @@ export default function Navbar() {
                   />
                </>
             )}
+            <Divider />
          </React.Fragment>
       </div>
    );

@@ -15,7 +15,7 @@ export default function MobileDrawerList({ navbarData }) {
          aria-labelledby="nested-list-subheader"
          subheader={
             <ListSubheader component="div" id="nested-list-subheader">
-               Nested List Items
+               Menyu
             </ListSubheader>
          }
       >
