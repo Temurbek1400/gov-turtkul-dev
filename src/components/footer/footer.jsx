@@ -2,8 +2,11 @@ import React from "react";
 import { ImgWrapper, Left, LeftContent, Right, Wrapper } from "./footer.style";
 import logo from "assets/resoursesImgs/logo.png";
 import CallIcon from "@mui/icons-material/Call";
+import { useSelector } from "react-redux";
+import { getFooterData } from "store/reducer-and-action/language/language";
 
 const Footer = () => {
+  const footerData = useSelector(getFooterData);
   return (
     <Wrapper>
       <Left>
@@ -12,25 +15,18 @@ const Footer = () => {
             <img src={logo} alt="logo" />
           </ImgWrapper>
           <div>
-            <h3>To'rtko'l hokimligi rasmiy-veb sayti</h3>
-            <p>
-              ....... shahri, I.Karimov <br /> ko‘chasi, 51
-            </p>
+            <h3>{footerData.title}</h3>
+            <p>{footerData.location}</p>
           </div>
         </LeftContent>
-        <p style={{ opacity: "0.75" }}>
-          © 2022 To'rtko'l hokimligi. Barcha huquqlar himoyalangan.
-        </p>
+        <p style={{ opacity: "0.75" }}>{footerData.copyright}</p>
       </Left>
       <Right>
+        <p>{footerData.requirement}</p>
         <p>
-          Ushbu saytda chop etilgan materiallardan foydalanishda ulanish talab
-          qilinadi.
-        </p>
-        <p>
-          Matbuot xizmati: <CallIcon fontSize="small" /> 71 210-01-63
+          {footerData.contact}: <CallIcon fontSize="small" /> 71 210-01-63
           <br />
-          Dushanba - Juma, 09:00 - 18:00
+          {footerData.acceptanceTime}, 09:00 - 18:00
         </p>
       </Right>
     </Wrapper>

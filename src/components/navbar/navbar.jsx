@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useMediaQuery } from "@mui/material";
-import navbarData from "./navbarData";
 
 import CustomDrawer from "./drawers/custom-drawer";
 import MobileDrawer from "./drawers/mobile/mobile-drawer";
@@ -8,6 +7,12 @@ import MobileDrawer from "./drawers/mobile/mobile-drawer";
 import CustomAppBar from "./app-bars/app-bar";
 import MobileAppBar from "./app-bars/mobile/mobile-app-bar";
 import { Wrapper } from "./navbar.styles";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getLanguagesName,
+  getNavbarData,
+  setLanguage,
+} from "store/reducer-and-action/language/language";
 
 export default function Navbar() {
   const matches = useMediaQuery("(max-width:915px)");
@@ -24,8 +29,16 @@ export default function Navbar() {
     setState(toggleTo);
   };
 
+  const navbarData = useSelector(getNavbarData);
+  const languages = useSelector(getLanguagesName);
+  const dispatch = useDispatch();
   return (
     <Wrapper>
+      <select onChange={(e) => dispatch(setLanguage(e.target.value))}>
+        {languages.map((lang) => (
+          <option value={lang}>{lang}</option>
+        ))}
+      </select>
       <React.Fragment key={"top"}>
         {matches ? (
           <>
