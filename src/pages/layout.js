@@ -8,7 +8,6 @@ const Layout = () => {
   return (
     <ThemeProvider>
       <Navbar />
-      {/* navbar */}
       <Outlet />
       <Footer />
     </ThemeProvider>

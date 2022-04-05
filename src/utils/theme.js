@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material";
 import MuiThemeProvider from "@mui/material/styles/ThemeProvider";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
+import Container from "@mui/material/Container";
 
 const colors = {
   background: "#fff",
@@ -83,7 +84,12 @@ const ThemeProvider = ({ children }) => {
   return (
     <MuiThemeProvider theme={muiTheme}>
       <GlobalStyle />
-      <StyledThemeProvider theme={styledTheme}>{children}</StyledThemeProvider>
+
+      <StyledThemeProvider theme={styledTheme}>
+        <Container disableGutters maxWidth="xl">
+          {children}
+        </Container>
+      </StyledThemeProvider>
     </MuiThemeProvider>
   );
 };
