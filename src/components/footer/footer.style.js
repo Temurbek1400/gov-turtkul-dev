@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  margin-top: 20px;
+  margin: 20px -30px 0;
   background-color: ${({ theme }) => theme.primary};
-  padding: 30px 0 50px;
+  padding: 30px 30px 50px;
   display: flex;
   justify-content: space-between;
 `;

@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material";
 import MuiThemeProvider from "@mui/material/styles/ThemeProvider";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
+import Container from "@mui/material/Container";
 
 const colors = {
   background: "#fff",
@@ -30,7 +31,11 @@ const GlobalStyle = createGlobalStyle`
     color:${colors.text};
     font-family: 'League Spartan', sans-serif;
     margin:0;
-   
+    padding: 0 30px;
+
+    @media (max-width: 425px) {
+      padding: 0 20px;
+    }
   }
 `;
 
@@ -79,7 +84,12 @@ const ThemeProvider = ({ children }) => {
   return (
     <MuiThemeProvider theme={muiTheme}>
       <GlobalStyle />
-      <StyledThemeProvider theme={styledTheme}>{children}</StyledThemeProvider>
+
+      <StyledThemeProvider theme={styledTheme}>
+        <Container disableGutters maxWidth="xl">
+          {children}
+        </Container>
+      </StyledThemeProvider>
     </MuiThemeProvider>
   );
 };

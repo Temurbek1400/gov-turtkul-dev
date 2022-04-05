@@ -11,3 +11,10 @@ export const CloseButton = styled(Button)`
   width: 0;
   color: ${(props) => props.theme.primary};
 `;
+
+export const Wrapper = styled.div`
+  margin: 0 -30px;
+  @media (max-width: 425px) {
+    margin: 0 -20px;
+  }
+`;
