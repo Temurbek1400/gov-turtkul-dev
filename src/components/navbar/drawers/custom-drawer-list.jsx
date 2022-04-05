@@ -10,7 +10,9 @@ export const CustomDrawerList = ({ toggleDrawer, listData }) => {
       <CustomBox onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
          <List>
             <ListItem>
-               <Typography variant="h6">{listData.head}</Typography>
+               <Typography sx={{ fontWeight: "bold" }} variant="h6">
+                  {listData.head}
+               </Typography>
             </ListItem>
             {listData.list.map((text) => (
                <CustomListItem button key={text}>

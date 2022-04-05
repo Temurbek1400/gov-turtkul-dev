@@ -20,7 +20,14 @@ export default function MobileDrawer({
          onClick={() => toggleDrawerMobile(false)}
          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
-         <DrawerMobile variant="persistent" anchor="left" open={drawer}>
+         <DrawerMobile
+            variant="persistent"
+            anchor="left"
+            open={drawer}
+            onClick={(event) => {
+               event.stopPropagation();
+            }}
+         >
             <DrawerHeader>
                <IconButton onClick={() => toggleDrawerMobile(false)}>
                   {theme.direction === "ltr" ? (

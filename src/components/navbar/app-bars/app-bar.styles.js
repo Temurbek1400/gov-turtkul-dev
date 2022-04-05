@@ -8,8 +8,9 @@ import TextField  from "@mui/material/TextField";
 export const AppBarItemText = styledMUI(Typography)(({ theme }) => ({
    flexGrow: 1,
    display: { xs: "none", sm: "block" },
-   color: "#fff",
+   color: theme.palette.primary.main,
    fontSize: "18px",
+   
 }));
 
 export const Search = styledMUI("div")(({ theme }) => ({
