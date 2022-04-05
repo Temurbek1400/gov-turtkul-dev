@@ -1,7 +1,6 @@
 import React from "react";
 import { ImgWrapper, Left, LeftContent, Right, Wrapper } from "./footer.style";
 import logo from "assets/resoursesImgs/logo.png";
-// import { IoCallOutline } from "react-icons/io";
 import CallIcon from "@mui/icons-material/Call";
 
 const Footer = () => {
@@ -19,7 +18,9 @@ const Footer = () => {
             </p>
           </div>
         </LeftContent>
-        <p>© 2022 To'rtko'l hokimligi. Barcha huquqlar himoyalangan.</p>
+        <p style={{ opacity: "0.75" }}>
+          © 2022 To'rtko'l hokimligi. Barcha huquqlar himoyalangan.
+        </p>
       </Left>
       <Right>
         <p>
