@@ -8,6 +8,7 @@ import CustomAppBar from "./app-bars/app-bar";
 import MobileAppBar from "./app-bars/mobile/mobile-app-bar";
 import { Wrapper } from "./navbar.styles";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchNews, getActiveFilter } from './../../store/reducer-and-action/news/newsSlice';
 import {
   getLanguagesName,
   getNavbarData,
@@ -31,10 +32,15 @@ export default function Navbar() {
 
   const navbarData = useSelector(getNavbarData);
   const languages = useSelector(getLanguagesName);
+  const activeFilter=useSelector(getActiveFilter)
   const dispatch = useDispatch();
   return (
     <Wrapper>
-      <select onChange={(e) => dispatch(setLanguage(e.target.value))}>
+      <select onChange={(e) => {
+        dispatch(setLanguage(e.target.value))
+        .then(
+        dispatch(fetchNews(activeFilter)))}
+        }>
         {languages.map((lang) => (
           <option value={lang}>{lang}</option>
         ))}
