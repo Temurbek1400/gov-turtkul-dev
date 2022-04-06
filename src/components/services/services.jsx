@@ -1,8 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ServicesData } from "./services-data";
-import { CommentsData } from "./comments-data";
 import "swiper/css";
+import { FaBus, FaMapMarkedAlt } from "react-icons/fa";
+import { HiDocumentSearch } from "react-icons/hi";
+import { AiFillQuestionCircle } from "react-icons/ai";
+import { FcIdea } from "react-icons/fc";
 import {
   Comment,
   CommentsWrapper,
@@ -14,13 +16,18 @@ import {
 } from "./services.style";
 import Title from "components/title";
 
-const Services = () => {
+const Services = ({ services, comments }) => {
+  console.log(services);
+  const optimazedData = services.data.map((service, index) => ({
+    icon: iconArray[index],
+    text: service,
+  }));
   return (
     <Wrapper>
       <Service>
-        <Title text="Xizmatlar" />
+        <Title text={services.title} />
         <ServiceWrapper>
-          {ServicesData.map((item, id) => {
+          {optimazedData.map((item, id) => {
             return (
               <ServiceCard key={id}>
                 {item.icon}
@@ -31,13 +38,13 @@ const Services = () => {
         </ServiceWrapper>
       </Service>
       <CommentsWrapper>
-        <Title text="Sharhlar" />
+        <Title text={comments.title} />
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
           style={{ boxShadow: "0 0 20px #606060", marginTop: "20px" }}
         >
-          {CommentsData.map((item, id) => {
+          {comments.data.map((item, id) => {
             return (
               <SwiperSlide key={id} style={{ cursor: "pointer" }}>
                 <SwiperItem>
@@ -55,3 +62,11 @@ const Services = () => {
 };
 
 export default Services;
+
+const iconArray = [
+  <HiDocumentSearch />,
+  <FaBus />,
+  <AiFillQuestionCircle />,
+  <FcIdea />,
+  <FaMapMarkedAlt />,
+];
