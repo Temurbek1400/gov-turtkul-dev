@@ -36,5 +36,9 @@ export const getLanguagesName = createSelector(
   (state) => state.language,
   (language) => language.languagesName
 );
+export const getHomePageData = createSelector(
+  (state) => state.language.activeLanguage,
+  (activeLanguage) => activeLanguage.homePageData
+);
 
 export default languageSlice.reducer;
