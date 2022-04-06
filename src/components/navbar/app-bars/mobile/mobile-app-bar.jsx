@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { AppBar } from "./mobile-app-bar.styles";
 import SearchInput from "../search-input";
-import Logo from "../logo";
+import Logo from "../../logo/logo";
 
 const MobileAppBar = ({ drawer, toggleDrawerMobile }) => {
    return (

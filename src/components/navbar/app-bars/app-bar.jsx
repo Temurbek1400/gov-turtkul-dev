@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 
 import AppBarItems from "./app-bar-items";
 import SearchInput from "./search-input";
-import Logo from "./logo";
+import Logo from "../logo/logo";
 
 export default function CustomAppBar({ toggleDrawer, navbarData }) {
    return (
