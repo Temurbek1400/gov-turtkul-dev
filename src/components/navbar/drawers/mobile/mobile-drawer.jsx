@@ -9,37 +9,37 @@ import MobileDrawerList from "./mobile-drawer-list";
 import { Backdrop } from "@mui/material";
 
 export default function MobileDrawer({
-   drawer,
-   toggleDrawerMobile,
-   navbarData,
+  drawer,
+  toggleDrawerMobile,
+  navbarData,
 }) {
-   const theme = useTheme();
-   return (
-      <Backdrop
-         open={drawer}
-         onClick={() => toggleDrawerMobile(false)}
-         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+  const theme = useTheme();
+  return (
+    <Backdrop
+      open={drawer}
+      onClick={() => toggleDrawerMobile(false)}
+      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
+      <DrawerMobile
+        variant="persistent"
+        anchor="left"
+        open={drawer}
+        onClick={(event) => {
+          event.stopPropagation();
+        }}
       >
-         <DrawerMobile
-            variant="persistent"
-            anchor="left"
-            open={drawer}
-            onClick={(event) => {
-               event.stopPropagation();
-            }}
-         >
-            <DrawerHeader>
-               <IconButton onClick={() => toggleDrawerMobile(false)}>
-                  {theme.direction === "ltr" ? (
-                     <ChevronLeftIcon />
-                  ) : (
-                     <ChevronRightIcon />
-                  )}
-               </IconButton>
-            </DrawerHeader>
-            <Divider />
-            <MobileDrawerList navbarData={navbarData} />
-         </DrawerMobile>
-      </Backdrop>
-   );
+        <DrawerHeader>
+          <IconButton onClick={() => toggleDrawerMobile(false)}>
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
+        <MobileDrawerList navbarData={navbarData} />
+      </DrawerMobile>
+    </Backdrop>
+  );
 }
