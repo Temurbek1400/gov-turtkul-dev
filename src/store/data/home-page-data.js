@@ -4,6 +4,9 @@ export const servicesData = {
     data: [
       "Fuqaro murojaatlari bilan ishlash (Virtual qabulxona)",
       "Shahar transporti bo`yicha ma`lumot",
+      "Ko‘p beriladigan savollar",
+      "Fuqarolardan taklif va mulohazalarini olish",
+      "Xududlarni rivojlantirish",
     ],
   },
   ru: {
@@ -11,6 +14,9 @@ export const servicesData = {
     data: [
       "Рассмотрение обращений граждан (Виртуальная приёмная)",
       "Информация о наземном транспорте",
+      "Часто задаваемые вопросы ",
+      "Приём предложений и замечаний граждан",
+      "Программа развития территорий",
     ],
   },
 };

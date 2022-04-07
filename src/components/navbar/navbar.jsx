@@ -25,9 +25,7 @@ export default function Navbar() {
       return;
     setState(toggleTo);
   };
-  const toggleDrawerMobile = (toggleTo) => {
-    setState(toggleTo);
-  };
+  const toggleDrawerMobile = (toggleTo) => setState(toggleTo);
 
   const navbarData = useSelector(getNavbarData);
   const languages = useSelector(getLanguagesName);
