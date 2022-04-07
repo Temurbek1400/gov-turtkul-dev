@@ -11,15 +11,6 @@ const Logo = () => {
     AOS.refresh();
   }, []);
 
-<<<<<<< HEAD
-  return (
-    <div data-aos="fade-right">
-      <LogoWrapper>
-        <img src={logo} alt="logo" />
-      </LogoWrapper>
-    </div>
-  );
-=======
    return (
       <div data-aos="fade-right">
          <LogoWrapper>
@@ -29,7 +20,6 @@ const Logo = () => {
          </LogoWrapper>
       </div>
    );
->>>>>>> 44729a9943ee04ba647aebccea3b7ed63935f1a9
 };
 
 export default Logo;

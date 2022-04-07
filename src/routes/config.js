@@ -8,30 +8,6 @@ const FilteredNews = lazy(() =>
 );
 
 const routes = [
-<<<<<<< HEAD
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/city-page",
-        element: <CityPage />,
-      },
-      {
-        path: "*",
-        element: <Navigate to="/" replace />,
-      },
-    ],
-  },
-=======
    {
       path: "/",
       element: <Layout />,
@@ -41,8 +17,16 @@ const routes = [
             element: <Home />,
          },
          {
+            path: "/home",
+            element: <Home />,
+         },
+         {
             path: "/news",
             element: <FilteredNews />,
+         },
+         {
+            path: "/city",
+            element: <CityPage />,
          },
          {
             path: "*",
@@ -50,7 +34,6 @@ const routes = [
          },
       ],
    },
->>>>>>> 44729a9943ee04ba647aebccea3b7ed63935f1a9
 ];
 
 const Routes = () => {

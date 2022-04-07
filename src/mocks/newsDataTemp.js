@@ -52,7 +52,7 @@ module.exports = {
    ru: [
       {
          filter: "capital",
-         title: "capital 1",
+         title: "capital news in russian 1",
          p: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
          images: [
             "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
@@ -76,7 +76,7 @@ module.exports = {
       },
       {
          filter: "finance",
-         title: "finance news in russian 2",
+         title: "finance news in russian 3",
          p: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
          images: [
             "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",

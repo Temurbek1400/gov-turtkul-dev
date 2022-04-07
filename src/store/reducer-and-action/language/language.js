@@ -1,6 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import data from "store/data/static-language-data";
-import { fetchNews } from "../news/newsSlice";
 
 const initialState = {
    languagesName: Object.keys(data),

@@ -24,7 +24,6 @@ export default function FilteredNews() {
    const [value, setValue] = React.useState(0);
 
    const handleChange = (filter, newValue) => {
-      debugger;
       dispatch(fetchNews(filter));
       setValue(newValue);
    };
