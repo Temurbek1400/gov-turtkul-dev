@@ -1,4 +1,3 @@
-import filteredNewsData from "components/filtered-news/filteredNewsData";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 const Home = lazy(() => import("pages/home"));
@@ -18,7 +17,7 @@ const routes = [
          },
          {
             path: "/news",
-            element: <FilteredNews filteredNewsData={filteredNewsData} />,
+            element: <FilteredNews />,
          },
          {
             path: "*",

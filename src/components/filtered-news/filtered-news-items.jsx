@@ -2,35 +2,28 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-const FilteredNewsItems = ({ value, newsDataTemp }) => {
-   debugger
+const FilteredNewsItems = ({ news }) => {
    return (
       <div>
-         {newsDataTemp.map((news, index) => (
-            <TabPanel value={value} index={index}>
-               <img src={news.images[0]} alt="" width="400" />
-               <h1>{news.title}</h1>
-               <p>{news.p}</p>
+         {news.map((news) => (
+            <TabPanel index={0}>
+               <div>
+                  <img src={news.images[0]} alt="" width="400" />
+                  <h1>{news.title}</h1>
+                  <p>{news.p}</p>
+               </div>
             </TabPanel>
          ))}
       </div>
    );
 };
 const TabPanel = (props) => {
-   const { children, value, index, ...other } = props;
+   const { children, ...other } = props;
    return (
-      <div
-         role="tabpanel"
-         hidden={value !== index}
-         id={`simple-tabpanel-${index}`}
-         aria-labelledby={`simple-tab-${index}`}
-         {...other}
-      >
-         {value === index && (
-            <Box sx={{ p: 3 }}>
-               <Typography>{children}</Typography>
-            </Box>
-         )}
+      <div role="tabpanel" {...other}>
+         <Box sx={{ p: 3 }}>
+            <Typography>{children}</Typography>
+         </Box>
       </div>
    );
 };
