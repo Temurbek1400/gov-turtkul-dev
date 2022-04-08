@@ -10,9 +10,29 @@ export const newsData = {
 export const cityPlanData = {
   uz: {
     title: "Shahar ishlari rejasi",
+    data: [
+      {
+        time: "13 jul",
+        info: "lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet",
+      },
+      { time: "19 jul", info: "lorem ipsum dolar amet" },
+      { time: "14 jul", info: "lorem ipsum dolar amet" },
+      { time: "15 jul", info: "lorem ipsum dolar amet" },
+      { time: "16 jul", info: "lorem ipsum dolar amet" },
+    ],
   },
   ru: {
     title: "График городских работ",
+    data: [
+      {
+        time: "13 jul",
+        info: "lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet",
+      },
+      { time: "19 jul", info: "lorem ipsum dolar amet" },
+      { time: "14 jul", info: "lorem ipsum dolar amet" },
+      { time: "15 jul", info: "lorem ipsum dolar amet" },
+      { time: "16 jul", info: "lorem ipsum dolar amet" },
+    ],
   },
 };
 export const servicesData = {
@@ -21,6 +41,9 @@ export const servicesData = {
     data: [
       "Fuqaro murojaatlari bilan ishlash (Virtual qabulxona)",
       "Shahar transporti bo`yicha ma`lumot",
+      "Ko‘p beriladigan savollar",
+      "Fuqarolardan taklif va mulohazalarini olish",
+      "Xududlarni rivojlantirish",
     ],
   },
   ru: {
@@ -28,6 +51,9 @@ export const servicesData = {
     data: [
       "Рассмотрение обращений граждан (Виртуальная приёмная)",
       "Информация о наземном транспорте",
+      "Часто задаваемые вопросы ",
+      "Приём предложений и замечаний граждан",
+      "Программа развития территорий",
     ],
   },
 };

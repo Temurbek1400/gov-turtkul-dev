@@ -13,7 +13,7 @@ const Home = () => {
   const homePageData = useSelector(getHomePageData);
   return (
     <div>
-      <LatestNews news={homePageData.news} plan={homePageData.plan} />
+      <LatestNews news={homePageData.news} plan={homePageData.cityPlan} />
       <BreadCrumbs />
       <Events />
       <Services
