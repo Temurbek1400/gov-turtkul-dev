@@ -1,30 +1,32 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import { NewsItemWrapper, NewsInfo, NewsWrapper } from "./filtered-news.styles";
+import Grid from "@mui/material/Grid";
+import { Divider } from "@mui/material";
 
 const FilteredNewsItems = ({ news }) => {
    return (
-      <div>
+      <NewsWrapper>
          {news.map((news) => (
-            <TabPanel index={0}>
-               <div>
-                  <img src={news.images[0]} alt="" width="400" />
-                  <h1>{news.title}</h1>
-                  <p>{news.p}</p>
-               </div>
-            </TabPanel>
+            <NewsItemWrapper role="tabpanel">
+               <Grid container key={news.title} columnSpacing={2}>
+                  <Grid item xs={12} sm={6} md={4} lg={3}>
+                     <img src={news.images[0]} alt="" />
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={8} lg={9}>
+                     <NewsInfo>
+                        <h2>{news.title}</h2>
+                        <p>{news.p}</p>
+                        <p>{news.date}</p>
+                     </NewsInfo>
+                  </Grid>
+               </Grid>
+               <br />
+               <Divider />
+               <br />
+            </NewsItemWrapper>
          ))}
-      </div>
+      </NewsWrapper>
    );
 };
-const TabPanel = (props) => {
-   const { children, ...other } = props;
-   return (
-      <div role="tabpanel" {...other}>
-         <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
-         </Box>
-      </div>
-   );
-};
+
 export default FilteredNewsItems;

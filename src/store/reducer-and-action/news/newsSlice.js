@@ -39,7 +39,7 @@ export const fetchNews = createAsyncThunk(
          language: { activeLanguageName },
       } = thunkAPI.getState();
       const response = await fetch(
-         `https://turtkul_gov/news/${activeLanguageName}/${filter}`
+         `https://turtkul_gov/${activeLanguageName}/news/${filter}`
       );
       thunkAPI.dispatch(setActiveFilter(filter));
       return await response.json();

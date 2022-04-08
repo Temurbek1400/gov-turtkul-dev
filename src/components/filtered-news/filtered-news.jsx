@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { MuiTabs, Wrapper } from "./filtered-news.styles";
+import { MuiTabs, PreloaderWrapper, Wrapper } from "./filtered-news.styles";
 import FilteredNewsItems from "./filtered-news-items";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilterBarData } from "./../../store/reducer-and-action/language/language";
@@ -10,6 +10,8 @@ import {
    getNewsData,
    getNewsStatus,
 } from "./../../store/reducer-and-action/news/newsSlice";
+import { PropagateLoader } from "react-spinners";
+import Pagination from "./pagination/pagination";
 
 export default function FilteredNews() {
    const news = useSelector(getNewsData);
@@ -41,11 +43,14 @@ export default function FilteredNews() {
                </MuiTabs>
             </Box>
             {pending ? (
-               "Ozgina kutib tur. loading///"
+               <PreloaderWrapper>
+                  <PropagateLoader size={15} color="#0156a7;" />
+               </PreloaderWrapper>
             ) : (
                <FilteredNewsItems news={news} />
             )}
          </Box>
+         <Pagination />
       </Wrapper>
    );
 }
