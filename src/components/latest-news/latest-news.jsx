@@ -4,11 +4,11 @@ import { CustomPaper, Title, Box, Wrapper } from "./latest-news.style";
 import News from "./news/news";
 import Schedule from "./schedule/schedule";
 
-const LatestNews = () => {
+const LatestNews = ({ news, plan }) => {
   return (
     <Wrapper>
       <div>
-        <Title>So`nggi yangiliklar</Title>
+        <Title>{news.title}</Title>
         <Divider />
         <CustomPaper elevation={3}>
           <Box>
@@ -19,7 +19,8 @@ const LatestNews = () => {
         </CustomPaper>
       </div>
       <div>
-        <Title>Shahar ishlari rejasi</Title>
+        {plan}
+        {/* <Title>{plan.title}</Title> */}
         <Divider />
         <Schedule data={scheduleData} />
       </div>

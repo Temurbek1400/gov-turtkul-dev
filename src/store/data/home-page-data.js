@@ -1,3 +1,20 @@
+export const newsData = {
+  uz: {
+    title: "So`nggi yangiliklar",
+  },
+  ru: {
+    title: "Последние новости",
+  },
+};
+
+export const cityPlanData = {
+  uz: {
+    title: "Shahar ishlari rejasi",
+  },
+  ru: {
+    title: "График городских работ",
+  },
+};
 export const servicesData = {
   uz: {
     title: "Xizmatlar",
