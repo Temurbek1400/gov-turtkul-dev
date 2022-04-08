@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { MuiTabs, PreloaderWrapper, Wrapper } from "./filtered-news.styles";
