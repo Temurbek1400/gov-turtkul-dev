@@ -22,7 +22,7 @@ const FilteredNewsItems = ({ news }) => {
                </Grid>
                <br />
                <Divider />
-               <br />
+               <div><br /></div>
             </NewsItemWrapper>
          ))}
       </NewsWrapper>
