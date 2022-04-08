@@ -6,11 +6,13 @@ import {
   newsData,
   servicesData,
 } from "./home-page-data";
+import filterBarData from "./filtered-news-data";
 
 const data = {
   uz: {
     navbar: navbarData.uz,
     footer: footerData.uz,
+    filterBar: filterBarData.uz,
     homePageData: {
       services: servicesData.uz,
       comments: commentsData.uz,
@@ -21,6 +23,7 @@ const data = {
   ru: {
     navbar: navbarData.ru,
     footer: footerData.ru,
+    filterBar: filterBarData.ru,
     homePageData: {
       services: servicesData.ru,
       comments: commentsData.ru,
