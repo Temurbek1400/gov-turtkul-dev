@@ -9,7 +9,6 @@ import {
 
 import CustomDrawer from "./drawers/custom-drawer";
 import MobileDrawer from "./drawers/mobile/mobile-drawer";
-
 import CustomAppBar from "./app-bars/app-bar";
 import MobileAppBar from "./app-bars/mobile/mobile-app-bar";
 import { Wrapper } from "./navbar.styles";
@@ -25,7 +24,8 @@ import {
    setLanguage,
 } from "store/reducer-and-action/language/language";
 
-export default function Navbar() {
+const Navbar = () => {
+   const navbarData = useSelector(getNavbarData);
    const matches = useMediaQuery("(max-width:915px)");
    const [drawer, setState] = React.useState(false);
    const toggleDrawer = (toggleTo) => (event) => {
@@ -40,32 +40,9 @@ export default function Navbar() {
       setState(toggleTo);
    };
 
-   const navbarData = useSelector(getNavbarData);
-   const languages = useSelector(getLanguagesName);
-   const activeLanguageName = useSelector(getActiveLanguageName);
-   const activeFilter = useSelector(getActiveFilter);
-   const dispatch = useDispatch();
    return (
       <Wrapper>
-         <FormControl>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
-            <Select
-               size="small"
-               labelId="demo-simple-select-label"
-               id="demo-simple-select"
-               label="lang"
-               value={activeLanguageName}
-               onChange={(e) => {
-                  dispatch(setLanguage(e.target.value)).then(
-                     dispatch(fetchNews(activeFilter))
-                  );
-               }}
-            >
-               {languages.map((lang) => (
-                  <MenuItem value={lang}>{lang}</MenuItem>
-               ))}
-            </Select>
-         </FormControl>
+         <LangSelect />
          <React.Fragment key={"top"}>
             {matches ? (
                <>
@@ -97,4 +74,34 @@ export default function Navbar() {
          </React.Fragment>
       </Wrapper>
    );
-}
+};
+
+const LangSelect = () => {
+   const languages = useSelector(getLanguagesName);
+   const activeLanguageName = useSelector(getActiveLanguageName);
+   const activeFilter = useSelector(getActiveFilter);
+   const dispatch = useDispatch();
+   return (
+      <FormControl>
+         <InputLabel id="demo-simple-select-label">Til</InputLabel>
+         <Select
+            size="small"
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="lang"
+            value={activeLanguageName}
+            onChange={(e) => {
+               dispatch(setLanguage(e.target.value)).then(
+                  dispatch(fetchNews(activeFilter))
+               );
+            }}
+         >
+            {languages.map((lang) => (
+               <MenuItem value={lang}>{lang}</MenuItem>
+            ))}
+         </Select>
+      </FormControl>
+   );
+};
+
+export default Navbar;

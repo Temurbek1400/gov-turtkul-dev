@@ -5,7 +5,7 @@ const HeaderNewsItem = ({ news }) => {
    debugger;
    return (
       <HeaderNewsItemWrapper>
-         <img src={news?.img} alt="" />
+         <img src={news?.images[0]} alt="" />
       </HeaderNewsItemWrapper>
    );
 };

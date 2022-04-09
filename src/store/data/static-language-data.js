@@ -1,7 +1,13 @@
 import navbarData from "./navbar-data";
 import footerData from "./footer-data";
+import {
+   cityPlanData,
+   commentsData,
+   newsData,
+   servicesData,
+} from "./home-page-data";
 import filterBarData from "./filtered-news-data";
-import { commentsData, servicesData } from "./home-page-data";
+
 const data = {
    uz: {
       navbar: navbarData.uz,
@@ -10,6 +16,8 @@ const data = {
       homePageData: {
          services: servicesData.uz,
          comments: commentsData.uz,
+         cityPlan: cityPlanData.uz,
+         news: newsData.uz,
       },
    },
    ru: {
@@ -19,6 +27,8 @@ const data = {
       homePageData: {
          services: servicesData.ru,
          comments: commentsData.ru,
+         cityPlan: cityPlanData.ru,
+         news: newsData.ru,
       },
    },
 };

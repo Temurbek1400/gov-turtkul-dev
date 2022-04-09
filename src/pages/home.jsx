@@ -11,22 +11,22 @@ import { getHomePageData } from "store/reducer-and-action/language/language";
 import Header from "components/header/header";
 
 const Home = () => {
-  const homePageData = useSelector(getHomePageData);
-  return (
-    <div>
-      <Header />
-      <LatestNews />
-      <BreadCrumbs />
-      <Events />
-      <Services
-        services={homePageData.services}
-        comments={homePageData.comments}
-      />
-      <Votes />
-      <City />
-      <Resourses />
-    </div>
-  );
+   const homePageData = useSelector(getHomePageData);
+   return (
+      <div>
+         <Header />
+         <LatestNews news={homePageData.news} plan={homePageData.cityPlan} />
+         <BreadCrumbs />
+         <Events />
+         <Services
+            services={homePageData.services}
+            comments={homePageData.comments}
+         />
+         <Votes />
+         <City />
+         <Resourses />
+      </div>
+   );
 };
 
 export default Home;

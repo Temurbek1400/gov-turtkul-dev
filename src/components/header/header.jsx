@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import { Wrapper } from "./header.styles";
 import { Divider } from "@mui/material";
-import { getNewsData  } from "store/reducer-and-action/news/newsSlice";
-import HeaderNewsItem from './header-news-item';
+import { getNewsData } from "../../store/reducer-and-action/news/newsSlice";
+import HeaderNewsItem from "./header-news-item";
 
 const Header = () => {
    const news = useSelector(getNewsData);
@@ -26,6 +26,10 @@ const Header = () => {
             <Grid item xs={12} sm={12} md={3}>
                <Divider />
                <br />
+               <HeaderNewsItem news={news[3]} />
+               <HeaderNewsItem news={news[4]} />
+               <HeaderNewsItem news={news[5]} />
+               <HeaderNewsItem news={news[6]} />
             </Grid>
          </Grid>
       </Wrapper>

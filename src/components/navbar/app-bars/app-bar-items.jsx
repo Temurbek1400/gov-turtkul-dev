@@ -1,16 +1,12 @@
 import Button from "@mui/material/Button";
-import { useMediaQuery } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const AppBarItems = ({ navbarData }) => {
-   const matches = useMediaQuery("(max-width:1100px)");
-
-   return navbarData.map((item, index) =>
-      matches ? (
-         index <= 5 && <Button sx={{ marginRight: 1.5 }}>{item.head}</Button>
-      ) : (
-         <Button sx={{ marginRight: 1.5 }}>{item.head}</Button>
-      )
-   );
+  return navbarData.map((item) => (
+    <Button component={Link} to={item.link} sx={{ marginRight: 1.5 }}>
+      {item.head}
+    </Button>
+  ));
 };
 
 export default AppBarItems;

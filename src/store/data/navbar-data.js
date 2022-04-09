@@ -2,90 +2,224 @@ module.exports = {
    uz: [
       {
          head: "Hokimiyat haqida",
+         link: "about",
          list: [
-            "Rahbariyat",
-            "Markaziy apparat",
-            "Boshqarma va tashkilotlar",
-            "Elektron hukumat",
-            "Bosh ish o`rinlar",
-            "Rahbariyatning bayonotlari",
-            "Matbuot xizmati",
-            "Statistika",
-            "Tarkibiy tuzilma",
-            "Bog`lanish",
+            {
+               route: "about-gov",
+               title: "Rahbariyat",
+            },
+            {
+               route: "central-tool",
+               title: "Markaziy apparat",
+            },
+            {
+               route: "manage-organization",
+               title: "Boshqarma va tashkilotlar",
+            },
+            {
+               route: "e-government",
+               title: "Elektron hukumat",
+            },
+            {
+               route: "vacancies",
+               title: "Bo`sh ish o`rinlar",
+            },
+            {
+               route: "management-statement",
+               title: "Rahbariyatning bayonotlari",
+            },
+            {
+               route: "press-serves",
+               title: "Matbuot xizmati",
+            },
+            {
+               route: "statistics",
+               title: "Statistika",
+            },
+            {
+               route: "connection",
+               title: "Bog`lanish",
+            },
          ],
       },
       {
          head: "Faoliyat",
+         link: "activity",
          list: [
-            "Harakatlar strategiyasi",
-            "Davlat dasturlari",
-            "Normativ - huquqiy hujjatlar",
-            "Loyihalar",
-            "Investitsiya salohiyati",
-            "Turizm faoliyati",
-            "Xalqaro munosabat",
-            "Jamoatchilik Kengashi",
-            "Ochiq ma`lumotlar",
-            "Ochiq majlislar",
-            "Tadbirkorlik va biznes",
-            "Iqtisodiy ko`rsatkichlar",
-            "Ochiq tanlovlar",
-            "Statistik hisobotlar",
+            {
+               route: "actions-strategy",
+               title: "Harakatlar strategiyasi",
+            },
+            {
+               route: "gov-programs",
+               title: "Davlat dasturlari",
+            },
+            {
+               route: "legal-docs",
+               title: "Normativ - huquqiy hujjatlar",
+            },
+            {
+               route: "projects",
+               title: "Loyihalar",
+            },
+            {
+               route: "investments-potential",
+               title: "Investitsiya salohiyati",
+            },
+            {
+               route: "tourism-activities",
+               title: "Turizm faoliyati",
+            },
+            {
+               route: "international-relations",
+               title: "Xalqaro munosabat",
+            },
+            {
+               route: "public-council",
+               title: "Jamoatchilik Kengashi",
+            },
+            {
+               route: "open-data",
+               title: "Ochiq ma`lumotlar",
+            },
+            {
+               route: "meetings",
+               title: "Ochiq majlislar",
+            },
+            {
+               route: "business",
+               title: "Tadbirkorlik va biznes",
+            },
+            {
+               route: "economic-indicators",
+               title: "Iqtisodiy ko`rsatkichlar",
+            },
+            {
+               route: "open-selections",
+               title: "Ochiq tanlovlar",
+            },
+            {
+               route: "statistical-reports",
+               title: "Statistik hisobotlar",
+            },
          ],
       },
       {
          head: "Hokimiyat yangiliklari",
+         link: "news",
          list: [
-            "Kapitalni yaxshilash",
-            "Jamiyat va himoya",
-            "Moliya va rivojlanish",
-            "Transpor",
-            "Madaniyat",
-            "Afisha",
-            "Mediateka",
-            "Ommaviy tadbirlar",
-            "Davlat ramzlari",
+            {
+               route: "capital-improvements",
+               title: "Kapitalni yaxshilash",
+            },
+            {
+               route: "society-protection",
+               title: "Jamiyat va himoya",
+            },
+            {
+               route: "finance-improvement",
+               title: "Moliya va rivojlanish",
+            },
+            {
+               route: "transport",
+               title: "Transport",
+            },
+
+            {
+               route: "culture",
+               title: "Madaniyat",
+            },
+
+            {
+               route: "poster",
+               title: "Afisha",
+            },
+
+            {
+               route: "media",
+               title: "Mediateka",
+            },
+
+            {
+               route: "mass-events",
+               title: "Ommaviy tadbirlar",
+            },
+            {
+               route: "state-symbols",
+               title: "Davlat ramzlari",
+            },
          ],
       },
       {
          head: "Yig'ilish",
+         link: "meeting",
          list: [
-            "Kengash faoliyati",
-            "Tuman kengashi deputatlari",
-            "Muvofiqlashtiruvchi va maslahat organlari",
+            {
+               route: "board-activities",
+               title: "Kengash faoliyati",
+            },
+
+            {
+               route: "district-council-deputies",
+               title: "Tuman kengashi deputatlari",
+            },
+
+            {
+               route: "coordinating-advisory-bodies",
+               title: "Muvofiqlashtiruvchi va maslahat organlari",
+            },
          ],
       },
       {
          head: "Xizmatlar",
+         link: "services",
          list: [
-            "Interaktiv xizmatlar",
-            "Fuqarolar murojaati",
-            "Shahar transporti",
-            "Mahalliy byudjetning daromad va xarajatlari",
-            "Litsenziyalash xizmatlari",
-            "Ko'p so'raladigan savollar",
-            "Fuqarolardan taklif va mulohazalarini olish",
-         ],
-      },
-      {
-         head: "Shahar",
-         list: [
-            "Umumiy ma'lumotlar",
-            "Qiziqarli joylar",
-            "Shahar haritasi",
-            "Parklar va dam olish madaniyati",
-            "Fuqarolar uchun",
-            "Biznes uchun",
-            "Turistlar uchun",
-            "O'zbekiston qahramoni",
+            {
+               route: "interactive-services",
+               title: "Interaktiv xizmatlar",
+            },
+            {
+               route: "citizens-appeal",
+               title: "Fuqarolar murojaati",
+            },
+            {
+               route: "urban-transport",
+               title: "Shahar transporti",
+            },
+
+            {
+               route: "local-budget",
+               title: "Mahalliy byudjetning daromad va xarajatlari",
+            },
+
+            {
+               route: "licensing-services",
+               title: "Litsenziyalash xizmatlari",
+            },
+
+            {
+               route: "frequently-asked-questions",
+               title: "Ko`p so`raladigan savollar",
+            },
+
+            {
+               route: "suggestions-feedbacks",
+               title: "Fuqarolardan taklif va mulohazalarini olish",
+            },
          ],
       },
       {
          head: "Aksilkorrupsiya",
+         link: "anticorruption",
          list: [
-            "Korrupsiyaga qarshi kurashish bo`yicha yangiliklar",
-            "Sohaga oid normativ-huquqiy hujjatlar",
+            {
+               route: "anti-corruption-news",
+               title: "Korrupsiyaga qarshi kurashish bo`yicha yangiliklar",
+            },
+            {
+               route: "regulatory-docs",
+               title: "Sohaga oid normativ-huquqiy hujjatlar",
+            },
          ],
       },
    ],
@@ -104,7 +238,9 @@ module.exports = {
             "Elektron hukumat",
             "Bosh ish o'rinlar",
          ],
+         link: "about",
       },
+
       {
          head: "Деятельность",
          list: [
@@ -119,6 +255,7 @@ module.exports = {
             "Elektron hukumat",
             "Bosh ish o'rinlar",
          ],
+         link: "activity",
       },
       {
          head: "Новости хокимията",
@@ -134,6 +271,7 @@ module.exports = {
             "Elektron hukumat",
             "Bosh ish o'rinlar",
          ],
+         link: "news",
       },
       {
          head: "Услуги",
@@ -149,6 +287,7 @@ module.exports = {
             "Elektron hukumat",
             "Bosh ish o'rinlar",
          ],
+         link: "services",
       },
       {
          head: "Районы",
@@ -164,6 +303,7 @@ module.exports = {
             "Elektron hukumat",
             "Bosh ish o'rinlar",
          ],
+         link: "districts",
       },
       {
          head: "Город",
@@ -179,6 +319,7 @@ module.exports = {
             "Elektron hukumat",
             "Bosh ish o'rinlar",
          ],
+         link: "city",
       },
       {
          head: "Антикоррупция",
@@ -194,6 +335,7 @@ module.exports = {
             "Elektron hukumat",
             "Bosh ish o'rinlar",
          ],
+         link: "anticorruption",
       },
    ],
 };
