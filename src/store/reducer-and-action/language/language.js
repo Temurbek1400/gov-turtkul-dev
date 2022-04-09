@@ -37,6 +37,10 @@ export const getLanguagesName = createSelector(
    (state) => state.language,
    (language) => language.languagesName
 );
+export const getActiveLanguageName = createSelector(
+   (state) => state.language,
+   (language) => language.activeLanguageName
+);
 
 export const getHomePageData = createSelector(
    (state) => state.language.activeLanguage,

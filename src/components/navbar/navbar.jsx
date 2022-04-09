@@ -1,5 +1,11 @@
 import * as React from "react";
-import { useMediaQuery } from "@mui/material";
+import {
+   FormControl,
+   InputLabel,
+   MenuItem,
+   Select,
+   useMediaQuery,
+} from "@mui/material";
 
 import CustomDrawer from "./drawers/custom-drawer";
 import MobileDrawer from "./drawers/mobile/mobile-drawer";
@@ -13,6 +19,7 @@ import {
    getActiveFilter,
 } from "./../../store/reducer-and-action/news/newsSlice";
 import {
+   getActiveLanguageName,
    getLanguagesName,
    getNavbarData,
    setLanguage,
@@ -35,21 +42,30 @@ export default function Navbar() {
 
    const navbarData = useSelector(getNavbarData);
    const languages = useSelector(getLanguagesName);
+   const activeLanguageName = useSelector(getActiveLanguageName);
    const activeFilter = useSelector(getActiveFilter);
    const dispatch = useDispatch();
    return (
       <Wrapper>
-         <select
-            onChange={(e) => {
-               dispatch(setLanguage(e.target.value)).then(
-                  dispatch(fetchNews(activeFilter))
-               );
-            }}
-         >
-            {languages.map((lang) => (
-               <option value={lang}>{lang}</option>
-            ))}
-         </select>
+         <FormControl>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+               size="small"
+               labelId="demo-simple-select-label"
+               id="demo-simple-select"
+               label="lang"
+               value={activeLanguageName}
+               onChange={(e) => {
+                  dispatch(setLanguage(e.target.value)).then(
+                     dispatch(fetchNews(activeFilter))
+                  );
+               }}
+            >
+               {languages.map((lang) => (
+                  <MenuItem value={lang}>{lang}</MenuItem>
+               ))}
+            </Select>
+         </FormControl>
          <React.Fragment key={"top"}>
             {matches ? (
                <>

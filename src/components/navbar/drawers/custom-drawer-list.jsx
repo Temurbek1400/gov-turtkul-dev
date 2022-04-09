@@ -3,6 +3,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import { CustomBox, CustomListItem } from "./custom-drawer.styles";
+import { Link } from "react-router-dom";
 
 export const CustomDrawerList = ({ toggleDrawer, listData }) => {
    return (
@@ -10,12 +11,12 @@ export const CustomDrawerList = ({ toggleDrawer, listData }) => {
          <List>
             <ListItem>
                <Typography sx={{ fontWeight: "bold" }} variant="h6">
-                  {listData.head}
+                  <Link to="news">{listData.head}</Link>
                </Typography>
             </ListItem>
             {listData.list.map((text) => (
                <CustomListItem button key={text}>
-                  <ListItemText primary={text} />
+                  <ListItemText primary={<Link to="news">{text}</Link>} />
                </CustomListItem>
             ))}
          </List>

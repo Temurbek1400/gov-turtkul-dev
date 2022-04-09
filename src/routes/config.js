@@ -25,6 +25,10 @@ const routes = [
             element: <FilteredNews />,
          },
          {
+            path: "/news/:filter",
+            element: <FilteredNews />,
+         },
+         {
             path: "/city",
             element: <CityPage />,
          },
