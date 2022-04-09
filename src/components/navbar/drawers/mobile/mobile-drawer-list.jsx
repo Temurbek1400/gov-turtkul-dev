@@ -10,7 +10,6 @@ import { DrawerMobileList } from "./mobile-drawer.styles";
 import { Link } from "react-router-dom";
 
 export default function MobileDrawerList({ navbarData }) {
-  
   return (
     <DrawerMobileList
       component="nav"
@@ -43,7 +42,7 @@ const MobileDrawerListItems = ({ navItem }) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {navItem.list.map((listItem) => (
-            <Link to={listItem.route}>
+            <Link to={`${navItem.link}/${listItem.route}`}>
               <ListItemButton sx={{ pl: 4 }}>
                 <ListItemText primary={listItem.title} />
               </ListItemButton>

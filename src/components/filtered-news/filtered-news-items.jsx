@@ -8,7 +8,7 @@ const FilteredNewsItems = ({ news }) => {
   return (
     <NewsWrapper>
       {news.map((news) => (
-        <Link to={`/news/${news.id}`}>
+        <Link to={`/news/all-news/${news.id}`}>
           <NewsItemWrapper role="tabpanel">
             <Grid container key={news.title} columnSpacing={2}>
               <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -17,7 +17,7 @@ const FilteredNewsItems = ({ news }) => {
               <Grid item xs={12} sm={6} md={8} lg={9}>
                 <NewsInfo>
                   <h2>{news.title}</h2>
-                  <p>{news.p}</p>
+                  <p>{news.body}</p>
                   <p>{news.date}</p>
                 </NewsInfo>
               </Grid>

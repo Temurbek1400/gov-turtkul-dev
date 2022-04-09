@@ -6,6 +6,8 @@ const Layout = lazy(() => import("pages/layout"));
 const FilteredNews = lazy(() =>
   import("components/filtered-news/filtered-news")
 );
+const DefaultPage = lazy(() => import("pages/default-page"));
+const DefaultRoute = lazy(() => import("pages/default-route"));
 const TemplateLayout = lazy(() => import("pages/template/template-layout"));
 
 const routes = [
@@ -34,16 +36,16 @@ const routes = [
         element: <TemplateLayout />,
         children: [
           {
-            path: "/news/:newsId",
+            path: "/news/all-news/:newsId",
             element: <NewsDetail />,
           },
           {
             path: ":navbarRoutes/:navRoute",
-            element: <NewsDetail />,
+            element: <DefaultRoute />,
           },
           {
-            path: ":navbarRoute",
-            element: <NewsDetail />,
+            path: ":navbarRoutes",
+            element: <DefaultPage />,
           },
         ],
       },

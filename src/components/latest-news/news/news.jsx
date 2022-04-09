@@ -14,7 +14,7 @@ const News = ({ newsData }) => {
       ) : (
         <Box>
           {newsData.map((item) => (
-            <Link to={`news/${item.id}`}>
+            <Link to={`news/all-news/${item.id}`}>
               <SingleNews
                 key={item.title}
                 time={item.date}

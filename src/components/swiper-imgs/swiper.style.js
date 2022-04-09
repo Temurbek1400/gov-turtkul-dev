@@ -19,8 +19,14 @@ export const ItemWrapper = styled.div`
   padding: 12px 0;
   border-top: 1px solid silver;
   width: 100%;
-  :hover {
-    color: ${({ theme }) => theme.primary};
+  background-color: ${({ active, theme }) => active && theme.secondary};
+  a {
+    :hover {
+      color: ${({ theme }) => theme.primary};
+    }
+    opacity: 0.7;
+    text-decoration: none;
+    color: ${({ theme }) => theme.textColor};
   }
 `;
 
