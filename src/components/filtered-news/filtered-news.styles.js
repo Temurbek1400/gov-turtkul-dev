@@ -22,6 +22,10 @@ export const MuiTabs = ({ value, handleChange, children }) => {
 export const Wrapper = styled.div``;
 
 export const NewsWrapper = styled.div`
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.textColor};
+  }
   /* width: 100%;
    @media screen and (max-width: 768px) {
       width: 100%;

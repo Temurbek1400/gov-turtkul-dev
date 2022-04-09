@@ -1,11 +1,12 @@
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 const Home = lazy(() => import("pages/home"));
-const CityPage = lazy(() => import("pages/city-page"));
+const NewsDetail = lazy(() => import("pages/news-detail"));
 const Layout = lazy(() => import("pages/layout"));
 const FilteredNews = lazy(() =>
   import("components/filtered-news/filtered-news")
 );
+const TemplateLayout = lazy(() => import("pages/template/template-layout"));
 
 const routes = [
   {
@@ -25,12 +26,26 @@ const routes = [
         element: <FilteredNews />,
       },
       {
-        path: "/city",
-        element: <CityPage />,
-      },
-      {
         path: "*",
         element: <Navigate to="/" replace />,
+      },
+      {
+        path: "/",
+        element: <TemplateLayout />,
+        children: [
+          {
+            path: "/news/:newsId",
+            element: <NewsDetail />,
+          },
+          {
+            path: ":navbarRoutes/:navRoute",
+            element: <NewsDetail />,
+          },
+          {
+            path: ":navbarRoute",
+            element: <NewsDetail />,
+          },
+        ],
       },
     ],
   },

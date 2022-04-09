@@ -19,10 +19,6 @@ export default function FilteredNews() {
   const pending = useSelector(getNewsStatus);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchNews("capital"));
-  }, [dispatch]);
-
   const [value, setValue] = React.useState(0);
 
   const handleChange = (filter, newValue) => {

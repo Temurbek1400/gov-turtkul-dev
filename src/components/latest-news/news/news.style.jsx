@@ -33,6 +33,9 @@ export const CustomPaper = styled(Paper)`
 `;
 
 export const Box = styled.div`
+  a {
+    text-decoration: none;
+  }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   div:nth-child(2n + 1) {

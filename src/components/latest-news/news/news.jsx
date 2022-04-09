@@ -1,6 +1,7 @@
 import Loader from "components/common/loader";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getNewsStatus } from "store/reducer-and-action/news/newsSlice";
 import { CustomPaper, MainBody, Time, Wrapper, Box } from "./news.style";
 const News = ({ newsData }) => {
@@ -13,7 +14,13 @@ const News = ({ newsData }) => {
       ) : (
         <Box>
           {newsData.map((item) => (
-            <SingleNews key={item.title} time={item.date} title={item.title} />
+            <Link to={`news/${item.id}`}>
+              <SingleNews
+                key={item.title}
+                time={item.date}
+                title={item.title}
+              />
+            </Link>
           ))}
         </Box>
       )}
