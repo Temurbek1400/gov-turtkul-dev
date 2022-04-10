@@ -7,7 +7,7 @@ const LeftContent = () => {
   return (
     <List>
       {LeftData.map((item, id) => (
-        <ListItemButton style={{ paddingTop: "0", paddingBottom: "0" }}>
+        <ListItemButton key={id} style={{ padding: 0 }}>
           <ItemWrapper>{item}</ItemWrapper>
         </ListItemButton>
       ))}

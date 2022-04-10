@@ -1,3 +1,4 @@
+import SeniorMenegment from "pages/senior-menegment";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 
@@ -21,6 +22,10 @@ const routes = [
       {
         path: "/city-page",
         element: <CityPage />,
+      },
+      {
+        path: "/senior-menegment",
+        element: <SeniorMenegment />,
       },
       {
         path: "*",

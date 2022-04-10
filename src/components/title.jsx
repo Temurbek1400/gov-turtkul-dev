@@ -5,6 +5,7 @@ export const Text = styled.h1`
   color: ${({ theme }) => theme.primary};
   border-bottom: 1px solid #909090;
   padding-bottom: 20px;
+  margin-bottom: 0;
 `;
 
 const Title = ({ text }) => {
