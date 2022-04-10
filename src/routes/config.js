@@ -1,10 +1,15 @@
 import SeniorMenegment from "pages/senior-menegment";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
-
 const Home = lazy(() => import("pages/home"));
-const CityPage = lazy(() => import("pages/city-page"));
+const NewsDetail = lazy(() => import("pages/news-detail"));
 const Layout = lazy(() => import("pages/layout"));
+const FilteredNews = lazy(() =>
+  import("components/filtered-news/filtered-news")
+);
+const DefaultPage = lazy(() => import("pages/default-page"));
+const DefaultRoute = lazy(() => import("pages/default-route"));
+const TemplateLayout = lazy(() => import("pages/template/template-layout"));
 
 const routes = [
   {
@@ -20,16 +25,34 @@ const routes = [
         element: <Home />,
       },
       {
-        path: "/city-page",
-        element: <CityPage />,
+        path: "/news",
+        element: <FilteredNews />,
       },
       {
-        path: "/senior-menegment",
+        path: "/about/about-gov",
         element: <SeniorMenegment />,
       },
       {
         path: "*",
         element: <Navigate to="/" replace />,
+      },
+      {
+        path: "/",
+        element: <TemplateLayout />,
+        children: [
+          {
+            path: "/news/all-news/:newsId",
+            element: <NewsDetail />,
+          },
+          {
+            path: ":navbarRoutes/:navRoute",
+            element: <DefaultRoute />,
+          },
+          {
+            path: ":navbarRoutes",
+            element: <DefaultPage />,
+          },
+        ],
       },
     ],
   },

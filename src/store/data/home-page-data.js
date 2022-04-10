@@ -1,3 +1,40 @@
+export const newsData = {
+  uz: {
+    title: "So`nggi yangiliklar",
+  },
+  ru: {
+    title: "Последние новости",
+  },
+};
+
+export const cityPlanData = {
+  uz: {
+    title: "Shahar ishlari rejasi",
+    data: [
+      {
+        time: "13 jul",
+        info: "lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet",
+      },
+      { time: "19 jul", info: "lorem ipsum dolar amet" },
+      { time: "14 jul", info: "lorem ipsum dolar amet" },
+      { time: "15 jul", info: "lorem ipsum dolar amet" },
+      { time: "16 jul", info: "lorem ipsum dolar amet" },
+    ],
+  },
+  ru: {
+    title: "График городских работ",
+    data: [
+      {
+        time: "13 jul",
+        info: "lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet lorem ipsum dolar ametlorem ipsum dolar ametlorem ipsum dolar amet",
+      },
+      { time: "19 jul", info: "lorem ipsum dolar amet" },
+      { time: "14 jul", info: "lorem ipsum dolar amet" },
+      { time: "15 jul", info: "lorem ipsum dolar amet" },
+      { time: "16 jul", info: "lorem ipsum dolar amet" },
+    ],
+  },
+};
 export const servicesData = {
   uz: {
     title: "Xizmatlar",

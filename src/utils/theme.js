@@ -32,6 +32,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'League Spartan', sans-serif;
     margin:0;
     padding: 0 30px;
+    a{
+      text-decoration: none;
+      color: ${colors.text};
+      :hover{
+        color: ${colors.primary};
+      }
+      
+    }
 
     @media (max-width: 425px) {
       padding: 0 20px;
