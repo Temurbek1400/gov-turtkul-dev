@@ -12,7 +12,11 @@ import { LangSelect } from "./../navbar";
 export default function CustomAppBar({ toggleDrawer, navbarData }) {
    return (
       <Box sx={{ flexGrow: 1 }}>
-         <AppBar color="transparent" position="static" sx={{ height: "150%", padding: "10px" }}>
+         <AppBar
+            color="transparent"
+            position="static"
+            sx={{ height: "150%", padding: "10px" }}
+         >
             <Toolbar
                sx={{
                   alignItems: "center",
