@@ -15,7 +15,7 @@ export default function CustomAppBar({ toggleDrawer, navbarData }) {
          <AppBar
             color="transparent"
             position="static"
-            sx={{ height: "150%", padding: "10px" }}
+            sx={{ height: "150%", padding: "10px 0" }}
          >
             <Toolbar
                sx={{
