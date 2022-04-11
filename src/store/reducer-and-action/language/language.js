@@ -5,6 +5,7 @@ const initialState = {
    languagesName: Object.keys(data),
    activeLanguage: data.uz,
    activeLanguageName: "uz",
+   drawer: false,
 };
 
 const languageSlice = createSlice({
@@ -15,10 +16,13 @@ const languageSlice = createSlice({
          state.activeLanguage = data[action.payload];
          state.activeLanguageName = action.payload;
       },
+      toggleDrawerRedux(state, action) {
+         state.drawer = action.payload;
+      },
    },
 });
 
-export const { setLanguage } = languageSlice.actions;
+export const { setLanguage, toggleDrawerRedux } = languageSlice.actions;
 
 export const getNavbarData = createSelector(
    (state) => state.language.activeLanguage,
@@ -41,10 +45,12 @@ export const getActiveLanguageName = createSelector(
    (state) => state.language,
    (language) => language.activeLanguageName
 );
-
 export const getHomePageData = createSelector(
    (state) => state.language.activeLanguage,
    (activeLanguage) => activeLanguage.homePageData
 );
-
+export const getDrawerStatus = createSelector(
+   (state) => state.language,
+   (language) => language.drawer
+);
 export default languageSlice.reducer;

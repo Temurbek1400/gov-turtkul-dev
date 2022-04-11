@@ -7,38 +7,38 @@ import { Link, useParams } from "react-router-dom";
 import { getNavbarData } from "store/reducer-and-action/language/language";
 
 const LeftContent = () => {
-  // return (
-  //   <List>
-  //     {LeftData.map((item, id) => (
-  //       <ListItemButton key={id} style={{ padding: 0 }}>
-  //         <ItemWrapper>{item}</ItemWrapper>
-  //       </ListItemButton>
-  //     ))}
-  //   </List>
-  let params = useParams();
-  const currentList = useSelector(getNavbarData).find(
-    (part) => part.link === params.navbarRoutes
-  );
-  if (currentList)
-    return (
-      <>
-        <Title>{currentList.head}</Title>
-        <List disablePadding>
-          {currentList.list.map((item, id) => (
-            <Link to={`${currentList.link}/${item.route}`}>
-              <ListItemButton
-                disableGutters
-                style={{ paddingTop: "0", paddingBottom: "0" }}
-              >
-                <ItemWrapper active={item.route === params.navRoute}>
-                  {item.title}
-                </ItemWrapper>
-              </ListItemButton>
-            </Link>
-          ))}
-        </List>
-      </>
-    );
+   // return (
+   //   <List>
+   //     {LeftData.map((item, id) => (
+   //       <ListItemButton key={id} style={{ padding: 0 }}>
+   //         <ItemWrapper>{item}</ItemWrapper>
+   //       </ListItemButton>
+   //     ))}
+   //   </List>
+   let params = useParams();
+   const currentList = useSelector(getNavbarData).find(
+      (part) => part.link === params.navbarRoutes
+   );
+   if (currentList)
+      return (
+         <>
+            <Title>{currentList.head}</Title>
+            <List disablePadding>
+               {currentList.list.map((item, id) => (
+                  <Link to={`${currentList.link}/${item.route}`}>
+                     <ListItemButton
+                        disableGutters
+                        style={{ paddingTop: "0", paddingBottom: "0" }}
+                     >
+                        <ItemWrapper active={item.route === params.navRoute}>
+                           {item.title}
+                        </ItemWrapper>
+                     </ListItemButton>
+                  </Link>
+               ))}
+            </List>
+         </>
+      );
 };
 
 export default LeftContent;

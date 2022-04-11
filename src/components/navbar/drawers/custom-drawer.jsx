@@ -1,31 +1,31 @@
-import Drawer from "@mui/material/Drawer";
 import CloseIcon from "@mui/icons-material/Close";
 import { CustomDrawerList } from "./custom-drawer-list";
-import { CloseButton, ListContainer } from "../navbar.styles";
+import { CloseButton } from "../navbar.styles";
+import { getDrawerStatus } from "store/reducer-and-action/language/language";
+import { useSelector } from "react-redux";
+import { React } from "react";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
 
- const CustomDrawer = ({ toggleDrawer, drawer, navbarData }) => {
+const CustomDrawer = ({ toggleDrawer, navbarData }) => {
+   const drawer = useSelector(getDrawerStatus);
    return (
       <div>
          <Drawer
-            anchor={"top"}
+            style={{ height: "100%", overflow: "scroll" }}
             open={drawer}
             onClose={toggleDrawer(false)}
-            sx={{padding: "30px"}}
+            direction="top"
          >
             <CloseButton onClick={toggleDrawer(false)}>
                <CloseIcon />
             </CloseButton>
-            <ListContainer>
-               {navbarData.map((listData) => (
-                  <CustomDrawerList toggleDrawer={toggleDrawer} listData={listData} />
-               ))}
-            </ListContainer>
+            <CustomDrawerList
+               navbarData={navbarData}
+               toggleDrawer={toggleDrawer}
+            />
          </Drawer>
       </div>
    );
 };
-export default CustomDrawer
-
-
-
-
+export default CustomDrawer;

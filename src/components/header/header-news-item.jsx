@@ -6,6 +6,8 @@ const HeaderNewsItem = ({ news }) => {
    return (
       <HeaderNewsItemWrapper>
          <img src={news?.images[0]} alt="" />
+         <p>{news?.date}</p>
+         <p>{news?.title}</p>
       </HeaderNewsItemWrapper>
    );
 };

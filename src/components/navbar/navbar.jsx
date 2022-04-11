@@ -19,41 +19,43 @@ import {
 } from "./../../store/reducer-and-action/news/newsSlice";
 import {
    getActiveLanguageName,
+   getDrawerStatus,
    getLanguagesName,
    getNavbarData,
    setLanguage,
+   toggleDrawerRedux,
 } from "store/reducer-and-action/language/language";
 
 const Navbar = () => {
    const navbarData = useSelector(getNavbarData);
+   const drawerStatus = useSelector(getDrawerStatus);
+   const dispatch = useDispatch();
    const matches = useMediaQuery("(max-width:915px)");
-   const [drawer, setState] = React.useState(false);
    const toggleDrawer = (toggleTo) => (event) => {
       if (
          event.type === "keydown" &&
          (event.key === "Tab" || event.key === "Shift")
       )
          return;
-      setState(toggleTo);
+      dispatch(toggleDrawerRedux(toggleTo));
    };
    const toggleDrawerMobile = (toggleTo) => {
-      setState(toggleTo);
+      dispatch(toggleDrawerRedux(toggleTo));
    };
 
    return (
       <Wrapper>
-         <LangSelect />
          <React.Fragment key={"top"}>
             {matches ? (
                <>
                   <MobileDrawer
                      navbarData={navbarData}
-                     drawer={drawer}
+                     drawer={drawerStatus}
                      toggleDrawerMobile={toggleDrawerMobile}
                   />
                   <MobileAppBar
                      navbarData={navbarData}
-                     drawer={drawer}
+                     drawer={drawerStatus}
                      toggleDrawerMobile={toggleDrawerMobile}
                   />
                </>
@@ -61,12 +63,12 @@ const Navbar = () => {
                <>
                   <CustomDrawer
                      navbarData={navbarData}
-                     drawer={drawer}
+                     drawer={drawerStatus}
                      toggleDrawer={toggleDrawer}
                   />
                   <CustomAppBar
                      navbarData={navbarData}
-                     drawer={drawer}
+                     drawer={drawerStatus}
                      toggleDrawer={toggleDrawer}
                   />
                </>
@@ -76,7 +78,7 @@ const Navbar = () => {
    );
 };
 
-const LangSelect = () => {
+export const LangSelect = () => {
    const languages = useSelector(getLanguagesName);
    const activeLanguageName = useSelector(getActiveLanguageName);
    const activeFilter = useSelector(getActiveFilter);
