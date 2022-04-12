@@ -1,7 +1,7 @@
 import CloseIcon from "@mui/icons-material/Close";
 import { CustomDrawerList } from "./custom-drawer-list";
 import { CloseButton } from "../navbar.styles";
-import { Drawer } from "custom-driver.styles";
+import { Drawer } from "./custom-drawer.styles.js";
 import { getDrawerStatus } from "store/reducer-and-action/language/language";
 import { useSelector } from "react-redux";
 import { React } from "react";
@@ -15,6 +15,7 @@ const CustomDrawer = ({ toggleDrawer, navbarData }) => {
             open={drawer}
             onClose={toggleDrawer(false)}
             direction="top"
+            enableOverlay={true}
          >
             <CloseButton onClick={toggleDrawer(false)}>
                <CloseIcon />

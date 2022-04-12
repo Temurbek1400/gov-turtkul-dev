@@ -13,7 +13,6 @@ export const CustomListItem = styled(ListItem)`
    color: ${(props) => props.primary};
 `;
 export const Drawer = styled(DrawerLib)`
-   height: "100%";
-   overflow: "scroll";
-   background-image: url("https://ssv.uz/assets/public/images/logo.svg");
+   height: 100% !important;
+   overflow-y: scroll !important;
 `;
