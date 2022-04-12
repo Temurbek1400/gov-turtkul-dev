@@ -6,17 +6,20 @@ import {
    Select,
    useMediaQuery,
 } from "@mui/material";
+import LanguageIcon from "@mui/icons-material/Language";
+import { useDispatch, useSelector } from "react-redux";
 
 import CustomDrawer from "./drawers/custom-drawer";
 import MobileDrawer from "./drawers/mobile/mobile-drawer";
 import CustomAppBar from "./app-bars/app-bar";
 import MobileAppBar from "./app-bars/mobile/mobile-app-bar";
 import { Wrapper } from "./navbar.styles";
-import { useDispatch, useSelector } from "react-redux";
+
 import {
    fetchNews,
    getActiveFilter,
 } from "./../../store/reducer-and-action/news/newsSlice";
+
 import {
    getActiveLanguageName,
    getDrawerStatus,
@@ -85,7 +88,9 @@ export const LangSelect = () => {
    const dispatch = useDispatch();
    return (
       <FormControl>
-         <InputLabel id="demo-simple-select-label">Til</InputLabel>
+         <InputLabel id="demo-simple-select-label">
+            <LanguageIcon />
+         </InputLabel>
          <Select
             size="small"
             labelId="demo-simple-select-label"

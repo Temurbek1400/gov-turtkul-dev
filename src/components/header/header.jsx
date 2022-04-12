@@ -12,15 +12,18 @@ const Header = () => {
     <Wrapper>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={7} md={6}>
+          <br />
           <Divider />
           <br />
           <HeaderNewsItem news={news[0]} />
+          
         </Grid>
         <Grid item xs={12} sm={5} md={3}>
           <Divider />
           <br />
           <HeaderNewsItem news={news[1]} />
           <HeaderNewsItem news={news[2]} />
+          
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
           <Divider />
