@@ -1,3 +1,4 @@
+import AskedQuestions from "components/asked-questions/asked-questions";
 import SeniorMenegment from "pages/senior-menegment";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
@@ -31,6 +32,10 @@ const routes = [
       {
         path: "/about/about-gov",
         element: <SeniorMenegment />,
+      },
+      {
+        path: "/questions",
+        element: <AskedQuestions />,
       },
       {
         path: "*",

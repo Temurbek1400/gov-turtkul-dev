@@ -78,3 +78,15 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.primary};
   margin-bottom: 0;
 `;
+
+export const ModalContent = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  width: 400px;
+  background-color: silver;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px #303030;
+  padding: 20px;
+`;
