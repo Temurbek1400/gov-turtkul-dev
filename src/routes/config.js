@@ -21,16 +21,16 @@ const routes = [
         element: <Home />,
       },
       {
-        path: "/home",
+        path: "home",
         element: <Home />,
       },
       {
-        path: "/news",
+        path: "news",
         element: <FilteredNews />,
       },
       {
-        path: "/about/about-gov",
-        element: <SeniorMenegment />,
+        path: "news/:newsFilter",
+        element: <FilteredNews />,
       },
       {
         path: "*",
@@ -41,9 +41,14 @@ const routes = [
         element: <TemplateLayout />,
         children: [
           {
-            path: "/news/all-news/:newsId",
+            path: "about/about-gov",
+            element: <SeniorMenegment />,
+          },
+          {
+            path: "news/:newsFilter/:newsId",
             element: <NewsDetail />,
           },
+
           {
             path: ":navbarRoutes/:navRoute",
             element: <DefaultRoute />,

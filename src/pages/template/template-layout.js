@@ -1,22 +1,26 @@
-import { Grid } from "@mui/material";
 import BreadCrumbs from "components/breadcrumbs/breadcrumbs";
 import LeftContent from "components/left-content/left-content";
-import React from "react";
 import { Outlet } from "react-router-dom";
+import {
+  MainBody,
+  LeftSideBar,
+  Wrapper,
+  RightPart,
+} from "./template-layout.style";
 
 const TemplateLayout = () => {
   return (
-    <div>
+    <Wrapper>
       <BreadCrumbs />
-      <Grid container spacing={4}>
-        <Grid item sm={7} md={8}>
+      <MainBody>
+        <RightPart>
           <Outlet />
-        </Grid>
-        <Grid item sm={5} md={4}>
+        </RightPart>
+        <LeftSideBar>
           <LeftContent />
-        </Grid>
-      </Grid>
-    </div>
+        </LeftSideBar>
+      </MainBody>
+    </Wrapper>
   );
 };
 

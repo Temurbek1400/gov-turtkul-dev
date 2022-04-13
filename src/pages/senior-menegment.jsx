@@ -26,11 +26,6 @@ const SeniorManagment = () => {
           </div>
         ))}
       </LeftWrapper>
-
-      <RigthWrapper>
-        <Title>Hokimiyat haqida</Title>
-        <LeftContent />
-      </RigthWrapper>
     </Container>
   );
 };

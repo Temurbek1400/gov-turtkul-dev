@@ -2,13 +2,14 @@ import React from "react";
 import { NewsItemWrapper, NewsInfo, NewsWrapper } from "./filtered-news.styles";
 import Grid from "@mui/material/Grid";
 import { Divider } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const FilteredNewsItems = ({ news }) => {
+  const { newsFilter } = useParams();
   return (
     <NewsWrapper>
       {news.map((news) => (
-        <Link to={`/news/all-news/${news.id}`}>
+        <Link to={`/news/${newsFilter}/${news.id}`}>
           <NewsItemWrapper role="tabpanel">
             <Grid container key={news.title} columnSpacing={2}>
               <Grid item xs={12} sm={6} md={4} lg={3}>

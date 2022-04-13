@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { MuiTabs, Wrapper } from "./filtered-news.styles";
@@ -7,33 +7,36 @@ import { useDispatch, useSelector } from "react-redux";
 import { getFilterBarData } from "./../../store/reducer-and-action/language/language";
 import {
   fetchNews,
+  getActiveFilter,
   getNewsData,
   getNewsStatus,
 } from "./../../store/reducer-and-action/news/newsSlice";
 import Pagination from "./pagination/pagination";
 import Loader from "components/common/loader";
+import { useNavigate } from "react-router-dom";
 
 export default function FilteredNews() {
   const news = useSelector(getNewsData);
   const filterBar = useSelector(getFilterBarData);
   const pending = useSelector(getNewsStatus);
   const dispatch = useDispatch();
+  const activeFilter = useSelector(getActiveFilter);
 
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (filter, newValue) => {
+  const navigate = useNavigate();
+  const handleChange = (filter) => {
     dispatch(fetchNews(filter));
-    setValue(newValue);
+    navigate(`/news/${filter}`);
   };
   return (
     <Wrapper>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <MuiTabs value={value}>
-            {filterBar.map((tabTitle, index) => (
+          <MuiTabs value={activeFilter}>
+            {filterBar.map((tabTitle) => (
               <Tab
                 label={tabTitle.title}
-                onClick={() => handleChange(tabTitle.filter, index)}
+                onClick={() => handleChange(tabTitle.filter)}
+                value={tabTitle.filter}
               />
             ))}
           </MuiTabs>
