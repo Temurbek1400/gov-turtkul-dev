@@ -1,12 +1,9 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MainFormWrapper, Textarea } from "./virtual-reception.styles";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
-
-import { useForm } from "react-hook-form";
-import { Checkbox } from "@mui/material";
 import SimpleModal from "./../common/modal";
 
 const MainForm = () => {
