@@ -1,3 +1,4 @@
+import VirtualReception from "components/virtual-reception/virtual-reception";
 import SeniorMenegment from "pages/senior-menegment";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
@@ -27,6 +28,10 @@ const routes = [
       {
         path: "/news",
         element: <FilteredNews />,
+      },
+      {
+        path: "/virtual-reception",
+        element: <VirtualReception />,
       },
       {
         path: "/about/about-gov",
