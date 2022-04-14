@@ -6,7 +6,7 @@ import Routes from "routes/config";
 function App() {
   return (
     <Suspense fallback={<Loader />}>
-      <Router>
+      <Router>  
         <Routes />
       </Router>
     </Suspense>

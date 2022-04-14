@@ -1,7 +1,9 @@
-import AskedQuestions from "components/asked-questions/asked-questions";
-import SeniorMenegment from "pages/senior-menegment";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
+const AskedQuestions = lazy(() =>
+  import("components/asked-questions/asked-questions")
+);
+const SeniorMenegment = lazy(() => import("pages/senior-menegment"));
 const Home = lazy(() => import("pages/home"));
 const NewsDetail = lazy(() => import("pages/news-detail"));
 const Layout = lazy(() => import("pages/layout"));
