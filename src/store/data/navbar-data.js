@@ -109,6 +109,10 @@ module.exports = {
       link: "news",
       list: [
         {
+          route: "all",
+          title: "Barcha",
+        },
+        {
           route: "capital-improvements",
           title: "Kapitalni yaxshilash",
         },
@@ -147,6 +151,10 @@ module.exports = {
         {
           route: "state-symbols",
           title: "Davlat ramzlari",
+        },
+        {
+          route: "uncategorithed",
+          title: "Guruhlanmagan",
         },
       ],
     },
@@ -226,116 +234,233 @@ module.exports = {
   ru: [
     {
       head: "О хокимияте",
-      list: [
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-      ],
       link: "about",
+      list: [
+        {
+          route: "about-gov",
+          title: "Rahbariyat",
+        },
+        {
+          route: "central-tool",
+          title: "Markaziy apparat",
+        },
+        {
+          route: "manage-organization",
+          title: "Boshqarma va tashkilotlar",
+        },
+        {
+          route: "e-government",
+          title: "Elektron hukumat",
+        },
+        {
+          route: "vacancies",
+          title: "Bo`sh ish o`rinlar",
+        },
+        {
+          route: "management-statement",
+          title: "Rahbariyatning bayonotlari",
+        },
+        {
+          route: "press-serves",
+          title: "Matbuot xizmati",
+        },
+        {
+          route: "statistics",
+          title: "Statistika",
+        },
+        {
+          route: "connection",
+          title: "Bog`lanish",
+        },
+      ],
     },
-
     {
       head: "Деятельность",
-      list: [
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-      ],
       link: "activity",
+      list: [
+        {
+          route: "actions-strategy",
+          title: "Harakatlar strategiyasi",
+        },
+        {
+          route: "gov-programs",
+          title: "Davlat dasturlari",
+        },
+        {
+          route: "legal-docs",
+          title: "Normativ - huquqiy hujjatlar",
+        },
+        {
+          route: "projects",
+          title: "Loyihalar",
+        },
+        {
+          route: "investments-potential",
+          title: "Investitsiya salohiyati",
+        },
+        {
+          route: "tourism-activities",
+          title: "Turizm faoliyati",
+        },
+        {
+          route: "international-relations",
+          title: "Xalqaro munosabat",
+        },
+        {
+          route: "public-council",
+          title: "Jamoatchilik Kengashi",
+        },
+        {
+          route: "open-data",
+          title: "Ochiq ma`lumotlar",
+        },
+        {
+          route: "meetings",
+          title: "Ochiq majlislar",
+        },
+        {
+          route: "business",
+          title: "Tadbirkorlik va biznes",
+        },
+        {
+          route: "economic-indicators",
+          title: "Iqtisodiy ko`rsatkichlar",
+        },
+        {
+          route: "open-selections",
+          title: "Ochiq tanlovlar",
+        },
+        {
+          route: "statistical-reports",
+          title: "Statistik hisobotlar",
+        },
+      ],
     },
     {
       head: "Новости хокимията",
-      list: [
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-      ],
       link: "news",
+      list: [
+        {
+          route: "all",
+          title: "Все",
+        },
+        {
+          route: "capital-improvements",
+          title: "Благоустройство столицы",
+        },
+        {
+          route: "society-protection",
+          title: "Общество и защита",
+        },
+        {
+          route: "finance-improvement",
+          title: "Финансы и развитие",
+        },
+        {
+          route: "transport",
+          title: "Транспорт",
+        },
+
+        {
+          route: "culture",
+          title: "Культура",
+        },
+
+        {
+          route: "poster",
+          title: "Афиша",
+        },
+
+        {
+          route: "media",
+          title: "Медиатека",
+        },
+
+        {
+          route: "mass-events",
+          title: "Публичные мероприятия",
+        },
+        {
+          route: "state-symbols",
+          title: "Государственные символы",
+        },
+        {
+          route: "uncategorithed",
+          title: "Некатегоризированный",
+        },
+      ],
+    },
+    {
+      head: "Заседания",
+      link: "meeting",
+      list: [
+        {
+          route: "board-activities",
+          title: "Деятельность совета",
+        },
+
+        {
+          route: "district-council-deputies",
+          title: "Депутаты городского совета",
+        },
+
+        {
+          route: "coordinating-advisory-bodies",
+          title: "Координационные и консультативные органы",
+        },
+      ],
     },
     {
       head: "Услуги",
-      list: [
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-      ],
       link: "services",
-    },
-    {
-      head: "Районы",
       list: [
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
+        {
+          route: "interactive-services",
+          title: "Интерактивные услуги",
+        },
+        {
+          route: "citizens-appeal",
+          title: "Обращения граждан",
+        },
+        {
+          route: "urban-transport",
+          title: "Городской транспорт",
+        },
+
+        {
+          route: "local-budget",
+          title: "Доходы и расходы местного бюджета",
+        },
+
+        {
+          route: "licensing-services",
+          title: "Услуги в сфере лицензирования",
+        },
+
+        {
+          route: "frequently-asked-questions",
+          title: "Часто задаваемые вопросы",
+        },
+
+        {
+          route: "suggestions-feedbacks",
+          title: "Прием предложений и замечаний граждан",
+        },
       ],
-      link: "districts",
-    },
-    {
-      head: "Город",
-      list: [
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-      ],
-      link: "city",
     },
     {
       head: "Антикоррупция",
-      list: [
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-        "Rahbariyat",
-        "Markaziy apparat",
-        "boshqarma va tashkilotlar",
-        "Elektron hukumat",
-        "Bosh ish o'rinlar",
-      ],
       link: "anticorruption",
+      list: [
+        {
+          route: "anti-corruption-news",
+          title: "Противодействие коррупции",
+        },
+        {
+          route: "regulatory-docs",
+          title: "Нормативно-правовые акты в сфере",
+        },
+      ],
     },
   ],
 };

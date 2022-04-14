@@ -20,17 +20,12 @@ const SeniorManagment = () => {
   return (
     <Container>
       <LeftWrapper>
-        {ManagmentData.map((item, id) => (
+        {ManagmentData.uz.map((item, id) => (
           <div data-aos="fade-up">
             <Managment data={item} key={id} />
           </div>
         ))}
       </LeftWrapper>
-
-      <RigthWrapper>
-        <Title>Hokimiyat haqida</Title>
-        <LeftContent />
-      </RigthWrapper>
     </Container>
   );
 };

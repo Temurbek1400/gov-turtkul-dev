@@ -11,15 +11,15 @@ const Logo = () => {
     AOS.refresh();
   }, []);
 
-   return (
-      <div data-aos="fade-right">
-         <LogoWrapper>
-            <Link to="/">
-               <img src={logo} alt="logo" />
-            </Link>
-         </LogoWrapper>
-      </div>
-   );
+  return (
+    <div data-aos="fade-right">
+      <LogoWrapper>
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
+      </LogoWrapper>
+    </div>
+  );
 };
 
 export default Logo;

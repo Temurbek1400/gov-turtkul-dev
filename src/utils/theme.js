@@ -32,6 +32,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'League Spartan', sans-serif;
     margin:0;
     padding: 0 30px;
+   *{ ::-webkit-scrollbar {
+       display: none;
+       }
+      -ms-overflow-style: none;  
+      scrollbar-width: none;  
+    }
     a{
       text-decoration: none;
       color: ${colors.text};

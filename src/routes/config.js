@@ -1,7 +1,9 @@
-import VirtualReception from "components/virtual-reception/virtual-reception";
-import SeniorMenegment from "pages/senior-menegment";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
+const AskedQuestions = lazy(() =>
+  import("components/asked-questions/asked-questions")
+);
+const SeniorMenegment = lazy(() => import("pages/senior-menegment"));
 const Home = lazy(() => import("pages/home"));
 const NewsDetail = lazy(() => import("pages/news-detail"));
 const Layout = lazy(() => import("pages/layout"));
@@ -22,20 +24,20 @@ const routes = [
         element: <Home />,
       },
       {
-        path: "/home",
+        path: "home",
         element: <Home />,
       },
       {
-        path: "/news",
+        path: "news",
         element: <FilteredNews />,
       },
       {
-        path: "/virtual-reception",
-        element: <VirtualReception />,
+        path: "news/:newsFilter",
+        element: <FilteredNews />,
       },
       {
-        path: "/about/about-gov",
-        element: <SeniorMenegment />,
+        path: "/questions",
+        element: <AskedQuestions />,
       },
       {
         path: "*",
@@ -46,9 +48,14 @@ const routes = [
         element: <TemplateLayout />,
         children: [
           {
-            path: "/news/all-news/:newsId",
+            path: "about/about-gov",
+            element: <SeniorMenegment />,
+          },
+          {
+            path: "news/:newsFilter/:newsId",
             element: <NewsDetail />,
           },
+
           {
             path: ":navbarRoutes/:navRoute",
             element: <DefaultRoute />,

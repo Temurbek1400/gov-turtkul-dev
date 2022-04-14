@@ -33,21 +33,22 @@ export const CustomPaper = styled(Paper)`
 `;
 
 export const Box = styled.div`
+  max-height: 400px;
+  overflow: auto;
   a {
     text-decoration: none;
   }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  div:nth-child(2n + 1) {
-    padding-right: 50px;
+  a:nth-child(2n + 1) {
     border-right: 1px solid #0000005f;
   }
-  div:nth-child(2n) {
-    padding-left: 50px;
+  a:nth-child(2n) {
   }
-  @media (max-width: ${(props) => props.theme.media.mobileL}) {
+  @media (max-width: ${(props) => props.theme.media.tabletS}) {
     grid-template-columns: 1fr;
-    div:nth-child(2n + 1) {
+    a:nth-child(n) {
+      padding: 0px;
       border-right: none;
     }
   }
