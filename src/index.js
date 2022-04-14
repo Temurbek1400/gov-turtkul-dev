@@ -8,7 +8,7 @@ import App from "./App";
 const { worker } = require("./mocks/browser");
 worker.start();
 
-store.dispatch(fetchNews("capital"));
+store.dispatch(fetchNews("all"));
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

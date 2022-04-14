@@ -1,7 +1,7 @@
 module.exports = {
   uz: [
     {
-      filter: "capital",
+      filter: "capital-improvements",
       title: "Hokimiyatda yig'ilish bo'lib o'tdi capital - 1",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -15,7 +15,35 @@ module.exports = {
       id: 1,
     },
     {
-      filter: "capital",
+      filter: "capital-improvements",
+      title: "Hokimiyatda yig'ilish bo'lib o'tdi capital - 1",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
+      date: "2022-10-10",
+      images: [
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+      ],
+      id: 1111,
+    },
+    {
+      filter: "capital-improvements",
+      title: "Hokimiyatda yig'ilish bo'lib o'tdi capital - 1",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
+      date: "2022-10-10",
+      images: [
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+        "https://static.zarnews.uz/crop/6/7/720__80_67cfaa3d807ce5df968d17c4b8c8851c.jpg?img=self&v=1614427385",
+      ],
+      id: 111221,
+    },
+    {
+      filter: "finance-improvement",
       title: "Hokimiyatda yig'ilish bo'lib o'tdi capital - 2",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -29,7 +57,7 @@ module.exports = {
       id: 2,
     },
     {
-      filter: "capital",
+      filter: "capital-improvements",
       title: "Hokimiyatda yig'ilish bo'lib o'tdi capital - 3",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -43,7 +71,7 @@ module.exports = {
       id: 3,
     },
     {
-      filter: "social",
+      filter: "society-protection",
       title: "Hokimiyatda yig'ilish bo'lib o'tdi social - 1",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -57,7 +85,7 @@ module.exports = {
       id: 4,
     },
     {
-      filter: "finance",
+      filter: "society-protection",
       title: "Hokimiyatda yig'ilish bo'lib o'tdi finance - 1",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -71,7 +99,7 @@ module.exports = {
       id: 5,
     },
     {
-      filter: "finance",
+      filter: "transport",
       title: "Hokimiyatda yig'ilish bo'lib o'tdi finance - 2",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -87,7 +115,7 @@ module.exports = {
   ],
   ru: [
     {
-      filter: "capital",
+      filter: "capital-improvements",
       title: "capital news in russian 1",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -101,7 +129,7 @@ module.exports = {
       id: 55,
     },
     {
-      filter: "capital",
+      filter: "capital-improvements",
       title: "capital news in russian 2",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -115,7 +143,7 @@ module.exports = {
       id: 57,
     },
     {
-      filter: "finance",
+      filter: "society-protection",
       title: "finance news in russian 2",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -129,7 +157,7 @@ module.exports = {
       id: 59,
     },
     {
-      filter: "finance",
+      filter: "society-protection",
       title: "finance news in russian 1",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -143,7 +171,7 @@ module.exports = {
       id: 0,
     },
     {
-      filter: "social",
+      filter: "society-protection",
       title: "social news in russian 1",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",
@@ -157,7 +185,7 @@ module.exports = {
       id: 99,
     },
     {
-      filter: "social",
+      filter: "finance-improvement",
       title: "social news in russian 2",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui similique rerum inventore ea! Tenetur voluptate, delectus aut voluptatibus dicta facere accusantium minima perferendis debitis molestiae reiciendis atque molestias veniam.",
       date: "2022-10-10",

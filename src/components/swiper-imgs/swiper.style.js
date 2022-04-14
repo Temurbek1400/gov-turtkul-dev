@@ -31,7 +31,6 @@ export const ItemWrapper = styled.div`
 `;
 
 export const Box = styled.div`
-  max-width: 85vw;
   display: flex;
   width: 100%;
 
