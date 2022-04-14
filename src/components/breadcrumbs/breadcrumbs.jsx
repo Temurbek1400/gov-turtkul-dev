@@ -4,23 +4,32 @@ import { Link, useLocation } from "react-router-dom";
 import { StyledBreadcrumb, Wrapper } from "./breadcrumbs.style";
 import HomeIcon from "@mui/icons-material/Home";
 import { MdOutlineLastPage } from "react-icons/md";
+import { useLocationRoutesArray } from "hooks/useLocationRoutesArray";
 
 const BreadCrumbs = () => {
-  const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
+  const routes = useLocationRoutesArray();
 
-  const pathes = pathnames.map((value, index) => {
-    const last = index === pathnames.length - 1;
-    const to = `/${pathnames.slice(0, index + 1).join("/")}`;
+  const pathes = routes.map((value, index) => {
+    const last = index === routes.length - 1;
+    const to = `/${routes
+      .slice(0, index + 1)
+      .map((item) => item.route)
+      .join("/")}`;
     return last ? (
       <StyledBreadcrumb
         disabled
         color="primary"
-        label={value}
+        label={value.title ? value.title : value.route}
         icon={<MdOutlineLastPage fontSize="small" />}
+        key={to}
       />
     ) : (
-      <StyledBreadcrumb component={Link} label={value} to={to} key={to} />
+      <StyledBreadcrumb
+        component={Link}
+        label={value.title ? value.title : value.route}
+        to={to}
+        key={to}
+      />
     );
   });
   return (

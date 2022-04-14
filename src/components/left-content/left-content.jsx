@@ -16,23 +16,23 @@ const LeftContent = () => {
   //     ))}
   //   </List>
   const location = useLocation().pathname;
-                                                                                                                                                                                                                                                                                 ist = useSelector(getNavbarData).find((part) =>
+  const currentList = useSelector(getNavbarData).find((part) =>
     location.includes(part.link)
   );
-  console.log(location.includes("capital"));
+
   if (currentList)
     return (
       <div>
         <Title>{currentList.head}</Title>
         <List disablePadding>
           {currentList.list.map((item, id) => (
-            <Link to={`${currentList.link}/${item.route}`}>
+            <Link to={`${currentList.link}/${item.route}`} key={item.route}>
               <ListItemButton
                 disableGutters
                 style={{ paddingTop: "0", paddingBottom: "0" }}
               >
-                <ItemWrapper active={}>
-                {item.title}
+                <ItemWrapper active={location.includes(item.route)}>
+                  {item.title}
                 </ItemWrapper>
               </ListItemButton>
             </Link>

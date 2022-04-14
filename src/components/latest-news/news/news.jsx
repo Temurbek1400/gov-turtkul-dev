@@ -7,7 +7,7 @@ import {
   getNewsStatus,
 } from "store/reducer-and-action/news/newsSlice";
 import { CustomPaper, MainBody, Time, Wrapper, Box } from "./news.style";
-const News = ({ newsData }) => {
+const News = ({ newsData = [] }) => {
   const pending = useSelector(getNewsStatus);
   const activeFilter = useSelector(getActiveFilter);
   return (
@@ -17,7 +17,7 @@ const News = ({ newsData }) => {
       ) : (
         <Box>
           {newsData.map((item) => (
-            <Link to={`news/${activeFilter}/${item.id}`}>
+            <Link to={`news/${activeFilter}/${item.id}`} key={item.id}>
               <SingleNews
                 key={item.title}
                 time={item.date}

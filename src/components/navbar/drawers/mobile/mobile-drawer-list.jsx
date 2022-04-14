@@ -20,8 +20,8 @@ export default function MobileDrawerList({ navbarData }) {
         </ListSubheader>
       }
     >
-      {navbarData.map((navItem) => (
-        <MobileDrawerListItems navItem={navItem} />
+      {navbarData.map((navItem, index) => (
+        <MobileDrawerListItems navItem={navItem} key={index} />
       ))}
     </DrawerMobileList>
   );
@@ -42,7 +42,7 @@ const MobileDrawerListItems = ({ navItem }) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {navItem.list.map((listItem) => (
-            <Link to={`${navItem.link}/${listItem.route}`}>
+            <Link to={`${navItem.link}/${listItem.route}`} key={listItem.route}>
               <ListItemButton sx={{ pl: 4 }}>
                 <ListItemText primary={listItem.title} />
               </ListItemButton>

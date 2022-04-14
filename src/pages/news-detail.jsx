@@ -6,7 +6,7 @@ import { getNewsData } from "store/reducer-and-action/news/newsSlice";
 
 const NewsDetail = () => {
   let params = useParams();
-  const currentNews = useSelector(getNewsData).find(
+  const currentNews = useSelector(getNewsData)?.find(
     (news) => news.id === +params.newsId
   );
   return (

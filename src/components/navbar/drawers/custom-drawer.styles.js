@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Box from "@mui/system/Box";
 import ListItem from "@mui/material/ListItem";
+import DrawerLib from "react-modern-drawer";
 
 export const CustomBox = styled(Box)`
    max-width: 400px;
@@ -11,4 +12,7 @@ export const CustomListItem = styled(ListItem)`
    padding-bottom: 0px;
    color: ${(props) => props.primary};
 `;
-
+export const Drawer = styled(DrawerLib)`
+   height: 100% !important;
+   overflow-y: scroll !important;
+`;
