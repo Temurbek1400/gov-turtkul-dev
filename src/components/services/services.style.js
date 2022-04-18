@@ -41,7 +41,7 @@ export const ServiceCard = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  background-color: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.palette.primary.dark};
 
   svg {
     font-size: 50px;
@@ -59,6 +59,10 @@ export const ServiceCard = styled.div`
 export const CommentsWrapper = styled.div`
   width: 50%;
   padding: 0 30px;
+  .swiper-initialized {
+    box-shadow: ${({ theme }) => theme.shadows?.[22]};
+    margin-top: 20px;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 100%;

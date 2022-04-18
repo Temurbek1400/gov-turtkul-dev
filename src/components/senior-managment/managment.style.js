@@ -43,7 +43,7 @@ export const Wrapper = styled.div`
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.palette.primary.main};
   }
   border-bottom: 1px solid silver;
 
@@ -58,7 +58,7 @@ export const Wrapper = styled.div`
 
 export const Right = styled.div`
   button {
-    background: ${({ theme }) => theme.primary} !important;
+    background: ${({ theme }) => theme.palette.primary.main} !important;
     text-transform: capitalize;
   }
 
@@ -68,7 +68,7 @@ export const Right = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.palette.primary.main};
   margin-bottom: 0;
 `;
 
@@ -83,8 +83,9 @@ export const ModalContent = styled.div`
   left: 13%;
   transform: translate(-50% -50%);
   width: 70%;
-  background-color: #fff;
-  box-shadow: 0 0 10px #303030;
+  background-color: ${({ theme }) => theme.palette.background.default};
+  box-shadow: ${({ theme }) => theme.shadows?.[22]};
+
   padding: 30px;
   border-radius: 8px;
   height: 75vh;
@@ -98,15 +99,12 @@ export const ModalContent = styled.div`
     right: 15px;
     top: 15px;
     cursor: pointer;
-
-    :hover {
-      color: red;
-    }
   }
 
   h2 {
     margin-top: 0;
-    color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.palette.primary.main};
+
     text-align: center;
   }
 

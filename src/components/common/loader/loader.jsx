@@ -1,9 +1,9 @@
 import { PropagateLoader } from "react-spinners";
 import { PreloaderWrapper } from "./loader.style";
 
-const Loader = () => {
+const Loader = ({ expanded }) => {
   return (
-    <PreloaderWrapper>
+    <PreloaderWrapper expanded={expanded}>
       <PropagateLoader size={15} color="#0156a7;" />
     </PreloaderWrapper>
   );

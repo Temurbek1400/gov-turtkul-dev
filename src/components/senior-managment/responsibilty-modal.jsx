@@ -12,7 +12,7 @@ const ResponsibilityModal = ({ body, open, handleClose }) => {
       aria-describedby="modal-modal-description"
     >
       <ModalContent>
-        <CloseIcon onClick={handleClose} />
+        <CloseIcon onClick={handleClose} color={"primary"} />
         <h2>Majburiyatlari</h2>
         <p>{body}</p>
       </ModalContent>

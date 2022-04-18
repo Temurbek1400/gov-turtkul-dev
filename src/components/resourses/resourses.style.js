@@ -5,13 +5,12 @@ export const CardWrapper = styled.div`
 `;
 
 export const Card = styled.div`
-  background: ${({ theme }) => theme.secondary2};
   border-radius: 5px;
   overflow: hidden;
   transition: 0.3s;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 0 20px #909090;
+  box-shadow: ${({ theme }) => theme.shadows?.[10]};
 
   img {
     cursor: pointer;
@@ -19,7 +18,7 @@ export const Card = styled.div`
   }
 
   p {
-    color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.palette.primary.main};
     margin: 0;
   }
 `;

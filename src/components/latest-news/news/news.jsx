@@ -1,4 +1,4 @@
-import Loader from "components/common/loader";
+import Loader from "components/common/loader/loader";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";

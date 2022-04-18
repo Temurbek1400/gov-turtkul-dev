@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   margin: 20px -30px 0;
-  background-color: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.palette.primary.dark};
   padding: 30px 30px 50px;
   color: #fff;
   position: relative;

@@ -24,7 +24,7 @@ export const Wrapper = styled.div``;
 export const NewsWrapper = styled.div`
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.textColor};
+    color: ${({ theme }) => theme.palette.text.primary};
   }
 
   display: grid;
@@ -51,13 +51,13 @@ export const NewsItemWrapper = styled.div`
   }
 
   :hover {
-    color: #000;
+    color: ${({ theme }) => theme.palette.text.primary};
   }
 `;
 export const NewsInfo = styled.div`
   margin-left: 20px;
   & h4 {
-    color: ${(props) => props.theme.primary};
+    color: ${({ theme }) => theme.palette.primary.main};
     margin: 0;
   }
 

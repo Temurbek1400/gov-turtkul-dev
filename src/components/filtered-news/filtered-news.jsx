@@ -11,7 +11,7 @@ import {
   getNewsStatus,
 } from "./../../store/reducer-and-action/news/newsSlice";
 import Pagination from "./pagination/pagination";
-import Loader from "components/common/loader";
+import Loader from "components/common/loader/loader";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function FilteredNews() {

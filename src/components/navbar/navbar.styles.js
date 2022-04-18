@@ -9,7 +9,7 @@ export const ListContainer = styled(Box)`
 `;
 export const CloseButton = styled(Button)`
   width: 0;
-  color: ${(props) => props.theme.primary};
+  color: ${({ theme }) => theme.palette.primary.main};
 `;
 
 export const Wrapper = styled.div`
