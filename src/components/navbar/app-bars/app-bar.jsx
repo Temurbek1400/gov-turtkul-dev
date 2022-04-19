@@ -7,7 +7,6 @@ import IconButton from "@mui/material/IconButton";
 import AppBarItems from "./app-bar-items";
 import SearchInput from "./search-input";
 import Logo from "../logo/logo";
-import { LangSelect } from "./../navbar";
 
 export default function CustomAppBar({ toggleDrawer, navbarData }) {
    return (
@@ -31,7 +30,6 @@ export default function CustomAppBar({ toggleDrawer, navbarData }) {
                </IconButton>
                <AppBarItems navbarData={navbarData} />
                <SearchInput />
-               <LangSelect />
             </Toolbar>
          </AppBar>
       </Box>
