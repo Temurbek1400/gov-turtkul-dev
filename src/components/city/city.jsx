@@ -3,11 +3,10 @@ import { CardWrapper } from "components/events/events.style";
 import { Wrapper } from "components/events/events.style";
 import Title from "components/title";
 import React, { useEffect } from "react";
-import { CityData } from "./city-data";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const City = () => {
+const City = ({ city }) => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -15,10 +14,10 @@ const City = () => {
 
   return (
     <div style={{ marginBottom: "30px" }}>
-      <Title text="Shahar" />
+      <Title text={city.title} />
       <div data-aos="fade-up">
         <Wrapper>
-          {CityData.map((item, id) => {
+          {city.cards.map((item, id) => {
             return (
               <CardWrapper key={id}>
                 <img src={item.img} alt="event-card-img" />

@@ -1,5 +1,4 @@
 import React from "react";
-import { VoteData } from "./votes-data";
 import {
   IconsWrapper,
   Like,
@@ -14,12 +13,12 @@ import { BiDislike, BiLike } from "react-icons/bi";
 import { Button } from "@mui/material";
 import Title from "components/title";
 
-const Votes = () => {
+const Votes = ({ votes }) => {
   return (
     <>
-      <Title text="Ovoz berish" />
+      <Title text={votes.title} />
       <Wrapper>
-        {VoteData.map((item, id) => {
+        {votes.cards.map((item, id) => {
           return (
             <VoteCard key={id}>
               <h4>{item.title}</h4>
@@ -29,14 +28,14 @@ const Votes = () => {
                 <Like>
                   <Button variant="outlined" color="success" size="small">
                     <Vote>
-                      Rozi
+                      {votes.votes.yes}
                       <BiLike style={{ color: "green" }} />
                     </Vote>
                   </Button>
                   <Button color="error" variant="outlined">
                     <Vote>
                       <BiDislike style={{ color: "red" }} />
-                      Qarshi
+                      {votes.votes.no}
                     </Vote>
                   </Button>
                 </Like>

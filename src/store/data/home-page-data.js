@@ -1,9 +1,91 @@
+import img from "assets/eventImgs/event-card-img.png";
+import city1 from "assets/cityImgs/city1.jpg";
+import city2 from "assets/cityImgs/city2.jpg";
+import logo from "assets/resoursesImgs/logo.png";
+
 export const newsData = {
   uz: {
     title: "So`nggi yangiliklar",
   },
   ru: {
     title: "Последние новости",
+  },
+};
+
+export const eventsData = {
+  uz: {
+    title: "Voqealar",
+    items: [
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+    ],
+  },
+  ru: {
+    title: "События",
+    items: [
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+      {
+        img: img,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
+      },
+    ],
   },
 };
 
@@ -35,6 +117,7 @@ export const cityPlanData = {
     ],
   },
 };
+
 export const servicesData = {
   uz: {
     title: "Xizmatlar",
@@ -114,6 +197,203 @@ export const commentsData = {
         comment:
           "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt vero doloremque excepturi dolore odit unde suscipit, ea ipsam cumque veritatis. Temporibus sit maxime magnam soluta illo, fuga ab quaerat debitis.",
         date: "20.20.2022",
+      },
+    ],
+  },
+};
+
+export const votesData = {
+  uz: {
+    title: "Ovoz berish",
+    votes: {
+      yes: "Rozi",
+      no: "Qarshi",
+    },
+    cards: [
+      {
+        title: "Landshaft san’ati festivali",
+        body: "Poytaxtimizda LANDSHAFT OPEN.UZ xalqaro landshaft san’ati festivali bo‘lib o‘tdi. Toshkent shahar hokimligi bu kabi yangi qiziqarli loyihalar ko‘lamini kengaytirish hamda rangbarang festevallarni tashkillashkillashtiradi. ",
+        voted: 55,
+      },
+      {
+        title: "Landshaft san’ati festivali",
+        body: "Poytaxtimizda LANDSHAFT OPEN.UZ xalqaro landshaft san’ati festivali bo‘lib o‘tdi. Toshkent shahar hokimligi bu kabi yangi qiziqarli loyihalar ko‘lamini kengaytirish hamda rangbarang festevallarni tashkillashkillashtiradi. ",
+        voted: 80,
+      },
+      {
+        title: "Landshaft san’ati festivali",
+        body: "Poytaxtimizda LANDSHAFT OPEN.UZ xalqaro landshaft san’ati festivali bo‘lib o‘tdi. Toshkent shahar hokimligi bu kabi yangi qiziqarli loyihalar ko‘lamini kengaytirish hamda rangbarang festevallarni tashkillashkillashtiradi. ",
+        voted: 30,
+      },
+    ],
+  },
+  ru: {
+    title: "Голосование",
+    votes: {
+      yes: "Голосовать",
+      no: "Против",
+    },
+    cards: [
+      {
+        title: "Landshaft san’ati festivali",
+        body: "Poytaxtimizda LANDSHAFT OPEN.UZ xalqaro landshaft san’ati festivali bo‘lib o‘tdi. Toshkent shahar hokimligi bu kabi yangi qiziqarli loyihalar ko‘lamini kengaytirish hamda rangbarang festevallarni tashkillashkillashtiradi. ",
+        voted: 55,
+      },
+      {
+        title: "Landshaft san’ati festivali",
+        body: "Poytaxtimizda LANDSHAFT OPEN.UZ xalqaro landshaft san’ati festivali bo‘lib o‘tdi. Toshkent shahar hokimligi bu kabi yangi qiziqarli loyihalar ko‘lamini kengaytirish hamda rangbarang festevallarni tashkillashkillashtiradi. ",
+        voted: 80,
+      },
+      {
+        title: "Landshaft san’ati festivali",
+        body: "Poytaxtimizda LANDSHAFT OPEN.UZ xalqaro landshaft san’ati festivali bo‘lib o‘tdi. Toshkent shahar hokimligi bu kabi yangi qiziqarli loyihalar ko‘lamini kengaytirish hamda rangbarang festevallarni tashkillashkillashtiradi. ",
+        voted: 30,
+      },
+    ],
+  },
+};
+
+export const cityData = {
+  uz: {
+    title: "Shahar",
+    cards: [
+      {
+        img: city1,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        img: city2,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        img: city1,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        img: city2,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+    ],
+  },
+  ru: {
+    title: "Город",
+    cards: [
+      {
+        img: city1,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        img: city2,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        img: city1,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        img: city2,
+        title: "Lorem ipsum dolor sit.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      },
+    ],
+  },
+};
+
+export const resoursesData = {
+  uz: {
+    title: "Foydali resurslar",
+    cards: [
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+    ],
+  },
+  ru: {
+    title: "Полезные ресурсы",
+    cards: [
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
+      },
+      {
+        logo: logo,
+        name: "O'zbekiston Respublikasi Prezident Virtual qabulxonasi",
+        website: "pm.gov.uz",
       },
     ],
   },

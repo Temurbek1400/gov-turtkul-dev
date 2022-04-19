@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Title from "components/title";
 import { Card, CardWrapper } from "./resourses.style";
-import { ResourseData } from "./resourses-data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const Resourses = () => {
+const Resourses = ({ resourses }) => {
   const [cardsCount, setCardsCount] = useState(5);
 
   const checkSize = (width) => {
@@ -23,13 +22,13 @@ const Resourses = () => {
 
   return (
     <>
-      <Title text="Foydali resurslar" />
+      <Title text={resourses.title} />
       <Swiper
         spaceBetween={20}
         slidesPerView={cardsCount}
         style={{ padding: "0 20px" }}
       >
-        {ResourseData.map((item, id) => {
+        {resourses.cards.map((item, id) => {
           return (
             <SwiperSlide key={id}>
               <CardWrapper>
