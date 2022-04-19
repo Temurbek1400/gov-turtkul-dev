@@ -22,7 +22,6 @@ const newsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchNews.fulfilled, (state, action) => {
-      console.log(action.payload);
       if (action.payload?.data)
         state.news = {
           ...state.news,

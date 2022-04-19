@@ -11,7 +11,7 @@ export const CustomDrawerList = ({ toggleDrawer, navbarData }) => {
   return (
     <ListContainer>
       {navbarData.map((listData) => (
-        <CustomBox onClick={toggleDrawer(false)}>
+        <CustomBox onClick={toggleDrawer(false)} key={listData.head}>
           <List>
             <ListItem>
               <Typography
