@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   margin-top: 1rem;
 `;
 export const HeaderNewsItemWrapper = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.palette.background.default};
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   & .card-info {
     padding: 0 0 10px 10px;
@@ -72,7 +72,7 @@ export const HeaderNewsItemWrapper = styled.div`
     transform: translate(0, -15%);
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
   }
   figure figcaption p {
     font-size: 30px;
