@@ -59,28 +59,3 @@ export const getDrawerStatus = createSelector(
 );
 export default languageSlice.reducer;
 
-export const getCurrentRoutes = createSelector(
-  (state) => state.language.activeLanguage,
-  ({ navbar }) => {
-    const { pathname } = window.location;
-    const currentList = navbar.find((part) => pathname.includes(part.link));
-    const secondOrderRoute = currentList.list.find(({ route }) =>
-      pathname.includes(route)
-    );
-    const routes = [
-      { title: currentList.head, route: currentList.link },
-      secondOrderRoute,
-      ...pathname
-        .split("/")
-        .filter(
-          (item) =>
-            currentList.link !== item &&
-            secondOrderRoute.route !== item &&
-            item !== ""
-        )
-        .map((item) => ({ route: item })),
-    ];
-    console.log(routes);
-    return routes;
-  }
-);

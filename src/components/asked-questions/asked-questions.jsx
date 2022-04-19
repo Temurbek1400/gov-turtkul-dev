@@ -18,11 +18,8 @@ const AskedQuestions = () => {
               expandIcon={<ExpandMoreIcon />}
               aria-controls={question.id}
               id={question.id}
-              style={{ background: "#1F51FF" }}
             >
-              <Typography style={{ color: "#fff" }}>
-                {question.question}
-              </Typography>
+              <Typography>{question.question}</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>{question.answer}</Typography>

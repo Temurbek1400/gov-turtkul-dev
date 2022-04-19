@@ -19,9 +19,11 @@ export const Wrapper = styled.div`
 
 export const VoteCard = styled.div`
   padding: 30px;
-  box-shadow: 0 0 25px ${({ theme }) => theme.secondary};
+  box-shadow: ${({ theme }) => theme.shadows?.[12]};
   position: relative;
-
+  .react-sweet-progress-symbol {
+    color: ${({ theme }) => theme.palette.text.primary};
+  }
   h4 {
     margin-top: 0;
   }

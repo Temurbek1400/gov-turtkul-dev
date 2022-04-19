@@ -3,10 +3,7 @@ import { styled as materialStyled, emphasize } from "@mui/system";
 import styled from "styled-components";
 
 export const StyledBreadcrumb = materialStyled(Chip)(({ theme }) => {
-  const backgroundColor =
-    theme.palette.mode === "light"
-      ? theme.palette.grey[100]
-      : theme.palette.grey[800];
+  const backgroundColor = emphasize(theme.palette.divider, 0.02);
   return {
     backgroundColor,
     height: theme.spacing(3),
@@ -14,7 +11,7 @@ export const StyledBreadcrumb = materialStyled(Chip)(({ theme }) => {
     fontWeight: theme.typography.fontWeightRegular,
     cursor: "pointer",
     "&:hover, &:focus": {
-      backgroundColor: emphasize(backgroundColor, 0.06),
+      backgroundColor: emphasize(backgroundColor, 0.1),
     },
     "&:active": {
       boxShadow: theme.shadows[1],
@@ -25,7 +22,7 @@ export const StyledBreadcrumb = materialStyled(Chip)(({ theme }) => {
 
 export const Wrapper = styled.div`
   padding: 15px;
-  background: ${({ theme }) => theme.secondary2};
+  background: ${({ theme }) => theme.palette.divider};
   margin-top: 15px;
   border-radius: 30px;
   @media (max-width: ${(props) => props.theme.media.mobileL}) {

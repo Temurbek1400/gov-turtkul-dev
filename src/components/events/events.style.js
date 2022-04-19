@@ -27,13 +27,13 @@ export const Wrapper = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-  background: ${({ theme }) => theme.secondary2};
+  box-shadow: ${({ theme }) => theme.shadows?.[9]};
   border-radius: 5px;
   overflow: hidden;
   transition: 0.3s;
   padding-bottom: 20px;
   :hover {
-    box-shadow: 0 0 40px #707070;
+    box-shadow: ${({ theme }) => theme.shadows?.[22]};
   }
 
   img {
@@ -53,7 +53,8 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardText = styled.div`
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.palette.primary.main};
+
   padding: 15px 15px 0;
   /* @media (min-width: ${({ theme }) => theme.media.mobileS}) {
     padding: 30px 30px 0;

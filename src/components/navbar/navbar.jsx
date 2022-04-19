@@ -14,6 +14,7 @@ import MobileDrawer from "./drawers/mobile/mobile-drawer";
 import CustomAppBar from "./app-bars/app-bar";
 import MobileAppBar from "./app-bars/mobile/mobile-app-bar";
 import { Wrapper } from "./navbar.styles";
+import Switch from "components/switch/switch";
 
 import {
   fetchNews,
@@ -109,6 +110,7 @@ export const LangSelect = () => {
           </MenuItem>
         ))}
       </Select>
+      <Switch />
     </FormControl>
   );
 };

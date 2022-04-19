@@ -42,7 +42,7 @@ const Services = ({ services, comments }) => {
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
-          style={{ boxShadow: "0 0 20px #606060", marginTop: "20px" }}
+          // style={{ boxShadow: "0 0 20px #606060", marginTop: "20px" }}
         >
           {comments.data.map((item, id) => {
             return (

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.palette.primary.main};
 `;
 
 export const Right = styled.div`
@@ -19,14 +19,14 @@ export const ItemWrapper = styled.div`
   padding: 12px 0;
   border-top: 1px solid silver;
   width: 100%;
-  background-color: ${({ active, theme }) => active && theme.secondary};
+  background-color: ${({ active, theme }) => active && theme.palette.divider};
   a {
     :hover {
-      color: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.palette.primary.main};
     }
     opacity: 0.7;
     text-decoration: none;
-    color: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.palette.text.primary};
   }
 `;
 
