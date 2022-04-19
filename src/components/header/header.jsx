@@ -18,18 +18,18 @@ const Header = () => {
           <HeaderNewsItem news={news?.[0]} />
         </Grid>
         <Grid item xs={12} sm={5} md={3}>
+          <br />
           <Divider />
           <br />
           <HeaderNewsItem news={news?.[1]} />
           <HeaderNewsItem news={news?.[2]} />
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
+          <br />
           <Divider />
           <br />
           <HeaderNewsItem news={news?.[3]} />
           <HeaderNewsItem news={news?.[4]} />
-          <HeaderNewsItem news={news?.[5]} />
-          <HeaderNewsItem news={news?.[6]} />
         </Grid>
       </Grid>
     </Wrapper>
