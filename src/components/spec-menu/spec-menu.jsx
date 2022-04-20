@@ -7,8 +7,11 @@ import { Wrapper, Left, Right } from "./spec-menu.styles";
 import { Link } from "react-router-dom";
 import { LangSelect } from "./lang-select";
 import SwitchTheme from "components/switch/switch";
+import { useMediaQuery } from "@mui/material";
 
 const SpecMenu = () => {
+  const match = useMediaQuery("(min-width:915px)");
+
   return (
     <Wrapper>
       <Left>
@@ -20,20 +23,28 @@ const SpecMenu = () => {
             </a>
           </span>
         </div>
-        <div>
-          <GoLocation />
-          <span>
-            <Link to="/">&nbsp;Toshkent shahri, I.Karimov kochasi, 51</Link>
-          </span>
-        </div>
-        <div>
-          <BsTelephone />
-          <span>&nbsp; +998 99 999 99 99</span>
-        </div>
+        {match && (
+          <>
+            <div>
+              <GoLocation />
+              <span>
+                <Link to="/">&nbsp;Toshkent shahri, I.Karimov kochasi, 51</Link>
+              </span>
+            </div>
+            <div>
+              <BsTelephone />
+              <span>&nbsp; +998 99 999 99 99</span>
+            </div>
+          </>
+        )}
       </Left>
       <Right>
-        <SwitchTheme />
-        <LangSelect />
+        {match && (
+          <>
+            <SwitchTheme />
+            <LangSelect />
+          </>
+        )}
         <div>
           <AiOutlineDisconnect />
           <span>

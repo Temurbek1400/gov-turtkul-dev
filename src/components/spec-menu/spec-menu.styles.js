@@ -7,6 +7,14 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  @media screen and (max-width:915px) {
+    padding: 0 0;
+    font-size: 15px;
+    & > div {
+      box-sizing: border-box;
+      width: auto;
+    }
+  }
   & Link {
     text-decoration: none;
   }
@@ -25,7 +33,7 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
-  width: 25%;
+  width: 40%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

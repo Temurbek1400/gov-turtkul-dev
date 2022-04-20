@@ -1,5 +1,4 @@
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import IconButton from "@mui/material/IconButton";
@@ -7,10 +6,11 @@ import IconButton from "@mui/material/IconButton";
 import AppBarItems from "./app-bar-items";
 import SearchInput from "./search-input";
 import Logo from "../logo/logo";
+import { BoxStyled } from "./app-bar.styles";
 
 export default function CustomAppBar({ toggleDrawer, navbarData }) {
    return (
-      <Box sx={{ flexGrow: 1 }}>
+      <BoxStyled>
          <AppBar
             color="transparent"
             position="static"
@@ -32,6 +32,6 @@ export default function CustomAppBar({ toggleDrawer, navbarData }) {
                <SearchInput />
             </Toolbar>
          </AppBar>
-      </Box>
+      </BoxStyled>
    );
 }

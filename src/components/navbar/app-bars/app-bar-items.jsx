@@ -9,6 +9,7 @@ const AppBarItems = ({ navbarData }) => {
         to={item.link}
         sx={{ marginRight: 1.5 }}
         key={item.link}
+        className="app-bar-item"
       >
         {item.head}
       </Button>
