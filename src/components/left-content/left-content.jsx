@@ -25,7 +25,7 @@ const LeftContent = () => {
       <div>
         <Title>{currentList.head}</Title>
         <List disablePadding>
-          {currentList.list.map((item, id) => (
+          {currentList.list.map((item) => (
             <Link to={`${currentList.link}/${item.route}`} key={item.route}>
               <ListItemButton
                 disableGutters

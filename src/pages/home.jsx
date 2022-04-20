@@ -15,14 +15,14 @@ const Home = () => {
     <div>
       <Header />
       <LatestNews news={homePageData.news} plan={homePageData.cityPlan} />
-      <Events />
+      <Events events={homePageData.events} />
       <Services
         services={homePageData.services}
         comments={homePageData.comments}
       />
-      <Votes />
-      <City />
-      <Resourses />
+      <Votes votes={homePageData.votes} />
+      <City city={homePageData.city} />
+      <Resourses resourses={homePageData.resourses} />
     </div>
   );
 };
