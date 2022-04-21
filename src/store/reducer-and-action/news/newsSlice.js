@@ -3,9 +3,10 @@ import {
   createSelector,
   createSlice,
 } from "@reduxjs/toolkit";
+import { getData } from "api/operations";
 
 const initialState = {
-  activeFilter: "all",
+  activeFilter: "social",
   news: {},
   errorMessage: "",
   pending: false,
@@ -51,11 +52,9 @@ export const fetchNews = createAsyncThunk(
       thunkAPI.dispatch(setActiveFilter(filter));
       return;
     }
-    const response = await fetch(
-      `https://turtkul_gov/${activeLanguageName}/news/${filter}`
-    );
+    const { data } = await getData(`/${activeLanguageName}/${activeFilter}`);
+    console.log(data);
     thunkAPI.dispatch(setActiveFilter(filter));
-    const data = await response.json();
     return { activeLanguageName, data };
   }
 );

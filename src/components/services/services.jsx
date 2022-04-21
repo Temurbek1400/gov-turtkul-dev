@@ -17,7 +17,6 @@ import {
 import Title from "components/title";
 
 const Services = ({ services, comments }) => {
-  console.log(services);
   const optimazedData = services.data.map((service, index) => ({
     icon: iconArray[index],
     text: service,

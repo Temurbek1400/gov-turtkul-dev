@@ -6,7 +6,7 @@ const HeaderNewsItem = ({ news }) => {
     <>
       <HeaderNewsItemWrapper>
         <figure>
-          <img src={news?.images[0]} alt="news" />
+          <img src={news?.imagesown} alt="news" />
           <figcaption>
             <p>{"Batafsil" || "More..."}</p>
           </figcaption>
