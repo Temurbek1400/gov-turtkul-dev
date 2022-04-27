@@ -4,6 +4,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 const AskedQuestions = lazy(() =>
   import("components/asked-questions/asked-questions")
 );
+const Contacts = lazy(() => import("components/contacts/contacts"));
 const SeniorMenegment = lazy(() => import("pages/senior-menegment"));
 const Home = lazy(() => import("pages/home"));
 const NewsDetail = lazy(() => import("pages/news-detail"));
@@ -38,6 +39,10 @@ const routes = [
       {
         path: "news/:newsFilter",
         element: <FilteredNews />,
+      },
+      {
+        path: "contacts",
+        element: <Contacts />,
       },
       {
         path: "*",

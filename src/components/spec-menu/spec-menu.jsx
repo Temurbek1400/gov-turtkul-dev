@@ -48,7 +48,7 @@ const SpecMenu = () => {
         <div>
           <AiOutlineDisconnect />
           <span>
-            <Link to="/">&nbsp;Qayta bog'lanish</Link>
+            <Link to="/contacts">&nbsp;Qayta bog'lanish</Link>
           </span>
         </div>
       </Right>
