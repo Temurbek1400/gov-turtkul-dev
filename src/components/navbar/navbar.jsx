@@ -1,44 +1,69 @@
 import * as React from "react";
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import DensityMediumIcon from "@mui/icons-material/DensityMedium";
-import lists from "./sidebarData";
-import { NavbarList } from "./navbar-list";
-import { CloseButton, ListContainer } from "./navbar.style";
-import CloseIcon from "@mui/icons-material/Close";
+import { useMediaQuery } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function Navbar() {
-   const [drawer, setState] = React.useState(false);
+import CustomDrawer from "./drawers/custom-drawer";
+import MobileDrawer from "./drawers/mobile/mobile-drawer";
+import CustomAppBar from "./app-bars/app-bar";
+import MobileAppBar from "./app-bars/mobile/mobile-app-bar";
+import { Wrapper } from "./navbar.styles";
 
-   const toggleDrawer = (toggleTo) => (event) => {
-      if (
-         event.type === "keydown" &&
-         (event.key === "Tab" || event.key === "Shift")
-      ) return;
+import {
+  getDrawerStatus,
+  getNavbarData,
+  toggleDrawerRedux,
+} from "store/reducer-and-action/language/language";
 
-      setState(toggleTo);
-   };
+const Navbar = () => {
+  const navbarData = useSelector(getNavbarData);
+  const drawerStatus = useSelector(getDrawerStatus);
+  const dispatch = useDispatch();
+  const matches = useMediaQuery("(max-width:915px)");
+  const toggleDrawer = (toggleTo) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    )
+      return;
+    dispatch(toggleDrawerRedux(toggleTo));
+  };
+  const toggleDrawerMobile = (toggleTo) => {
+    dispatch(toggleDrawerRedux(toggleTo));
+  };
 
-   return (
-      <div>
-         <React.Fragment key={"top"}>
-            <Button onClick={toggleDrawer(true)}>
-               <DensityMediumIcon />
-            </Button>
-            <Drawer anchor={"top"} open={drawer} onClose={toggleDrawer(false)}>
-               <CloseButton onClick={toggleDrawer(false)}>
-                  <CloseIcon />
-               </CloseButton>
-               <ListContainer>
-                  {lists.map((listData) => (
-                     <NavbarList
-                        toggleDrawer={toggleDrawer}
-                        listData={listData}
-                     />
-                  ))}
-               </ListContainer>
-            </Drawer>
-         </React.Fragment>
-      </div>
-   );
-}
+  return (
+    <Wrapper>
+      <React.Fragment key={"top"}>
+        {matches ? (
+          <>
+            <MobileDrawer
+              navbarData={navbarData}
+              drawer={drawerStatus}
+              toggleDrawerMobile={toggleDrawerMobile}
+            />
+            <MobileAppBar
+              navbarData={navbarData}
+              drawer={drawerStatus}
+              toggleDrawerMobile={toggleDrawerMobile}
+            />
+          </>
+        ) : (
+          <>
+            <CustomDrawer
+              navbarData={navbarData}
+              drawer={drawerStatus}
+              toggleDrawer={toggleDrawer}
+            />
+            <CustomAppBar
+              navbarData={navbarData}
+              drawer={drawerStatus}
+              toggleDrawer={toggleDrawer}
+            />
+          </>
+        )}
+      </React.Fragment>
+    </Wrapper>
+  );
+};
+
+export default Navbar;

@@ -1,27 +1,32 @@
 import { Divider } from "@mui/material";
-import { scheduleData } from "./latest-news.data";
-import { CustomPaper, Title, Box, Wrapper } from "./latest-news.style";
+import Title from "components/title";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchNews,
+  getNewsData,
+} from "store/reducer-and-action/news/newsSlice";
+import { Wrapper } from "./latest-news.style";
 import News from "./news/news";
 import Schedule from "./schedule/schedule";
 
-const LatestNews = () => {
+const LatestNews = ({ news, plan }) => {
+  const dispatch = useDispatch();
+  const newsData = useSelector(getNewsData);
+
+  useEffect(() => {
+    dispatch(fetchNews("all"));
+  }, [dispatch]);
+
   return (
     <Wrapper>
       <div>
-        <Title>So`nggi yangiliklar</Title>
-        <Divider />
-        <CustomPaper elevation={3}>
-          <Box>
-            {scheduleData.map((item) => (
-              <News key={item.time} time={item.time} info={item.info} />
-            ))}
-          </Box>
-        </CustomPaper>
+        <Title text={news.title} />
+        <News newsData={newsData} />
       </div>
       <div>
-        <Title>Shahar ishlari rejasi</Title>
-        <Divider />
-        <Schedule data={scheduleData} />
+        <Title text={plan.title} />
+        <Schedule data={plan.data} />
       </div>
     </Wrapper>
   );
