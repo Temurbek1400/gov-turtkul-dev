@@ -117,7 +117,7 @@ module.exports = {
           title: "Kapitalni yaxshilash",
         },
         {
-          route: "society-protection",
+          route: "social",
           title: "Jamiyat va himoya",
         },
         {
@@ -349,7 +349,7 @@ module.exports = {
           title: "Благоустройство столицы",
         },
         {
-          route: "society-protection",
+          route: "social",
           title: "Общество и защита",
         },
         {

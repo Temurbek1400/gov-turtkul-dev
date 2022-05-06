@@ -1,5 +1,4 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { useLocation } from "react-router-dom";
 import data from "store/data/static-language-data";
 
 const initialState = {
