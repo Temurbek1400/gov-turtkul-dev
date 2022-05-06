@@ -1,17 +1,32 @@
+import { BASE_URL } from "api/config";
+import axios from "axios";
 import Title from "components/title";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEvents } from "store/reducer-and-action/events/eventsSlice";
 import { Wrapper, CardText, CardWrapper } from "./events.style";
 
 const Events = ({ events }) => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.events.events);
+
+  useEffect(() => {
+    dispatch(fetchEvents());
+  }, [dispatch]);
+
+  console.log(data);
+
+  // axios.get(BASE_URL + "/uz/events/").then((res) => console.log(res));
+
   return (
     <>
-      <Title text={events.title} />
+      <Title text={data.title} />
       <Wrapper>
-        {events.items.map((item, id) => {
+        {data.map((item) => {
           return (
-            <CardWrapper key={id}>
-              <img src={item.img} alt="event-card-img" />
-              <CardText>{item.text}</CardText>
+            <CardWrapper key={data.id}>
+              <img src={BASE_URL + item.imagesown} alt="event-card-img" />
+              <CardText>{item.body}</CardText>
             </CardWrapper>
           );
         })}

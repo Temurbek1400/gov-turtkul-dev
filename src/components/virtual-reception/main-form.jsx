@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MainFormWrapper, Textarea } from "./virtual-reception.styles";
 import SimpleModal from "./../common/modal";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchSupports,
+  postSupports,
+} from "store/reducer-and-action/supports/supportsSlice";
 
 const MainForm = () => {
   const {
@@ -13,7 +18,19 @@ const MainForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const dispatch = useDispatch();
+
+  const data = useSelector((state) => state.supports);
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    await dispatch(postSupports(data));
+    dispatch(fetchSupports());
+  };
+
+  useEffect(() => {
+    dispatch(fetchSupports());
+  }, [dispatch]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -22,11 +39,22 @@ const MainForm = () => {
           <Grid item xs={12} sm={12} md={8} lg={6}>
             <TextField
               type="text"
-              id="firstName"
+              id="first_name"
               label="First Name"
               required
               sx={{ width: "100%", marginBottom: 5 }}
-              {...register("firstName", {
+              {...register("first_name", {
+                required: true,
+                maxLength: 30,
+              })}
+            />
+            <TextField
+              type="text"
+              id="last_name"
+              label="Last Name"
+              sx={{ width: "100%", marginBottom: 5 }}
+              required
+              {...register("last_name", {
                 required: true,
                 maxLength: 30,
               })}
@@ -38,6 +66,14 @@ const MainForm = () => {
               required
               sx={{ width: "100%", marginBottom: 5 }}
               {...register("email", { required: true, maxLength: 30 })}
+            />
+            <TextField
+              id="number"
+              label="Number"
+              type="number"
+              required
+              sx={{ width: "100%", marginBottom: 5 }}
+              {...register("number", { required: true, maxLength: 30 })}
             />
             <Textarea
               aria-label="address"
@@ -54,27 +90,27 @@ const MainForm = () => {
             />
           </Grid>
           <Grid item xs={12} sm={12} md={8} lg={6}>
-            <TextField
-              type="text"
-              id="lastName"
-              label="Last Name"
+            <Textarea
+              aria-label="Body"
+              minRows={3}
+              placeholder="Body"
+              style={{ width: "100%", marginBottom: 5 }}
+              required
+              id="body"
+              label="Body"
+              {...register("body", { required: true, maxLength: 200 })}
+            />
+            {/* <TextField
+              type="file"
+              id="file"
+              label="File"
               sx={{ width: "100%", marginBottom: 5 }}
               required
-              {...register("lastName", {
+              {...register("file", {
                 required: true,
                 maxLength: 30,
               })}
-            />
-            <Textarea
-              aria-label="Appeal"
-              minRows={3}
-              placeholder="Appeal"
-              style={{ width: "100%", marginBottom: 5 }}
-              required
-              id="appeal"
-              label="Appeal"
-              {...register("appeal", { required: true, maxLength: 200 })}
-            />
+            /> */}
           </Grid>
         </Grid>
         <SimpleModal
