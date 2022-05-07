@@ -35,7 +35,6 @@ const FilteredNewsItems = ({ news = [] }) => {
                            <Grid item xs={12} sm={6} md={6} lg={6}>
                               <img
                                  src={
-                                    "https://turtkul2.herokuapp.com" +
                                     news_item.imagesown
                                  }
                                  alt=""

@@ -14,6 +14,7 @@ export const HeaderNewsItemWrapper = styled.div`
     position: relative;
     display: inline-block;
     margin: 0;
+    width: 100%;
     max-width: 100%;
     background-color: #2266a5;
     color: #fff;
@@ -27,6 +28,7 @@ export const HeaderNewsItemWrapper = styled.div`
 
   figure > img {
     vertical-align: top;
+    width: 100%;
     max-width: 100%;
   }
 
