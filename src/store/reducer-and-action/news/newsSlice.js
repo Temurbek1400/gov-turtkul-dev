@@ -5,6 +5,7 @@ import {
 } from "@reduxjs/toolkit";
 import { getData } from "api/operations";
 import DEFAULT_IMAGE from "assets/default-news-img.jpg";
+import { postData } from "./../../../api/operations";
 
 const initialState = {
   activeFilter: "",
@@ -12,6 +13,9 @@ const initialState = {
   errorMessage: "",
   pending: false,
   fulfilled: false,
+  searchNews: {},
+  searchNewsPending: false,
+  searchNewsError: "",
 };
 
 const newsSlice = createSlice({
@@ -46,6 +50,24 @@ const newsSlice = createSlice({
     builder.addCase(fetchNews.rejected, (state, action) => {
       state.errorMessage = action.payload;
     });
+    builder.addCase(searchNews.fulfilled, (state, action) => {
+      state.searchNewsPending = false;
+      if (action?.payload?.[action.meta.arg.activeLanguageName]) {
+        const searchingLang = Object.keys(action.payload)[0];
+        state.searchNews[searchingLang] = [
+          ...action.payload[searchingLang].map((item) => ({
+            ...item,
+            imagesown: DEFAULT_IMAGE,
+          })),
+        ];
+      }
+    });
+    builder.addCase(searchNews.rejected, (state, action) => {
+      state.searchNewsPending = false;
+    });
+    builder.addCase(searchNews.pending, (state, action) => {
+      state.searchNewsPending = true;
+    });
   },
 });
 
@@ -68,6 +90,18 @@ export const fetchNews = createAsyncThunk(
   }
 );
 
+export const searchNews = createAsyncThunk(
+  "news/searchNews",
+  async ({ search, activeLanguageName }, thunkAPI) => {
+    if (search) {
+      const { data } = await postData(`${activeLanguageName}/search/`, {
+        q: search,
+      });
+      return data;
+    }
+  }
+);
+
 export const getNewsData = createSelector(
   (state) => state,
   ({ language: { activeLanguageName }, news: { activeFilter, news } }) =>
@@ -81,6 +115,10 @@ export const getActiveFilter = createSelector(
 export const getNewsStatus = createSelector(
   (state) => state.news,
   (news) => news.pending
+);
+export const getSearchResult = createSelector(
+  (state) => state.news,
+  (news) => [news.searchNews, news.searchNewsPending]
 );
 
 export const { setActiveFilter } = newsSlice.actions;

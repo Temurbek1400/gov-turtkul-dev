@@ -18,6 +18,9 @@ const VirtualReception = lazy(() =>
 const DefaultPage = lazy(() => import("pages/default-page"));
 const DefaultRoute = lazy(() => import("pages/default-route"));
 const TemplateLayout = lazy(() => import("pages/template/template-layout"));
+const SearchResult = lazy(() =>
+  import("components/search-result/SearchResult")
+);
 
 const routes = [
   {
@@ -43,6 +46,10 @@ const routes = [
       {
         path: "contacts",
         element: <Contacts />,
+      },
+      {
+        path: "search-result",
+        element: <SearchResult />,
       },
       {
         path: "*",

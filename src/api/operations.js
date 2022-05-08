@@ -10,7 +10,6 @@ export const postData = (url, data) => {
 };
 
 export const getData = (url) => {
-  debugger
   const config = {
     method: "GET",
     url,
