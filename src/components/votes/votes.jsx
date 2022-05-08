@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   IconsWrapper,
   Like,
@@ -21,6 +21,7 @@ let ip;
 
 const Votes = ({ votes }) => {
   const dispatch = useDispatch();
+  const [disableBtn, setDisableBtn] = useState(false);
   const data = useSelector((state) => state.votes.votes);
   useEffect(() => {
     dispatch(fetchVotes());
@@ -53,6 +54,8 @@ const Votes = ({ votes }) => {
       };
 
     await dispatch(postVote(vote));
+    alert("You successfully voted");
+    setDisableBtn(true);
     dispatch(fetchVotes());
   };
   return (
@@ -71,13 +74,22 @@ const Votes = ({ votes }) => {
               />
               <IconsWrapper>
                 <Like>
-                  <Button variant="outlined" color="success" size="small">
+                  <Button
+                    disabled={disableBtn}
+                    variant="outlined"
+                    color="success"
+                    size="small"
+                  >
                     <Vote onClick={() => voted("agree", item.id)}>
                       {votes.votes.yes}
                       <BiLike style={{ color: "green" }} />
                     </Vote>
                   </Button>
-                  <Button color="error" variant="outlined">
+                  <Button
+                    disabled={disableBtn}
+                    color="error"
+                    variant="outlined"
+                  >
                     <Vote onClick={() => voted("disAgree", item.id)}>
                       <BiDislike style={{ color: "red" }} />
                       {votes.votes.no}
