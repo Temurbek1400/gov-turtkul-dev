@@ -1,6 +1,4 @@
 import { getData } from "api/operations";
-import { useSelector } from "react-redux";
-import { getActiveLanguageName } from "../language/language";
 
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
