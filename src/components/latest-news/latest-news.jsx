@@ -14,9 +14,9 @@ const LatestNews = ({ news, plan }) => {
   const dispatch = useDispatch();
   const newsData = useSelector(getNewsData);
 
-  useEffect(() => {
-    dispatch(fetchNews("all"));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchNews("all_news"));
+  // }, [dispatch]);
 
   return (
     <Wrapper>

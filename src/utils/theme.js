@@ -73,6 +73,9 @@ const lightTheme = createTheme({
   palette: {
     mode: "light",
     divider: "#F5F5F5",
+    background: {
+      primary: "#1976d2",
+    },
   },
 });
 const ThemeProvider = ({ children }) => {

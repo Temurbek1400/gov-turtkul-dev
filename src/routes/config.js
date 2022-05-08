@@ -4,6 +4,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 const AskedQuestions = lazy(() =>
   import("components/asked-questions/asked-questions")
 );
+const Contacts = lazy(() => import("components/contacts/contacts"));
 const SeniorMenegment = lazy(() => import("pages/senior-menegment"));
 const Home = lazy(() => import("pages/home"));
 const NewsDetail = lazy(() => import("pages/news-detail"));
@@ -17,6 +18,9 @@ const VirtualReception = lazy(() =>
 const DefaultPage = lazy(() => import("pages/default-page"));
 const DefaultRoute = lazy(() => import("pages/default-route"));
 const TemplateLayout = lazy(() => import("pages/template/template-layout"));
+const SearchResult = lazy(() =>
+  import("components/search-result/SearchResult")
+);
 
 const routes = [
   {
@@ -38,6 +42,14 @@ const routes = [
       {
         path: "news/:newsFilter",
         element: <FilteredNews />,
+      },
+      {
+        path: "contacts",
+        element: <Contacts />,
+      },
+      {
+        path: "search-result",
+        element: <SearchResult />,
       },
       {
         path: "*",

@@ -1,5 +1,4 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { useLocation } from "react-router-dom";
 import data from "store/data/static-language-data";
 
 const initialState = {
@@ -25,6 +24,10 @@ const languageSlice = createSlice({
 
 export const { setLanguage, toggleDrawerRedux } = languageSlice.actions;
 
+export const getContactsData = createSelector(
+  (state) => state.language.activeLanguage,
+  (activeLanguage) => activeLanguage.contacts
+);
 export const getNavbarData = createSelector(
   (state) => state.language.activeLanguage,
   (activeLanguage) => activeLanguage.navbar
@@ -40,7 +43,6 @@ export const getFooterData = createSelector(
   (state) => state.language.activeLanguage,
   (activeLanguage) => activeLanguage.footer
 );
-
 export const getLanguagesName = createSelector(
   (state) => state.language,
   (language) => language.languagesName
