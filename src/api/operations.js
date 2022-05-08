@@ -2,8 +2,8 @@ import axiosClient from "./config";
 
 export const postData = (url, data) => {
   const config = {
-    method: "POST",
     url,
+    method: "POST",
     data,
   };
   return axiosClient(config);
