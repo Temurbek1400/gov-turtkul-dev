@@ -12,12 +12,7 @@ const Events = ({ events }) => {
 
   useEffect(() => {
     dispatch(fetchEvents());
-  }, [dispatch]);
-
-  console.log(data);
-
-  // axios.get(BASE_URL + "/uz/events/").then((res) => console.log(res));
-
+  }, []);
   return (
     <>
       <Title text={data.title} />
