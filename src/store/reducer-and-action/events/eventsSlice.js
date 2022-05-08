@@ -1,4 +1,6 @@
 import { getData } from "api/operations";
+import { useSelector } from "react-redux";
+import { getActiveLanguageName } from "../language/language";
 
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
@@ -24,8 +26,11 @@ const eventsSlice = createSlice({
   },
 });
 
-export const fetchEvents = createAsyncThunk("/uz/events", async () => {
-  return await getData("/uz/events");
-});
+export const fetchEvents = createAsyncThunk(
+  "events/data",
+  async (currLanguage) => {
+    return await getData(`/${currLanguage}/events`);
+  }
+);
 
 export default eventsSlice.reducer;
