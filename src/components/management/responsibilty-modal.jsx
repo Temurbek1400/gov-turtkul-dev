@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "@mui/material/Modal";
-import { ModalContent } from "./managment.style";
+import { ModalContent } from "./management.style";
 import CloseIcon from "@mui/icons-material/Close";
 
 const ResponsibilityModal = ({ body, open, handleClose }) => {
