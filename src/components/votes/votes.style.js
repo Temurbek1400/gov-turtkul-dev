@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   text-align: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  column-gap: 30px;
+  row-gap: 100px;
 
   @media (max-width: ${({ theme }) => theme.media.laptop}) {
     grid-template-columns: 1fr;
