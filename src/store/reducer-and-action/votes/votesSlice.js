@@ -30,13 +30,10 @@ const votesSlice = createSlice({
       state.errorMessage = action.payload;
     });
     builder.addCase(postVote.fulfilled, (state, action) => {
-      debugger;
     });
     builder.addCase(postVote.pending, (state, action) => {
-      debugger;
     });
     builder.addCase(postVote.rejected, (state, action) => {
-      debugger;
     });
   },
 });

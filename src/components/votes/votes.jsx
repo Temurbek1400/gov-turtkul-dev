@@ -25,7 +25,6 @@ const Votes = ({ votes }) => {
       ID = getUUID(10);
       localStorage.setItem("uuid", ID);
     } else {
-      debugger;
       dispatch(
         postVote({
           id: itemID,
