@@ -1,11 +1,18 @@
 import { getData, postData } from "api/operations";
+import { toast } from "react-toastify";
 
-const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
+const {
+  createSlice,
+  createAsyncThunk,
+  createSelector,
+} = require("@reduxjs/toolkit");
 
 const initialState = {
   votes: [],
   errorMessage: "",
   pending: false,
+  votedSuccess: false,
+  cantVote: false,
 };
 
 const votesSlice = createSlice({
@@ -22,6 +29,15 @@ const votesSlice = createSlice({
     builder.addCase(fetchVotes.rejected, (state, action) => {
       state.errorMessage = action.payload;
     });
+    builder.addCase(postVote.fulfilled, (state, action) => {
+      debugger;
+    });
+    builder.addCase(postVote.pending, (state, action) => {
+      debugger;
+    });
+    builder.addCase(postVote.rejected, (state, action) => {
+      debugger;
+    });
   },
 });
 
@@ -31,7 +47,13 @@ export const fetchVotes = createAsyncThunk("/vote", async () => {
 });
 
 export const postVote = createAsyncThunk("/get-vote", async (vote) => {
-  await postData("/get-vote/", vote);
+  const { data } = await postData("/get-vote/", vote);
+  return data;
 });
+
+export const getVotes = createSelector(
+  (state) => state.votes,
+  (votes) => votes.votes
+);
 
 export default votesSlice.reducer;

@@ -62,10 +62,10 @@ const newsSlice = createSlice({
         ];
       }
     });
-    builder.addCase(searchNews.rejected, (state, action) => {
+    builder.addCase(searchNews.rejected, (state) => {
       state.searchNewsPending = false;
     });
-    builder.addCase(searchNews.pending, (state, action) => {
+    builder.addCase(searchNews.pending, (state) => {
       state.searchNewsPending = true;
     });
   },

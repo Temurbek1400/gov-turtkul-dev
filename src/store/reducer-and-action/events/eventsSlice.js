@@ -13,7 +13,7 @@ const eventsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchEvents.fulfilled, (state, action) => {
       state.pending = false;
-      state.events = action.payload.data;
+      state.events = action.payload;
     });
     builder.addCase(fetchEvents.pending, (state, action) => {
       state.pending = true;
@@ -24,8 +24,12 @@ const eventsSlice = createSlice({
   },
 });
 
-export const fetchEvents = createAsyncThunk("/uz/events", async () => {
-  return await getData("/uz/events");
-});
+export const fetchEvents = createAsyncThunk(
+  "events/events",
+  async (currLanguage) => {
+    const { data } = await getData(`/${currLanguage}/events`);
+    return data;
+  }
+);
 
 export default eventsSlice.reducer;

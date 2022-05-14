@@ -21,7 +21,6 @@ const SearchInput = () => {
     dispatch(searchNews({ search: state, activeLanguageName: activeLang }));
     navigate("/search-result");
   };
-  console.log(state);
   return (
     <SearchInputWrapper>
       <Search>

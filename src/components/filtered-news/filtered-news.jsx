@@ -9,6 +9,7 @@ import {
   fetchNews,
   getNewsData,
   getNewsStatus,
+  setActiveFilter,
 } from "./../../store/reducer-and-action/news/newsSlice";
 import Pagination from "./pagination/pagination";
 import Loader from "components/common/loader/loader";
@@ -35,8 +36,8 @@ export default function FilteredNews() {
   useEffect(() => {
     const filter = pathname.split("/").pop();
     if (filterBar.some((item) => item.route === filter)) handleChange(filter);
-    // if (filter === "news") handleChange("all");
   }, [dispatch, filterBar, handleChange, pathname]);
+
   const newsFilter = useSelector(getActiveFilter);
   return (
     <Wrapper>

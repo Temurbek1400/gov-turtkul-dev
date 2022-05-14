@@ -1,105 +1,49 @@
-import React, { useEffect, useState } from "react";
-import {
-  IconsWrapper,
-  Like,
-  Vote,
-  VoteBody,
-  VoteCard,
-  Wrapper,
-} from "./votes.style";
-import { Progress } from "react-sweet-progress";
-import "react-sweet-progress/lib/style.css";
-import { BiDislike, BiLike } from "react-icons/bi";
-import { Button } from "@mui/material";
-import Title from "components/title";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Wrapper } from "./votes.style";
+import "react-sweet-progress/lib/style.css";
+import Title from "components/title";
+import VotesItems from "./votes-items";
 import {
   fetchVotes,
   postVote,
+  getVotes,
 } from "store/reducer-and-action/votes/votesSlice";
-let ip;
-
+import getUUID from "utils/getUUID";
 const Votes = ({ votes }) => {
   const dispatch = useDispatch();
-  const [disableBtn, setDisableBtn] = useState(false);
-  const data = useSelector((state) => state.votes.votes);
+  const data = useSelector(getVotes);
+
   useEffect(() => {
     dispatch(fetchVotes());
-    getIp();
   }, [dispatch]);
+  useEffect(() => {}, [data]);
 
-  const getIp = async () => {
-    await fetch("https://api.ipify.org/?format=json")
-      .then((res) => res.json())
-      .then((data) => (ip = data.ip));
-  };
-
-  const voted = async (voting, itemID) => {
-    let vote;
-    if (voting === "agree")
-      vote = {
-        id: itemID,
-        ip: ip + itemID,
-        tr: true,
-        fl: false,
-        vote: itemID,
-      };
-    else
-      vote = {
-        id: itemID,
-        ip: ip + itemID,
-        tr: false,
-        fl: true,
-        vote: itemID,
-      };
-
-    await dispatch(postVote(vote));
-    alert("You successfully voted");
-    setDisableBtn(true);
+  const onVote = (isAgreed, itemID) => {
+    let ID = localStorage.getItem("uuid");
+    if (!ID) {
+      ID = getUUID(10);
+      localStorage.setItem("uuid", ID);
+    } else {
+      debugger;
+      dispatch(
+        postVote({
+          id: itemID,
+          ip: ID + itemID,
+          tr: isAgreed,
+          fl: !isAgreed,
+          vote: itemID,
+        })
+      );
+    }
     dispatch(fetchVotes());
   };
   return (
     <>
       <Title text={votes.title} />
       <Wrapper>
-        {data.map((item) => {
-          return (
-            <VoteCard key={item.id}>
-              <h4>{item.title}</h4>
-              <VoteBody>{item.text}</VoteBody>
-              <Progress
-                percent={Math.floor(
-                  (item.sumagree / (item.sumagree + item.sumdisagree)) * 100
-                )}
-              />
-              <IconsWrapper>
-                <Like>
-                  <Button
-                    disabled={disableBtn}
-                    variant="outlined"
-                    color="success"
-                    size="small"
-                  >
-                    <Vote onClick={() => voted("agree", item.id)}>
-                      {votes.votes.yes}
-                      <BiLike style={{ color: "green" }} />
-                    </Vote>
-                  </Button>
-                  <Button
-                    disabled={disableBtn}
-                    color="error"
-                    variant="outlined"
-                  >
-                    <Vote onClick={() => voted("disAgree", item.id)}>
-                      <BiDislike style={{ color: "red" }} />
-                      {votes.votes.no}
-                    </Vote>
-                  </Button>
-                </Like>
-              </IconsWrapper>
-            </VoteCard>
-          );
-        })}
+        <VotesItems votes={data} onVote={onVote} />
+        {/* <CommonToast duration={1000} /> */}
       </Wrapper>
     </>
   );

@@ -16,8 +16,15 @@ const FilteredNewsItems = ({ news = [], newsFilter }) => {
     <NewsWrapper>
       {news.length ? (
         news.map((news_item) => (
-          <div data-aos="fade-right">
-            <Link to={`/${newsFilter}/${news_item.id}`} key={news_item.id}>
+          <div data-aos="fade-right" key={news_item.title}>
+            <Link
+              to={
+                newsFilter
+                  ? `/${newsFilter}/${news_item.id}`
+                  : `/news/${news_item.filter}/${news_item.id}`
+              }
+              key={news_item.id}
+            >
               <NewsItemWrapper role="tabpanel">
                 <Grid
                   container
