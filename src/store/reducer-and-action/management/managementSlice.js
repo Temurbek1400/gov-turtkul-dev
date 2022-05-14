@@ -31,7 +31,7 @@ const managementSlice = createSlice({
 export const fetchManagement = createAsyncThunk(
   "management/data",
   async (currLanguage) => {
-    const { data } = await getData(`/${currLanguage}/about/central-tool/`);
+    const { data } = await getData(`/${currLanguage}/about/about-gov/`);
     console.log(data);
     return data;
   }

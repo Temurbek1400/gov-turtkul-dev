@@ -4,7 +4,7 @@ import { Wrapper, Right } from "./management.style";
 import Button from "@mui/material/Button";
 import ResponsibilityModal from "./responsibilty-modal";
 
-const Managment = ({ data }) => {
+const Management = ({ data }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -35,4 +35,4 @@ const Managment = ({ data }) => {
   );
 };
 
-export default Managment;
+export default Management;
