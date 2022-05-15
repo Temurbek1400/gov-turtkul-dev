@@ -32,7 +32,6 @@ export const fetchManagement = createAsyncThunk(
   "management/data",
   async (currLanguage) => {
     const { data } = await getData(`/${currLanguage}/about/about-gov/`);
-    console.log(data);
     return data;
   }
 );

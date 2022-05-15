@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const FilteredNewsItems = ({ news = [], newsFilter }) => {
+  debugger;
   useEffect(() => {
     AOS.init();
     AOS.refresh();

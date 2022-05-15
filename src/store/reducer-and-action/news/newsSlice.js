@@ -51,16 +51,8 @@ const newsSlice = createSlice({
       state.errorMessage = action.payload;
     });
     builder.addCase(searchNews.fulfilled, (state, action) => {
+      state.searchNews = action.payload;
       state.searchNewsPending = false;
-      if (action?.payload?.[action.meta.arg.activeLanguageName]) {
-        const searchingLang = Object.keys(action.payload)[0];
-        state.searchNews[searchingLang] = [
-          ...action.payload[searchingLang].map((item) => ({
-            ...item,
-            imagesown: DEFAULT_IMAGE,
-          })),
-        ];
-      }
     });
     builder.addCase(searchNews.rejected, (state) => {
       state.searchNewsPending = false;

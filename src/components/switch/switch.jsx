@@ -13,7 +13,6 @@ const Switch = () => {
 
   const handleChange = (event) => {
     const { checked } = event.target;
-    console.log(checked);
     dispatch(setDarkTheme(checked));
   };
 

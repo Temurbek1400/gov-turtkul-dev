@@ -22,7 +22,6 @@ const SeniorManagement = () => {
     dispatch(fetchManagement(currLanguage));
   }, []);
 
-  console.log(management);
   return (
     <Container>
       <LeftWrapper>

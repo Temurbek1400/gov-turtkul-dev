@@ -23,7 +23,6 @@ const MainForm = () => {
   const data = useSelector((state) => state.supports);
 
   const onSubmit = async (data) => {
-    console.log(data);
     await dispatch(postSupports(data));
     dispatch(fetchSupports());
   };
