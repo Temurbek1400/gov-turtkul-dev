@@ -5,7 +5,7 @@ module.exports = {
       email: "Yuridik va jismoniy shaxslar murojaatlari uchun: murojaatlar@tashkent.uz",
       phoneNumbers: `
          71-210-03-47 Toshkent shahar hokimligi
-         Murojaatlar bilan ishlash bo'limi.
+         Murojaatlar bilan ishlash bo'limi. \n
 
          71-210-01-63 
          Matbuot xizmati. 

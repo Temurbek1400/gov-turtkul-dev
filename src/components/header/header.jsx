@@ -10,6 +10,7 @@ import {
 } from "../../store/reducer-and-action/news/newsSlice";
 import Skeleton from "@mui/material/Skeleton";
 import { getNewsStatus } from "store/reducer-and-action/news/newsSlice";
+import Contacts from "components/contacts/contacts";
 
 const Header = () => {
   const news = useSelector(getNewsData);
