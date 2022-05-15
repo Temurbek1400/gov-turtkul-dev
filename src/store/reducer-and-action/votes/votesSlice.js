@@ -1,5 +1,5 @@
 import { getData, postData } from "api/operations";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const {
   createSlice,
@@ -18,10 +18,16 @@ const initialState = {
 const votesSlice = createSlice({
   name: "votes",
   initialState,
+  reducers: {
+    votedSuccess: (state, action) => {
+      state.votedSuccess = false;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchVotes.fulfilled, (state, action) => {
       state.pending = false;
       state.votes = action.payload;
+      state.votedSuccess = true;
     });
     builder.addCase(fetchVotes.pending, (state, action) => {
       state.pending = true;
@@ -30,10 +36,13 @@ const votesSlice = createSlice({
       state.errorMessage = action.payload;
     });
     builder.addCase(postVote.fulfilled, (state, action) => {
+      debugger;
+      toast.success("Ovoz berildi!");
     });
-    builder.addCase(postVote.pending, (state, action) => {
-    });
+    builder.addCase(postVote.pending, (state, action) => {});
     builder.addCase(postVote.rejected, (state, action) => {
+      debugger;
+      toast.success("Siz allaqachon ovoz bergansiz!");
     });
   },
 });
@@ -49,8 +58,8 @@ export const postVote = createAsyncThunk("/get-vote", async (vote) => {
 });
 
 export const getVotes = createSelector(
-  (state) => state.votes,
-  (votes) => votes.votes
+  (state) => state,
+  ({ votes }) => votes.votes
 );
 
 export default votesSlice.reducer;

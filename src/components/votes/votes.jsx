@@ -10,6 +10,8 @@ import {
   getVotes,
 } from "store/reducer-and-action/votes/votesSlice";
 import getUUID from "utils/getUUID";
+
+
 const Votes = ({ votes }) => {
   const dispatch = useDispatch();
   const data = useSelector(getVotes);
@@ -35,6 +37,7 @@ const Votes = ({ votes }) => {
         })
       );
     }
+
     dispatch(fetchVotes());
   };
   return (
@@ -42,7 +45,6 @@ const Votes = ({ votes }) => {
       <Title text={votes.title} />
       <Wrapper>
         <VotesItems votes={data} onVote={onVote} />
-        {/* <CommonToast duration={1000} /> */}
       </Wrapper>
     </>
   );

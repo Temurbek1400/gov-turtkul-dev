@@ -8,6 +8,7 @@ import {
   fetchNews,
   setActiveFilter,
 } from "store/reducer-and-action/news/newsSlice";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
         <Router>
           <Routes />
         </Router>
+        <Toaster containerStyle={{ zIndex: "100000" }} />
       </Suspense>
     </ThemeProvider>
   );
