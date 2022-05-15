@@ -4,7 +4,7 @@ import img3 from "assets/senior-menegment-page/3.jpg";
 import img4 from "assets/senior-menegment-page/4.jpg";
 // import img5 from "assets/senior-menegment-page/5.jpg";
 
-export const ManagmentData = {
+export const ManagementData = {
   uz: [
     {
       img: img1,

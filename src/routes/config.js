@@ -5,7 +5,7 @@ const AskedQuestions = lazy(() =>
   import("components/asked-questions/asked-questions")
 );
 const Contacts = lazy(() => import("components/contacts/contacts"));
-const SeniorMenegment = lazy(() => import("pages/senior-menegment"));
+const Management = lazy(() => import("pages/management"));
 const Home = lazy(() => import("pages/home"));
 const NewsDetail = lazy(() => import("pages/news-detail"));
 const Layout = lazy(() => import("pages/layout"));
@@ -61,7 +61,7 @@ const routes = [
         children: [
           {
             path: "about/about-gov",
-            element: <SeniorMenegment />,
+            element: <Management />,
           },
           {
             path: "news/:newsFilter/:newsId",

@@ -36,13 +36,29 @@ const votesSlice = createSlice({
       state.errorMessage = action.payload;
     });
     builder.addCase(postVote.fulfilled, (state, action) => {
-      debugger;
-      toast.success("Ovoz berildi!");
-    });
-    builder.addCase(postVote.pending, (state, action) => {});
-    builder.addCase(postVote.rejected, (state, action) => {
-      debugger;
-      toast.success("Siz allaqachon ovoz bergansiz!");
+      if (action.payload.data === "voted") {
+        toast.error("Siz allaqachon ovoz bergansiz!");
+      } else if (action.payload.data === "success") {
+        toast.success("Ovoz berildi!");
+      }
+      state.votes = state.votes.map((vote) => {
+        if (vote.id === action.payload.vote.id) {
+          let disabledVotes = localStorage.getItem("disabledVotes");
+          if (disabledVotes?.length) {
+            localStorage.setItem(
+              "disabledVotes",
+              JSON.stringify([...JSON.parse(disabledVotes), vote.id])
+            );
+          } else {
+            localStorage.setItem("disabledVotes", JSON.stringify([vote.id]));
+          }
+          return {
+            ...vote,
+            disabled: true,
+          };
+        }
+        return vote;
+      });
     });
   },
 });
@@ -54,7 +70,7 @@ export const fetchVotes = createAsyncThunk("/vote", async () => {
 
 export const postVote = createAsyncThunk("/get-vote", async (vote) => {
   const { data } = await postData("/get-vote/", vote);
-  return data;
+  return { data, vote };
 });
 
 export const getVotes = createSelector(

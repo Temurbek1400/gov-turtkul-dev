@@ -8,6 +8,8 @@ const VotesItems = ({ votes = [], onVote }) => {
   if (votes.length === 0) {
     return "Loading...";
   }
+  let disabledVotes = localStorage.getItem("disabledVotes");
+  disabledVotes = JSON.parse(disabledVotes);
 
   return (
     <div>
@@ -25,14 +27,25 @@ const VotesItems = ({ votes = [], onVote }) => {
             />
             <IconsWrapper>
               <Like>
-                <Vote onClick={() => onVote(true, item.id)}>
-                  <Button variant="outlined" color="success" size="small">
+                <Vote>
+                  <Button
+                    variant="outlined"
+                    color="success"
+                    size="small"
+                    disabled={disabledVotes.includes(item.id)}
+                    onClick={() => onVote(true, item.id)}
+                  >
                     {/* {votes.votes.yes} */}
                     <BiLike style={{ color: "green" }} />
                   </Button>
                 </Vote>
-                <Vote onClick={() => onVote(false, item.id)}>
-                  <Button color="error" variant="outlined">
+                <Vote>
+                  <Button
+                    color="error"
+                    variant="outlined"
+                    disabled={disabledVotes.includes(item.id)}
+                    onClick={() => onVote(false, item.id)}
+                  >
                     <BiDislike style={{ color: "red" }} />
                     {/* {votes.votes.no} */}
                   </Button>

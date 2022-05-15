@@ -1,6 +1,10 @@
 import { getData } from "api/operations";
 
-const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
+const {
+  createSlice,
+  createAsyncThunk,
+  createSelector,
+} = require("@reduxjs/toolkit");
 
 const initialState = {
   events: [],
@@ -30,6 +34,11 @@ export const fetchEvents = createAsyncThunk(
     const { data } = await getData(`/${currLanguage}/events`);
     return data;
   }
+);
+
+export const getEvents = createSelector(
+  (state) => state.events,
+  (events) => events.events
 );
 
 export default eventsSlice.reducer;
