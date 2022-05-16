@@ -1,8 +1,8 @@
-import React from "react";
 import Button from "@mui/material/Button";
+import React from "react";
+import { BiDislike, BiLike } from "react-icons/bi";
 import { Progress } from "react-sweet-progress";
 import { IconsWrapper, Like, Vote, VoteBody, VoteCard } from "./votes.style";
-import { BiDislike, BiLike } from "react-icons/bi";
 
 const VotesItems = ({ votes = [], onVote, voting }) => {
   if (votes.length === 0) {
