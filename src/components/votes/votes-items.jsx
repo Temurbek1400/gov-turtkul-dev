@@ -32,7 +32,7 @@ const VotesItems = ({ votes = [], onVote }) => {
                     variant="outlined"
                     color="success"
                     size="small"
-                    disabled={disabledVotes.includes(item.id)}
+                    disabled={disabledVotes?.includes(item.id)}
                     onClick={() => onVote(true, item.id)}
                   >
                     {/* {votes.votes.yes} */}
