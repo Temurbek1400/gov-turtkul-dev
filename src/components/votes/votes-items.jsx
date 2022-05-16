@@ -4,7 +4,7 @@ import { Progress } from "react-sweet-progress";
 import { IconsWrapper, Like, Vote, VoteBody, VoteCard } from "./votes.style";
 import { BiDislike, BiLike } from "react-icons/bi";
 
-const VotesItems = ({ votes = [], onVote }) => {
+const VotesItems = ({ votes = [], onVote, voting }) => {
   if (votes.length === 0) {
     return "Loading...";
   }
@@ -32,7 +32,7 @@ const VotesItems = ({ votes = [], onVote }) => {
                     variant="outlined"
                     color="success"
                     size="small"
-                    disabled={disabledVotes?.includes(item.id)}
+                    disabled={disabledVotes?.includes(item.id) || voting}
                     onClick={() => onVote(true, item.id)}
                   >
                     {/* {votes.votes.yes} */}
@@ -43,7 +43,7 @@ const VotesItems = ({ votes = [], onVote }) => {
                   <Button
                     color="error"
                     variant="outlined"
-                    disabled={disabledVotes.includes(item.id)}
+                    disabled={disabledVotes?.includes(item.id) || voting}
                     onClick={() => onVote(false, item.id)}
                   >
                     <BiDislike style={{ color: "red" }} />

@@ -13,6 +13,7 @@ const initialState = {
   pending: false,
   votedSuccess: false,
   cantVote: false,
+  voting: false,
 };
 
 const votesSlice = createSlice({
@@ -34,6 +35,9 @@ const votesSlice = createSlice({
     });
     builder.addCase(fetchVotes.rejected, (state, action) => {
       state.errorMessage = action.payload;
+    });
+    builder.addCase(postVote.pending, (state, action) => {
+      state.voting = true;
     });
     builder.addCase(postVote.fulfilled, (state, action) => {
       if (action.payload.data === "voted") {
@@ -57,6 +61,7 @@ const votesSlice = createSlice({
             disabled: true,
           };
         }
+        state.voting = false;
         return vote;
       });
     });
@@ -75,7 +80,7 @@ export const postVote = createAsyncThunk("/get-vote", async (vote) => {
 
 export const getVotes = createSelector(
   (state) => state,
-  ({ votes }) => votes.votes
+  ({ votes }) => [votes.votes, votes.voting]
 );
 
 export default votesSlice.reducer;

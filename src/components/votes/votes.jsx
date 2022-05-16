@@ -11,15 +11,14 @@ import {
 } from "store/reducer-and-action/votes/votesSlice";
 import getUUID from "utils/getUUID";
 
-
 const Votes = ({ votes }) => {
   const dispatch = useDispatch();
-  const data = useSelector(getVotes);
+  const [data, voting] = useSelector(getVotes);
 
   useEffect(() => {
     dispatch(fetchVotes());
   }, [dispatch]);
-  useEffect(() => {}, [data]);
+  useEffect(() => {}, [data, voting]);
 
   const onVote = (isAgreed, itemID) => {
     let ID = localStorage.getItem("uuid");
@@ -44,7 +43,7 @@ const Votes = ({ votes }) => {
     <>
       <Title text={votes.title} />
       <Wrapper>
-        <VotesItems votes={data} onVote={onVote} />
+        <VotesItems votes={data} onVote={onVote} voting={voting} />
       </Wrapper>
     </>
   );
