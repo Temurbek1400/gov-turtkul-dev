@@ -1,7 +1,7 @@
 import React from "react";
 import Hypnosis from "react-cssfx-loading/lib/Hypnosis";
 import styled from "styled-components";
-import logo from "assets/resoursesImgs/logo.png";
+import logo from "assets/site-logo.png";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -10,6 +10,17 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  @keyframes scaling {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(2);
+    }
+  }
+  .scalingImage {
+    animation: scaling 5s infinite alternate;
+  }
 
   div:nth-child(2) {
     width: 270px;
@@ -21,8 +32,8 @@ const Wrapper = styled.div`
   }
 
   img {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     position: absolute;
   }
 
@@ -33,8 +44,8 @@ const Wrapper = styled.div`
     }
 
     img {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       position: absolute;
     }
   }
@@ -46,7 +57,7 @@ const FirstLoading = () => {
 
   return (
     <Wrapper>
-      <img src={logo} alt="" />
+      <img className="scalingImage" src={logo} alt="" />
       <Hypnosis width={`${num}px`} height={`${num}px`} />
     </Wrapper>
   );
