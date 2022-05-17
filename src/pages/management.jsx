@@ -1,16 +1,14 @@
-import Management from "components/management/management-card";
-import { ManagementData } from "components/management/management-data";
-import { Container } from "components/management/management.style";
-import { LeftWrapper } from "components/management/management.style";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Management from "components/management/management-card";
+import { Container, LeftWrapper } from "components/management/management.style";
 import { useDispatch, useSelector } from "react-redux";
+import { getActiveLanguageName } from "store/reducer-and-action/language/language";
 import {
   fetchManagement,
   getManagement,
 } from "store/reducer-and-action/management/managementSlice";
-import { getActiveLanguageName } from "store/reducer-and-action/language/language";
 
 const SeniorManagement = () => {
   const dispatch = useDispatch();
