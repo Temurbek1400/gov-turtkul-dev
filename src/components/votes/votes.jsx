@@ -43,7 +43,12 @@ const Votes = ({ votes }) => {
     <>
       <Title text={votes.title} />
       <Wrapper>
-        <VotesItems votes={data} onVote={onVote} voting={voting} />
+        <VotesItems
+          votes={data}
+          onVote={onVote}
+          voting={voting}
+          btnsLanguage={votes.votes}
+        />
       </Wrapper>
     </>
   );

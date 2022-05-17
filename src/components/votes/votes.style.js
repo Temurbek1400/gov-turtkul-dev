@@ -40,7 +40,7 @@ export const VoteBody = styled.div`
 
 export const IconsWrapper = styled.div`
   width: 100%;
-  /* position: absolute; */
+  position: absolute;
   bottom: -60px;
   left: 0;
   text-align: center;
@@ -58,7 +58,10 @@ export const Vote = styled.div`
   gap: 10px;
   font-size: 18px;
   text-transform: capitalize;
+
+  button {
+    font-size: 16px;
+    gap: 10px;
+    font-weight: bold;
+  }
 `;
-// export const Wrapper = styled.div``
-// export const Wrapper = styled.div``
-// export const Wrapper = styled.div``

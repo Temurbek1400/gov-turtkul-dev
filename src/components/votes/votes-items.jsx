@@ -2,16 +2,9 @@ import Button from "@mui/material/Button";
 import React from "react";
 import { BiDislike, BiLike } from "react-icons/bi";
 import { Progress } from "react-sweet-progress";
-import {
-  IconsWrapper,
-  Like,
-  Vote,
-  VoteBody,
-  VoteCard,
-  Wrapper,
-} from "./votes.style";
+import { IconsWrapper, Like, Vote, VoteBody, VoteCard } from "./votes.style";
 
-const VotesItems = ({ votes = [], onVote, voting }) => {
+const VotesItems = ({ votes = [], onVote, voting, btnsLanguage }) => {
   if (votes.length === 0) {
     return "Loading...";
   }
@@ -19,7 +12,7 @@ const VotesItems = ({ votes = [], onVote, voting }) => {
   disabledVotes = JSON.parse(disabledVotes);
 
   return (
-    <Wrapper>
+    <>
       {votes.map((item) => {
         return (
           <VoteCard key={item.id}>
@@ -42,8 +35,7 @@ const VotesItems = ({ votes = [], onVote, voting }) => {
                     disabled={disabledVotes?.includes(item.id) || voting}
                     onClick={() => onVote(true, item.id)}
                   >
-                    Like
-                    {/* {votes.votes.yes} */}
+                    {btnsLanguage.yes}
                     <BiLike style={{ color: "green" }} />
                   </Button>
                 </Vote>
@@ -55,8 +47,7 @@ const VotesItems = ({ votes = [], onVote, voting }) => {
                     onClick={() => onVote(false, item.id)}
                   >
                     <BiDislike style={{ color: "red" }} />
-                    {/* {votes.votes.no} */}
-                    Dislike
+                    {btnsLanguage.no}
                   </Button>
                 </Vote>
               </Like>
@@ -64,7 +55,7 @@ const VotesItems = ({ votes = [], onVote, voting }) => {
           </VoteCard>
         );
       })}
-    </Wrapper>
+    </>
   );
 };
 
