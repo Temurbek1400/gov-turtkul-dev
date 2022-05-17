@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Title, Wrapper } from "./asked-questions.style";
 import { QuestionsData } from "./questions-data";
-import { getData } from "api/operations";
 
 const AskedQuestions = () => {
   return (
