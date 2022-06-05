@@ -25,6 +25,11 @@ const SearchInput = () => {
     <SearchInputWrapper>
       <Search>
         <StyledInputBase
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              onSearchNews();
+            }
+          }}
           value={state}
           onChange={(e) => setState(e.target.value)}
           variant="filled"

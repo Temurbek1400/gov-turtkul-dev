@@ -51,7 +51,10 @@ const newsSlice = createSlice({
       state.errorMessage = action.payload;
     });
     builder.addCase(searchNews.fulfilled, (state, action) => {
-      state.searchNews = action.payload;
+      state.searchNews = action.payload.map((item) => ({
+        ...item,
+        imagesown: DEFAULT_IMAGE,
+      }));
       state.searchNewsPending = false;
     });
     builder.addCase(searchNews.rejected, (state) => {
@@ -84,7 +87,7 @@ export const fetchNews = createAsyncThunk(
 
 export const searchNews = createAsyncThunk(
   "news/searchNews",
-  async ({ search, activeLanguageName }, thunkAPI) => {
+  async ({ search, activeLanguageName }) => {
     if (search) {
       const { data } = await postData(`${activeLanguageName}/search/`, {
         q: search,
