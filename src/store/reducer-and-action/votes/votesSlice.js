@@ -75,6 +75,7 @@ export const fetchVotes = createAsyncThunk("/vote", async () => {
 
 export const postVote = createAsyncThunk("/get-vote", async (vote) => {
   const { data } = await postData("/get-vote/", vote);
+  
   return { data, vote };
 });
 

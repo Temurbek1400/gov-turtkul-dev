@@ -4,7 +4,6 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 import { getData } from "api/operations";
-import DEFAULT_IMAGE from "assets/default-news-img.jpg";
 import { postData } from "./../../../api/operations";
 
 const initialState = {
@@ -35,10 +34,12 @@ const newsSlice = createSlice({
           [action.payload?.activeLanguageName]: {
             ...state.news[action.payload?.activeLanguageName],
             [state.activeFilter]: [
-              ...action.payload?.data.map((item) => ({
-                ...item,
-                imagesown: DEFAULT_IMAGE,
-              })),
+              ...action.payload?.data.map((item) => {
+                return {
+                  ...item,
+                  imagesown: item.imagesown,
+                };
+              }),
             ],
           },
         };
@@ -53,7 +54,7 @@ const newsSlice = createSlice({
     builder.addCase(searchNews.fulfilled, (state, action) => {
       state.searchNews = action.payload.map((item) => ({
         ...item,
-        imagesown: DEFAULT_IMAGE,
+        imagesown: item.imagesown,
       }));
       state.searchNewsPending = false;
     });

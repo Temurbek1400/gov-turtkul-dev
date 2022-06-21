@@ -19,6 +19,7 @@ const Header = () => {
   useEffect(() => {
     dispatch(setActiveFilter("news/all"));
   }, []);
+  debugger;
 
   const WaitingNews = ({ id }) => {
     return !news || pending ? (

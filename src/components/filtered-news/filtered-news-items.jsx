@@ -6,6 +6,7 @@ import NotFound from "components/not-found/not-found";
 import EventIcon from "@mui/icons-material/Event";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import formatDate from "utils/formatDate";
 
 const FilteredNewsItems = ({ news = [], newsFilter }) => {
   useEffect(() => {
@@ -33,14 +34,16 @@ const FilteredNewsItems = ({ news = [], newsFilter }) => {
                   style={{ display: "flex", alignItems: "center" }}
                 >
                   <Grid item xs={12} sm={6} md={6} lg={6}>
-                    <img src={news_item.imagesown} alt="" />
+                    <img className="news-image" src={news_item.imagesown} alt="" />
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={6}>
                     <NewsInfo>
                       <h4>{news_item.title}</h4>
-                      <p>{news_item.body}</p>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: news_item.body }}
+                      ></div>
                       <h5>
-                        <EventIcon /> {news_item.date}
+                        <EventIcon /> {formatDate(news_item.date)}
                       </h5>
                     </NewsInfo>
                   </Grid>

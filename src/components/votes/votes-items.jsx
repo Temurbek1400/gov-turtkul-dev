@@ -5,6 +5,7 @@ import { Progress } from "react-sweet-progress";
 import { IconsWrapper, Like, Vote, VoteBody, VoteCard } from "./votes.style";
 
 const VotesItems = ({ votes = [], onVote, voting, btnsLanguage }) => {
+  debugger
   if (votes.length === 0) {
     return "Loading...";
   }

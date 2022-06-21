@@ -1,4 +1,5 @@
 import React from "react";
+import formatDate from "utils/formatDate";
 import { HeaderNewsItemWrapper } from "./header.styles";
 
 const HeaderNewsItem = ({ news }) => {
@@ -13,7 +14,7 @@ const HeaderNewsItem = ({ news }) => {
         </figure>
         <div className="card-info">
           <p>{news?.title}</p>
-          <p>{news?.date}</p>
+          <p>{formatDate(news?.date)}</p>
         </div>
       </HeaderNewsItemWrapper>
     </>

@@ -33,7 +33,7 @@ const SwiperImgs = ({ title = "", images = [], body = "" }) => {
         </Swiper>
       </Box>
 
-      <p>{body}</p>
+      <div dangerouslySetInnerHTML={{ __html: body }}></div>
     </Wrapper>
   );
 };
