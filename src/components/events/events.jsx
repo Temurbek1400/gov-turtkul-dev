@@ -19,6 +19,8 @@ const Events = () => {
     dispatch(fetchEvents(currLanguage));
   }, [currLanguage]);
 
+  debugger;
+
   return (
     <>
       <Title text={events.title} />
@@ -26,7 +28,7 @@ const Events = () => {
         {events.map((item) => {
           return (
             <CardWrapper key={item.id}>
-              <img src={BASE_URL + item.imagesown} alt="event-card-img" />
+              <img src={item.imagesown} alt="event-card-img" />
               <CardText>
                 <div dangerouslySetInnerHTML={{ __html: item.body }}></div>
               </CardText>
