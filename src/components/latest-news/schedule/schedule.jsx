@@ -3,6 +3,7 @@ import React from "react";
 import { CustomPaper, Info, TimeTitle } from "./schedule.style";
 
 const Schedule = ({ data }) => {
+  debugger;
   return (
     <CustomPaper elevation={3}>
       <List>

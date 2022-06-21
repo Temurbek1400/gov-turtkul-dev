@@ -11,7 +11,6 @@ import News from "./news/news";
 import Schedule from "./schedule/schedule";
 
 const LatestNews = ({ news, plan }) => {
-  const dispatch = useDispatch();
   const newsData = useSelector(getNewsData);
 
   // useEffect(() => {
@@ -21,7 +20,7 @@ const LatestNews = ({ news, plan }) => {
   return (
     <Wrapper>
       <div>
-        <Title text={news.title} />
+        <Title text={news.title + "wtf"} />
         <News newsData={newsData} />
       </div>
       <div>

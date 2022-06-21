@@ -27,7 +27,9 @@ const Events = () => {
           return (
             <CardWrapper key={item.id}>
               <img src={BASE_URL + item.imagesown} alt="event-card-img" />
-              <CardText>{item.body}</CardText>
+              <CardText>
+                <div dangerouslySetInnerHTML={{ __html: item.body }}></div>
+              </CardText>
             </CardWrapper>
           );
         })}

@@ -5,7 +5,6 @@ import { Progress } from "react-sweet-progress";
 import { IconsWrapper, Like, Vote, VoteBody, VoteCard } from "./votes.style";
 
 const VotesItems = ({ votes = [], onVote, voting, btnsLanguage }) => {
-  debugger
   if (votes.length === 0) {
     return "Loading...";
   }
@@ -18,7 +17,9 @@ const VotesItems = ({ votes = [], onVote, voting, btnsLanguage }) => {
         return (
           <VoteCard key={item.id}>
             <h4>{item.title}</h4>
-            <VoteBody>{item.text}</VoteBody>
+            <VoteBody>
+              <div dangerouslySetInnerHTML={{ __html: item.text }}></div>
+            </VoteBody>
             <Progress
               percent={
                 Math.floor(
