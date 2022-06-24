@@ -30,18 +30,25 @@ const FilteredNewsItems = ({ news = [], newsFilter }) => {
                 <Grid
                   container
                   key={news_item.title}
-                  columnSpacing={2}
                   style={{ display: "flex", alignItems: "center" }}
                 >
-                  <Grid item xs={12} sm={6} md={6} lg={6}>
-                    <img className="news-image" src={news_item.imagesown} alt="" />
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    md={6}
+                    lg={6}
+                    className="img-container"
+                  >
+                    <img
+                      className="news-image"
+                      src={news_item.imagesown}
+                      alt=""
+                    />
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={6}>
                     <NewsInfo>
                       <h4>{news_item.title}</h4>
-                      <div
-                        dangerouslySetInnerHTML={{ __html: news_item.body }}
-                      ></div>
                       <h5>
                         <EventIcon /> {formatDate(news_item.date)}
                       </h5>

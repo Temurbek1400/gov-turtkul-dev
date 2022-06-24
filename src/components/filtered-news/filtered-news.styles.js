@@ -46,8 +46,14 @@ export const NewsWrapper = styled.div`
 export const NewsItemWrapper = styled.div`
   border-bottom: 1px solid silver;
   padding-bottom: 20px;
+  .img-container {
+    background-color: #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   & img {
-    width: 100%;
+    height: 200px;
   }
 
   :hover {
@@ -66,6 +72,7 @@ export const NewsInfo = styled.div`
     align-items: center;
     gap: 10px;
     margin: 0;
+    margin-top: 1rem;
     svg {
       font-size: 20px;
     }

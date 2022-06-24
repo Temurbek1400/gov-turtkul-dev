@@ -4,7 +4,6 @@ import formatDate from "utils/formatDate";
 import { HeaderNewsItemWrapper } from "./header.styles";
 
 const HeaderNewsItem = ({ news: news_item }) => {
-  debugger;
   return (
     <>
       <Link
