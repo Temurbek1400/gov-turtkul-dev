@@ -47,7 +47,7 @@ export const NewsItemWrapper = styled.div`
   border-bottom: 1px solid silver;
   padding-bottom: 20px;
   .img-container {
-    background-color: #bbb;
+    background-color: #ddd;
     display: flex;
     justify-content: center;
     align-items: center;
